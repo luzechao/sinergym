@@ -22,9 +22,9 @@ weather_specification:
       thickness_roof: 0.15
       thickness_wall: 0.1
       setpoint_control_type: ZeroFlowPower
-      heating_control_throttling_range: 0.5
+      heating_control_throttling_range: 0.0001
       cooling_control_throttling_range: 1
-      maximum_hot_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
+      maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
       maximum_cold_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
     - cap_nom_heating: 2000
       cap_nom_cooling: 200
@@ -32,9 +32,9 @@ weather_specification:
       thickness_roof: 0.15
       thickness_wall: 0.1
       setpoint_control_type: ZeroFlowPower
-      heating_control_throttling_range: 0.5
+      heating_control_throttling_range: 0.0001
       cooling_control_throttling_range: 1
-      maximum_hot_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
+      maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
       maximum_cold_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
     - cap_nom_heating: 3000
       cap_nom_cooling: 300
@@ -42,9 +42,9 @@ weather_specification:
       thickness_roof: 0.15
       thickness_wall: 0.1
       setpoint_control_type: ZeroFlowPower
-      heating_control_throttling_range: 0.5
+      heating_control_throttling_range: 0.0001
       cooling_control_throttling_range: 1
-      maximum_hot_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
+      maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
       maximum_cold_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
     - cap_nom_heating: 7000
       cap_nom_cooling: Autosize
@@ -52,9 +52,9 @@ weather_specification:
       thickness_roof: 0.05
       thickness_wall: 0.05
       setpoint_control_type: ZeroFlowPower
-      heating_control_throttling_range: 0.5
+      heating_control_throttling_range: 0.0001
       cooling_control_throttling_range: 1
-      maximum_hot_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
+      maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
       maximum_cold_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
   keys: [hot, mixed, cool, stockholm]
 
