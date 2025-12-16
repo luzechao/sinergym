@@ -21,7 +21,7 @@ weather_specification:
       window_type: double_pane_low_E_air_eu
       thickness_roof: 0.15
       thickness_wall: 0.1
-      setpoint_control_type: ZeroFlowPower
+      setpoint_control_type: HalfFlowPower
       heating_control_throttling_range: 0.0001
       cooling_control_throttling_range: 1
       maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
@@ -31,7 +31,7 @@ weather_specification:
       window_type: double_pane_low_E_air_eu
       thickness_roof: 0.15
       thickness_wall: 0.1
-      setpoint_control_type: ZeroFlowPower
+      setpoint_control_type: HalfFlowPower
       heating_control_throttling_range: 0.0001
       cooling_control_throttling_range: 1
       maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
@@ -41,7 +41,7 @@ weather_specification:
       window_type: double_pane_low_E_air_eu
       thickness_roof: 0.15
       thickness_wall: 0.1
-      setpoint_control_type: ZeroFlowPower
+      setpoint_control_type: HalfFlowPower
       heating_control_throttling_range: 0.0001
       cooling_control_throttling_range: 1
       maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
@@ -51,7 +51,7 @@ weather_specification:
       window_type: double_pane_low_E_air_eu
       thickness_roof: 0.05
       thickness_wall: 0.05
-      setpoint_control_type: ZeroFlowPower
+      setpoint_control_type: HalfFlowPower
       heating_control_throttling_range: 0.0001
       cooling_control_throttling_range: 1
       maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
