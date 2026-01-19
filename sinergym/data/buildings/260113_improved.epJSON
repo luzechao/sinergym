@@ -14870,7 +14870,7 @@
     },
     "ZoneHVAC:LowTemperatureRadiant:ConstantFlow": {
         "Low Temp Radiant Const Flow_P1_Aseo2-Vestidor": {
-            "availability_schedule_name": "P1_Aseo2-Vestidor Thermostat Schedule",
+            "availability_schedule_name": "Always On Discrete hvac_library",
             "circuit_length": 106.7,
             "cooling_high_control_temperature_schedule_name": "Const Vol Rad Clg Hi Air Temp Sch",
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
@@ -14892,7 +14892,7 @@
             "zone_name": "P1_Aseo2-Vestidor"
         },
         "Low Temp Radiant Const Flow_P1_Aseo-Pasillo": {
-            "availability_schedule_name": "P1_Aseo-Pasillo Thermostat Schedule",
+            "availability_schedule_name": "Always On Discrete hvac_library",
             "circuit_length": 106.7,
             "cooling_high_control_temperature_schedule_name": "Const Vol Rad Clg Hi Air Temp Sch",
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
@@ -14914,7 +14914,7 @@
             "zone_name": "P1_Aseo-Pasillo"
         },
         "Low Temp Radiant Const Flow_P1_Dormitorio1": {
-            "availability_schedule_name": "P1_Dormitorio1 Thermostat Schedule",
+            "availability_schedule_name": "Always On Discrete hvac_library",
             "circuit_length": 106.7,
             "cooling_high_control_temperature_schedule_name": "Const Vol Rad Clg Hi Air Temp Sch",
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
@@ -14936,7 +14936,7 @@
             "zone_name": "P1_Dormitorio1"
         },
         "Low Temp Radiant Const Flow_P1_Dormitorio2": {
-            "availability_schedule_name": "P1_Dormitorio2 Thermostat Schedule",
+            "availability_schedule_name": "Always On Discrete hvac_library",
             "circuit_length": 106.7,
             "cooling_high_control_temperature_schedule_name": "Const Vol Rad Clg Hi Air Temp Sch",
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
@@ -14958,7 +14958,7 @@
             "zone_name": "P1_Dormitorio2"
         },
         "Low Temp Radiant Const Flow_P1_Dormitorio3": {
-            "availability_schedule_name": "P1_Dormitorio3 Thermostat Schedule",
+            "availability_schedule_name": "Always On Discrete hvac_library",
             "circuit_length": 106.7,
             "cooling_high_control_temperature_schedule_name": "Const Vol Rad Clg Hi Air Temp Sch",
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
@@ -14980,7 +14980,7 @@
             "zone_name": "P1_Dormitorio3"
         },
         "Low Temp Radiant Const Flow_PB_Aseo-Vestibulo": {
-            "availability_schedule_name": "PB_Aseo-Vestibulo Thermostat Schedule",
+            "availability_schedule_name": "Always On Discrete hvac_library",
             "circuit_length": 106.7,
             "cooling_high_control_temperature_schedule_name": "Const Vol Rad Clg Hi Air Temp Sch",
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
@@ -15002,7 +15002,7 @@
             "zone_name": "PB_Aseo-Vestibulo"
         },
         "Low Temp Radiant Const Flow_PB_Cocina": {
-            "availability_schedule_name": "PB_Cocina-Salon1-Salon2 Thermostat Schedule",
+            "availability_schedule_name": "Always On Discrete hvac_library",
             "circuit_length": 106.7,
             "cooling_high_control_temperature_schedule_name": "Const Vol Rad Clg Hi Air Temp Sch",
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
