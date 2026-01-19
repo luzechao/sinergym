@@ -923,6 +923,7 @@ class EnergyCostWrapper(gym.Wrapper):
             self.energy_cost_data = ornstein_uhlenbeck_process(
                 data=self.energy_cost_data,
                 variability_config=self.energy_cost_variability,  # type: ignore
+                np_random=_get_np_random(self),
             )
 
     def observation(self, obs: np.ndarray, info: Dict[str, Any]) -> np.ndarray:
@@ -3029,8 +3030,11 @@ class RandomGeneralContextWrapper(gym.Wrapper):
         # Generate new random configuration for this episode
         self.context_configuration = {}
 
+        # Get random number generator from environment
+        rng = _get_np_random(self)
+
         # Random number of changes for this episode
-        num_changes = np.random.randint(
+        num_changes = rng.integers(
             self.num_changes_range[0], self.num_changes_range[1] + 1
         )
 
@@ -3048,7 +3052,7 @@ class RandomGeneralContextWrapper(gym.Wrapper):
         total_hours = int((end_datetime - begin_datetime).total_seconds() / 3600)
 
         # Generate num_changes random hours
-        random_hours = np.random.randint(0, total_hours, size=num_changes)
+        random_hours = rng.integers(0, total_hours, size=num_changes)
 
         # Create datetime objects and format strings
         random_dates = [
@@ -3057,7 +3061,7 @@ class RandomGeneralContextWrapper(gym.Wrapper):
         str_dates = [dt.strftime('%m-%d %H') for dt in random_dates]
 
         # Generate random context values
-        context_values = np.random.uniform(
+        context_values = rng.uniform(
             self.context_range[0], self.context_range[1], size=num_changes
         )
 
