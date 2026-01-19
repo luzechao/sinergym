@@ -64,6 +64,7 @@ class ModelJSON(object):
         max_ep_store: int,
         building_config: Optional[Dict[str, Any]] = None,
         weather_conf: Optional[Dict[str, Any]] = None,
+        np_random: Optional[np.random.Generator] = None,
     ):
         """Constructor. Variables and meters are required to update building model scheme.
 
@@ -76,6 +77,7 @@ class ModelJSON(object):
             max_ep_store (int): Number of episodes directories will be stored in workspace_path.
             building_config (Dict[str, Any]): Dict config with extra configuration which is required to modify building model (may be None).
             weather_conf (Dict[str, Any]): Dict config with extra configuration which is required to modify weather (may be None).
+            np_random (Optional[np.random.Generator]): Random number generator for reproducible randomness. If None, a default generator will be created. Defaults to None.
         """
 
         self.pkg_data_path = PKG_DATA_PATH
@@ -97,8 +99,11 @@ class ModelJSON(object):
         # IDD
         self._idd = os.path.join(os.environ['EPLUS_PATH'], 'Energy+.idd')
 
+        # Random number generator (use provided or create default)
+        self.np_random = np_random if np_random is not None else np.random.default_rng()
+
         # Select one weather randomly (if there are more than one)
-        choice = np.random.choice(self.weather_files)
+        choice = self.np_random.choice(self.weather_files)
         self._weather_path = (
             choice
             if os.path.isfile(choice)
@@ -453,7 +458,7 @@ class ModelJSON(object):
 
         # Select a new weather file randomly
         self._weather_path = os.path.join(
-            self.pkg_data_path, 'weather', np.random.choice(self.weather_files)
+            self.pkg_data_path, 'weather', self.np_random.choice(self.weather_files)
         )
 
         # Verify file exists
@@ -518,7 +523,7 @@ class ModelJSON(object):
                     if i < 3:
                         if isinstance(param, tuple):
                             processed_params.append(
-                                float(np.random.uniform(param[0], param[1]))
+                                float(self.np_random.uniform(param[0], param[1]))
                             )
                         elif isinstance(param, (float, int)):
                             processed_params.append(float(param))
@@ -536,6 +541,7 @@ class ModelJSON(object):
             weather_data_mod.dataframe = ornstein_uhlenbeck_process(
                 data=self.weather_data.dataframe,
                 variability_config=self.weather_variability_config,
+                np_random=self.np_random,
             )  # type: ignore
 
             self.logger.info(
@@ -573,10 +579,15 @@ class ModelJSON(object):
             schedules.update(self.building['Schedule:Year'])
 
         for sch_name, sch_info in schedules.items():
-            # Write sch_name and data type in output
-            result[sch_name] = {
-                'Type': sch_info['schedule_type_limits_name'],
-            }
+            # Write sch_name and data type in output if it exists
+            if sch_info.get('schedule_type_limits_name'):
+                result[sch_name] = {
+                    'Type': sch_info['schedule_type_limits_name'],
+                }
+            else:
+                result[sch_name] = {
+                    'Type': None,
+                }
             # We are going to search where that scheduler appears in whole
             # building model
             for table, elements in self.building.items():
