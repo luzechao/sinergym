@@ -27,12 +27,17 @@
       :template: custom-class-template.rst               
    
       BaseLoggerWrapper
+      BoilerEnergyWrapper
       CSVLogger
       DatetimeWrapper
       DeltaTempWrapper
       DiscreteIncrementalWrapper
+      DiscreteSetpointControlWrapper
       DiscretizeEnv
       EnergyCostWrapper
+      ExtremeFlowControlWrapper
+      GeneralContextWrapper
+      HeatPumpEnergyWrapper
       IncrementalWrapper
       LoggerWrapper
       MultiObjectiveReward
@@ -42,7 +47,10 @@
       OfficeGridStorageSmoothingActionConstraintsWrapper
       PreviousObservationWrapper
       ProbabilisticContextWrapper
+      RadiantLoggerWrapper
+      RandomGeneralContextWrapper
       ReduceObservationWrapper
+      RoundActionWrapper
       ScheduledContextWrapper
       WandBLogger
       WeatherForecastingWrapper

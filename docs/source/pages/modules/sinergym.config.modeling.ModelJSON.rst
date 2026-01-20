@@ -20,6 +20,7 @@
       ~ModelJSON.adapt_building_to_epw
       ~ModelJSON.adapt_building_to_meters
       ~ModelJSON.adapt_building_to_variables
+      ~ModelJSON.apply_weather_conf
       ~ModelJSON.apply_weather_variability
       ~ModelJSON.get_eplus_runperiod
       ~ModelJSON.get_runperiod_len

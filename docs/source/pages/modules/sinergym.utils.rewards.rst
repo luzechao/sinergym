@@ -1,4 +1,4 @@
-sinergym.utils.rewards
+﻿sinergym.utils.rewards
 ======================
 
 .. automodule:: sinergym.utils.rewards
@@ -19,12 +19,15 @@ sinergym.utils.rewards
       :toctree:                                          
       :template: custom-class-template.rst               
    
+      BalancedRewardV1
+      BalancedRewardV2
       BaseReward
       EnergyCostLinearReward
       ExpReward
       HourlyLinearReward
       LinearReward
-      MultiZoneReward
+      MultiZoneRewardV1
+      MultiZoneRewardV2
       NormalizedLinearReward
    
    
