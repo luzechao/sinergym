@@ -10272,6 +10272,11 @@
             "tolerance_for_time_heating_setpoint_not_met": 0.2
         }
     },
+    "OutputControl:ResilienceSummaries": {
+        "OutputControl:ResilienceSummaries 1": {
+            "heat_index_algorithm": "Simplified"
+        }
+    },
     "OutputControl:Table:Style": {
         "OutputControl:Table:Style 1": {
             "column_separator": "HTML"
