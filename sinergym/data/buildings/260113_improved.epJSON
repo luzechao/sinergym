@@ -6249,7 +6249,7 @@
             "construction_name": "FI01_SR",
             "dimensions_for_the_ctf_calculation": 1,
             "temperature_calculation_requested_after_layer_number": 1,
-            "thermal_source_present_after_layer_number": 1,
+            "thermal_source_present_after_layer_number": 3,
             "tube_spacing": 0.154,
             "two_dimensional_temperature_calculation_position": 0
         }
