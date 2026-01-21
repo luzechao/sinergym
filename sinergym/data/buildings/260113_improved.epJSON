@@ -2531,7 +2531,7 @@
             "zone_name": "PB_Cocina-Salon1-Salon2"
         },
         "srf39": {
-            "construction_name": "FI01_SR",
+            "construction_name": "FI01 4",
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "srf39 Reversed",
             "space_name": "spc_P1_Dormitorio3",
@@ -4649,10 +4649,10 @@
             "zone_name": "P1_Dormitorio3"
         },
         "srf79": {
-            "construction_name": "ctn2",
-            "outside_boundary_condition": "Adiabatic",
+            "construction_name": "FI01_SR",
+            "outside_boundary_condition": "Outdoors",
             "space_name": "spc_P1_Dormitorio3",
-            "sun_exposure": "NoSun",
+            "sun_exposure": "SunExposed",
             "surface_type": "Floor",
             "vertices": [
                 {
@@ -4701,7 +4701,7 @@
                     "vertex_z_coordinate": 6
                 }
             ],
-            "wind_exposure": "NoWind",
+            "wind_exposure": "WindExposed",
             "zone_name": "P1_Dormitorio3"
         },
         "srf80": {
@@ -11296,8 +11296,7 @@
                     "value_until_time": 0
                 }
             ],
-            "interpolate_to_timestep": "No",
-            "schedule_type_limits_name": "Fractional"
+            "interpolate_to_timestep": "No"
         },
         "Schedule Day 1": {
             "data": [
@@ -12341,8 +12340,7 @@
                     "start_day": 1,
                     "start_month": 1
                 }
-            ],
-            "schedule_type_limits_name": "Fractional"
+            ]
         },
         "SolarTermica40": {
             "schedule_type_limits_name": "Temperature",
@@ -14327,20 +14325,16 @@
                     "surface_name": "srf39"
                 },
                 {
-                    "fraction_of_radiant_energy_to_surface": 0.32,
-                    "surface_name": "srf80"
+                    "fraction_of_radiant_energy_to_surface": 0.0227712100549612,
+                    "surface_name": "srf66 Reversed"
                 },
                 {
-                    "fraction_of_radiant_energy_to_surface": 0.0151305368892285,
-                    "surface_name": "srf78 Reversed"
+                    "fraction_of_radiant_energy_to_surface": 0.00145481606928892,
+                    "surface_name": "srf27"
                 },
                 {
-                    "fraction_of_radiant_energy_to_surface": 0.0821192074519852,
-                    "surface_name": "srf81"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0427596697569328,
-                    "surface_name": "srf82"
+                    "fraction_of_radiant_energy_to_surface": 0.0385278393877558,
+                    "surface_name": "srf79"
                 },
                 {
                     "fraction_of_radiant_energy_to_surface": 0.0450731561778571,
@@ -14351,32 +14345,36 @@
                     "surface_name": "srf84"
                 },
                 {
-                    "fraction_of_radiant_energy_to_surface": 0.0681124475155256,
-                    "surface_name": "srf87"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.057166224829759,
-                    "surface_name": "srf77 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0385278393877558,
-                    "surface_name": "srf79"
-                },
-                {
                     "fraction_of_radiant_energy_to_surface": 0.0349704979183258,
                     "surface_name": "srf85"
+                },
+                {
+                    "fraction_of_radiant_energy_to_surface": 0.0821192074519852,
+                    "surface_name": "srf81"
                 },
                 {
                     "fraction_of_radiant_energy_to_surface": 0.0462195263192581,
                     "surface_name": "srf86"
                 },
                 {
-                    "fraction_of_radiant_energy_to_surface": 0.0227712100549612,
-                    "surface_name": "srf66 Reversed"
+                    "fraction_of_radiant_energy_to_surface": 0.0681124475155256,
+                    "surface_name": "srf87"
                 },
                 {
-                    "fraction_of_radiant_energy_to_surface": 0.00145481606928892,
-                    "surface_name": "srf27"
+                    "fraction_of_radiant_energy_to_surface": 0.0151305368892285,
+                    "surface_name": "srf78 Reversed"
+                },
+                {
+                    "fraction_of_radiant_energy_to_surface": 0.057166224829759,
+                    "surface_name": "srf77 Reversed"
+                },
+                {
+                    "fraction_of_radiant_energy_to_surface": 0.32,
+                    "surface_name": "srf80"
+                },
+                {
+                    "fraction_of_radiant_energy_to_surface": 0.0427596697569328,
+                    "surface_name": "srf82"
                 }
             ],
             "water_inlet_node_name": "Node 49",
@@ -15167,12 +15165,12 @@
         "Low Temp Radiant Const Flow_P1_Dormitorio3Floors": {
             "surface_fractions": [
                 {
-                    "flow_fraction_for_surface": 0.0117816920320969,
-                    "surface_name": "srf39"
+                    "flow_fraction_for_surface": 0.0363861792734575,
+                    "surface_name": "srf27"
                 },
                 {
-                    "flow_fraction_for_surface": 0.988218307967903,
-                    "surface_name": "srf27"
+                    "flow_fraction_for_surface": 0.963613820726543,
+                    "surface_name": "srf79"
                 }
             ]
         },
