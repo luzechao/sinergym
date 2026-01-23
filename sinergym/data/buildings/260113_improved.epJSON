@@ -30,69 +30,69 @@
             "components": [
                 {
                     "component_inlet_node_name": "Node 6",
-                    "component_name": "Cooling Panel RadConvW_P1_Aseo-Pasillo",
-                    "component_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water",
-                    "component_outlet_node_name": "Node 44"
+                    "component_name": "Low Temp Radiant Const Flow_P1_Aseo-Pasillo",
+                    "component_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow",
+                    "component_outlet_node_name": "Node 40"
                 }
             ]
         },
         "Cooling Plant Loop Demand Branch 2": {
             "components": [
                 {
-                    "component_inlet_node_name": "Node 47",
-                    "component_name": "Cooling Panel RadConvW_P1_Dormitorio1",
-                    "component_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water",
-                    "component_outlet_node_name": "Node 48"
+                    "component_inlet_node_name": "Node 41",
+                    "component_name": "Low Temp Radiant Const Flow_P1_Aseo2-Vestidor",
+                    "component_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow",
+                    "component_outlet_node_name": "Node 42"
                 }
             ]
         },
         "Cooling Plant Loop Demand Branch 3": {
             "components": [
                 {
-                    "component_inlet_node_name": "Node 49",
-                    "component_name": "Cooling Panel RadConvW_P1_Dormitorio3",
-                    "component_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water",
-                    "component_outlet_node_name": "Node 50"
+                    "component_inlet_node_name": "Node 43",
+                    "component_name": "Low Temp Radiant Const Flow_P1_Dormitorio1",
+                    "component_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow",
+                    "component_outlet_node_name": "Node 44"
                 }
             ]
         },
         "Cooling Plant Loop Demand Branch 4": {
             "components": [
                 {
-                    "component_inlet_node_name": "Node 51",
-                    "component_name": "Cooling Panel RadConvW_P1_Aseo2-Vestidor",
-                    "component_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water",
-                    "component_outlet_node_name": "Node 52"
+                    "component_inlet_node_name": "Node 45",
+                    "component_name": "Low Temp Radiant Const Flow_P1_Dormitorio2",
+                    "component_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow",
+                    "component_outlet_node_name": "Node 46"
                 }
             ]
         },
         "Cooling Plant Loop Demand Branch 5": {
             "components": [
                 {
-                    "component_inlet_node_name": "Node 53",
-                    "component_name": "Cooling Panel RadConvW_PB_Aseo-Vestibulo",
-                    "component_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water",
-                    "component_outlet_node_name": "Node 54"
+                    "component_inlet_node_name": "Node 47",
+                    "component_name": "Low Temp Radiant Const Flow_P1_Dormitorio3",
+                    "component_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow",
+                    "component_outlet_node_name": "Node 48"
                 }
             ]
         },
         "Cooling Plant Loop Demand Branch 6": {
             "components": [
                 {
-                    "component_inlet_node_name": "Node 55",
-                    "component_name": "Cooling Panel RadConvW_PB_Cocina",
-                    "component_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water",
-                    "component_outlet_node_name": "Node 56"
+                    "component_inlet_node_name": "Node 49",
+                    "component_name": "Low Temp Radiant Const Flow_PB_Aseo-Vestibulo",
+                    "component_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow",
+                    "component_outlet_node_name": "Node 50"
                 }
             ]
         },
         "Cooling Plant Loop Demand Branch 7": {
             "components": [
                 {
-                    "component_inlet_node_name": "Node 59",
-                    "component_name": "Cooling Panel RadConvW_P1_Dormitorio2",
-                    "component_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water",
-                    "component_outlet_node_name": "Node 60"
+                    "component_inlet_node_name": "Node 51",
+                    "component_name": "Low Temp Radiant Const Flow_PB_Cocina",
+                    "component_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow",
+                    "component_outlet_node_name": "Node 52"
                 }
             ]
         },
@@ -10424,7 +10424,7 @@
             "load_distribution_scheme": "Optimal",
             "loop_temperature_setpoint_node_name": "Node 2",
             "maximum_loop_flow_rate": "Autosize",
-            "maximum_loop_temperature": 17,
+            "maximum_loop_temperature": 15,
             "minimum_loop_flow_rate": 0,
             "minimum_loop_temperature": 5,
             "plant_equipment_operation_scheme_name": "Cooling Plant Loop Operation Schemes",
@@ -10483,7 +10483,7 @@
         "Const Spd Pump": {
             "design_electric_power_per_unit_flow_rate": 348701.1,
             "design_flow_rate": "Autosize",
-            "design_power_consumption": 35,
+            "design_power_consumption": "Autosize",
             "design_power_sizing_method": "PowerPerFlowPerPressure",
             "design_pump_head": 38460,
             "design_shaft_power_per_unit_flow_rate_per_unit_head": 1.282051282,
@@ -10825,7 +10825,7 @@
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": 15
+                    "value_until_time": 18
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -10835,7 +10835,7 @@
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": 21
+                    "value_until_time": 24
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -10845,7 +10845,7 @@
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": 10
+                    "value_until_time": 15
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -11729,7 +11729,7 @@
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": 18
+                    "value_until_time": 15
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -13231,8 +13231,8 @@
     "Sizing:Plant": {
         "Sizing:Plant 1": {
             "coincident_sizing_factor_mode": "None",
-            "design_loop_exit_temperature": 17,
-            "loop_design_temperature_difference": 5,
+            "design_loop_exit_temperature": 15,
+            "loop_design_temperature_difference": 0.1,
             "loop_type": "Cooling",
             "plant_or_condenser_loop_name": "Cooling Plant Loop",
             "sizing_option": "NonCoincident",
@@ -14009,710 +14009,6 @@
             "zone_or_zonelist_name": "PB_Cocina-Salon1-Salon2"
         }
     },
-    "ZoneHVAC:CoolingPanel:RadiantConvective:Water": {
-        "Cooling Panel RadConvW_P1_Aseo2-Vestidor": {
-            "availability_schedule_name": "Always_On",
-            "condensation_control_dewpoint_offset": 1,
-            "condensation_control_type": "SimpleOff",
-            "control_type": "OperativeTemperature",
-            "cooling_control_temperature_schedule_name": "Always_On",
-            "cooling_control_throttling_range": 2,
-            "cooling_design_capacity": "Autosize",
-            "cooling_design_capacity_method": "FractionOfAutosizedCoolingCapacity",
-            "cooling_design_capacity_per_floor_area": 0,
-            "fraction_of_autosized_cooling_design_capacity": 1,
-            "fraction_of_radiant_energy_incident_on_people": 0.2,
-            "fraction_radiant": 0.65,
-            "maximum_chilled_water_flow_rate": "Autosize",
-            "rated_inlet_space_temperature": 25,
-            "rated_inlet_water_temperature": 17,
-            "rated_water_mass_flow_rate": 0.063,
-            "surface_fractions": [
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0112663173393268,
-                    "surface_name": "srf40"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0299108229164963,
-                    "surface_name": "srf90"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0728303552358916,
-                    "surface_name": "srf91"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.12875376391169,
-                    "surface_name": "srf88"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0728303552358916,
-                    "surface_name": "srf89"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00482790314963442,
-                    "surface_name": "srf51"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0299108229164963,
-                    "surface_name": "srf68 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.19124623608831,
-                    "surface_name": "srf92"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0444284666117205,
-                    "surface_name": "srf93"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0728303552358916,
-                    "surface_name": "srf94"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0728303552358916,
-                    "surface_name": "srf91 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0145176436952243,
-                    "surface_name": "srf95"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0239057795110387,
-                    "surface_name": "srf52"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0299108229164963,
-                    "surface_name": "srf69 Reversed"
-                }
-            ],
-            "water_inlet_node_name": "Node 51",
-            "water_outlet_node_name": "Node 52"
-        },
-        "Cooling Panel RadConvW_P1_Aseo-Pasillo": {
-            "availability_schedule_name": "Always_On",
-            "condensation_control_dewpoint_offset": 1,
-            "condensation_control_type": "SimpleOff",
-            "control_type": "OperativeTemperature",
-            "cooling_control_temperature_schedule_name": "Always_On",
-            "cooling_control_throttling_range": 2,
-            "cooling_design_capacity": "Autosize",
-            "cooling_design_capacity_method": "FractionOfAutosizedCoolingCapacity",
-            "cooling_design_capacity_per_floor_area": 0,
-            "fraction_of_autosized_cooling_design_capacity": 1,
-            "fraction_of_radiant_energy_incident_on_people": 0.2,
-            "fraction_radiant": 0.65,
-            "maximum_chilled_water_flow_rate": "Autosize",
-            "rated_inlet_space_temperature": 25,
-            "rated_inlet_water_temperature": 17,
-            "rated_water_mass_flow_rate": 0.063,
-            "surface_fractions": [
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.018172702112394,
-                    "surface_name": "srf34"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0460144065141571,
-                    "surface_name": "srf73 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.1804905870874,
-                    "surface_name": "srf75"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0528500176157715,
-                    "surface_name": "srf76"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0460144065141571,
-                    "surface_name": "srf77"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0121789164366155,
-                    "surface_name": "srf78"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0406711011791559,
-                    "surface_name": "srf65 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00438862127353102,
-                    "surface_name": "srf26"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 1.19616986927496e-05,
-                    "surface_name": "srf38"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00684742738943423,
-                    "surface_name": "srf50"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0310835409724612,
-                    "surface_name": "srf68"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0406711505995765,
-                    "surface_name": "srf67"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0310835409724612,
-                    "surface_name": "srf69"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0406711011791559,
-                    "surface_name": "srf65"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0182656664258335,
-                    "surface_name": "srf70"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0183290696457323,
-                    "surface_name": "srf66"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.1395094129126,
-                    "surface_name": "srf63"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0621670819449223,
-                    "surface_name": "srf64"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.010579287525948,
-                    "surface_name": "srf25"
-                }
-            ],
-            "water_inlet_node_name": "Node 6",
-            "water_outlet_node_name": "Node 44"
-        },
-        "Cooling Panel RadConvW_P1_Dormitorio1": {
-            "availability_schedule_name": "Always_On",
-            "condensation_control_dewpoint_offset": 1,
-            "condensation_control_type": "SimpleOff",
-            "control_type": "OperativeTemperature",
-            "cooling_control_temperature_schedule_name": "Always_On",
-            "cooling_control_throttling_range": 2,
-            "cooling_design_capacity": "Autosize",
-            "cooling_design_capacity_method": "FractionOfAutosizedCoolingCapacity",
-            "cooling_design_capacity_per_floor_area": 0,
-            "fraction_of_autosized_cooling_design_capacity": 1,
-            "fraction_of_radiant_energy_incident_on_people": 0.2,
-            "fraction_radiant": 0.65,
-            "maximum_chilled_water_flow_rate": "Autosize",
-            "rated_inlet_space_temperature": 25,
-            "rated_inlet_water_temperature": 17,
-            "rated_water_mass_flow_rate": 0.063,
-            "surface_fractions": [
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.100258746232345,
-                    "surface_name": "srf94 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0112357413373968,
-                    "surface_name": "srf54"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0287642586626032,
-                    "surface_name": "srf59"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.119741253767655,
-                    "surface_name": "srf101"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00605664981299533,
-                    "surface_name": "srf102"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.119741253767655,
-                    "surface_name": "srf98 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00700327625717811,
-                    "surface_name": "srf103"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.32,
-                    "surface_name": "srf100"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0798477501837885,
-                    "surface_name": "srf104"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00735106997838341,
-                    "surface_name": "srf105"
-                }
-            ],
-            "water_inlet_node_name": "Node 47",
-            "water_outlet_node_name": "Node 48"
-        },
-        "Cooling Panel RadConvW_P1_Dormitorio2": {
-            "availability_schedule_name": "Always_On",
-            "condensation_control_dewpoint_offset": 1,
-            "condensation_control_type": "SimpleOff",
-            "control_type": "OperativeTemperature",
-            "cooling_control_temperature_schedule_name": "Always_On",
-            "cooling_control_throttling_range": 2,
-            "cooling_design_capacity": "Autosize",
-            "cooling_design_capacity_method": "FractionOfAutosizedCoolingCapacity",
-            "cooling_design_capacity_per_floor_area": 0,
-            "fraction_of_autosized_cooling_design_capacity": 1,
-            "fraction_of_radiant_energy_incident_on_people": 0.2,
-            "fraction_radiant": 0.65,
-            "maximum_chilled_water_flow_rate": "Autosize",
-            "rated_inlet_space_temperature": 25,
-            "rated_inlet_water_temperature": 17,
-            "rated_water_mass_flow_rate": 0.063,
-            "surface_fractions": [
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0297924987639877,
-                    "surface_name": "srf41"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0973122645864197,
-                    "surface_name": "srf89 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0704910247340431,
-                    "surface_name": "srf87 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.052292509587575,
-                    "surface_name": "srf67 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.32,
-                    "surface_name": "srf107"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.097120816027223,
-                    "surface_name": "srf108"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0102075012360123,
-                    "surface_name": "srf106"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.122783385064739,
-                    "surface_name": "srf109"
-                }
-            ],
-            "water_inlet_node_name": "Node 59",
-            "water_outlet_node_name": "Node 60"
-        },
-        "Cooling Panel RadConvW_P1_Dormitorio3": {
-            "availability_schedule_name": "Always_On",
-            "condensation_control_dewpoint_offset": 1,
-            "condensation_control_type": "SimpleOff",
-            "control_type": "OperativeTemperature",
-            "cooling_control_temperature_schedule_name": "Always_On",
-            "cooling_control_throttling_range": 2,
-            "cooling_design_capacity": "Autosize",
-            "cooling_design_capacity_method": "FractionOfAutosizedCoolingCapacity",
-            "cooling_design_capacity_per_floor_area": 0,
-            "fraction_of_autosized_cooling_design_capacity": 1,
-            "fraction_of_radiant_energy_incident_on_people": 0.2,
-            "fraction_radiant": 0.65,
-            "maximum_chilled_water_flow_rate": "Autosize",
-            "rated_inlet_space_temperature": 25,
-            "rated_inlet_water_temperature": 17,
-            "rated_water_mass_flow_rate": 0.063,
-            "surface_fractions": [
-                {
-                    "fraction_of_radiant_energy_to_surface": 1.73445429552439e-05,
-                    "surface_name": "srf39"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0227712100549612,
-                    "surface_name": "srf66 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00145481606928892,
-                    "surface_name": "srf27"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0385278393877558,
-                    "surface_name": "srf79"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0450731561778571,
-                    "surface_name": "srf83"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0256775230861667,
-                    "surface_name": "srf84"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0349704979183258,
-                    "surface_name": "srf85"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0821192074519852,
-                    "surface_name": "srf81"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0462195263192581,
-                    "surface_name": "srf86"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0681124475155256,
-                    "surface_name": "srf87"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0151305368892285,
-                    "surface_name": "srf78 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.057166224829759,
-                    "surface_name": "srf77 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.32,
-                    "surface_name": "srf80"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0427596697569328,
-                    "surface_name": "srf82"
-                }
-            ],
-            "water_inlet_node_name": "Node 49",
-            "water_outlet_node_name": "Node 50"
-        },
-        "Cooling Panel RadConvW_PB_Aseo-Vestibulo": {
-            "availability_schedule_name": "Always_On",
-            "condensation_control_dewpoint_offset": 1,
-            "condensation_control_type": "SimpleOff",
-            "control_type": "OperativeTemperature",
-            "cooling_control_temperature_schedule_name": "Always_On",
-            "cooling_control_throttling_range": 2,
-            "cooling_design_capacity": "Autosize",
-            "cooling_design_capacity_method": "FractionOfAutosizedCoolingCapacity",
-            "cooling_design_capacity_per_floor_area": 0,
-            "fraction_of_autosized_cooling_design_capacity": 1,
-            "fraction_of_radiant_energy_incident_on_people": 0.2,
-            "fraction_radiant": 0.65,
-            "maximum_chilled_water_flow_rate": "Autosize",
-            "rated_inlet_space_temperature": 25,
-            "rated_inlet_water_temperature": 17,
-            "rated_water_mass_flow_rate": 0.063,
-            "surface_fractions": [
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0425265677252467,
-                    "surface_name": "srf36"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0425265677252467,
-                    "surface_name": "srf37"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.165185634949113,
-                    "surface_name": "srf34 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0606396529435486,
-                    "surface_name": "srf35"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0606396529435486,
-                    "surface_name": "srf28 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0206482043686391,
-                    "surface_name": "srf11"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0312278318022155,
-                    "surface_name": "srf29"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.020957867618849,
-                    "surface_name": "srf31"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0856059475289892,
-                    "surface_name": "srf30"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0606396529435486,
-                    "surface_name": "srf28"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0193517956313609,
-                    "surface_name": "srf10"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0398915465149782,
-                    "surface_name": "srf26 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0961632627044001,
-                    "surface_name": "srf25 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0187595558315089,
-                    "surface_name": "srf27 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0102699641833665,
-                    "surface_name": "srf33"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0249662945854405,
-                    "surface_name": "srf32"
-                }
-            ],
-            "water_inlet_node_name": "Node 53",
-            "water_outlet_node_name": "Node 54"
-        },
-        "Cooling Panel RadConvW_PB_Cocina": {
-            "availability_schedule_name": "Always_On",
-            "condensation_control_dewpoint_offset": 1,
-            "condensation_control_type": "SimpleOff",
-            "control_type": "OperativeTemperature",
-            "cooling_control_temperature_schedule_name": "Always_On",
-            "cooling_control_throttling_range": 2,
-            "cooling_design_capacity": "Autosize",
-            "cooling_design_capacity_method": "FractionOfAutosizedCoolingCapacity",
-            "cooling_design_capacity_per_floor_area": 0,
-            "fraction_of_autosized_cooling_design_capacity": 1,
-            "fraction_of_radiant_energy_incident_on_people": 0.2,
-            "fraction_radiant": 0.65,
-            "maximum_chilled_water_flow_rate": "Autosize",
-            "rated_inlet_space_temperature": 25,
-            "rated_inlet_water_temperature": 17,
-            "rated_water_mass_flow_rate": 0.063,
-            "surface_fractions": [
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0103245294796479,
-                    "surface_name": "srf74 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00338512493847035,
-                    "surface_name": "srf95 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00273236547109986,
-                    "surface_name": "srf53"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00409837756835814,
-                    "surface_name": "srf70 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0569617416118771,
-                    "surface_name": "srf96"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00438785219206155,
-                    "surface_name": "srf58"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0144229070480061,
-                    "surface_name": "srf99"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0202820817584073,
-                    "surface_name": "srf98"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0236672066968777,
-                    "surface_name": "srf97"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0314049915351583,
-                    "surface_name": "srf56 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00955427782281029,
-                    "surface_name": "srf21"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0413314052684484,
-                    "surface_name": "srf59 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0145849761478724,
-                    "surface_name": "srf60"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0314049915351583,
-                    "surface_name": "srf62"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0351028177254268,
-                    "surface_name": "srf58 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0145849761478724,
-                    "surface_name": "srf61"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0161446531320192,
-                    "surface_name": "srf54 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0181487948922566,
-                    "surface_name": "srf55"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00620066352062911,
-                    "surface_name": "srf50 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0314049915351583,
-                    "surface_name": "srf56"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00592884342813058,
-                    "surface_name": "srf51 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0293571804063826,
-                    "surface_name": "srf52 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0218589238864504,
-                    "surface_name": "srf53 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00279378244280433,
-                    "surface_name": "srf3"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00594955747861612,
-                    "surface_name": "srf20"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00906656434325125,
-                    "surface_name": "srf48 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0103245294796479,
-                    "surface_name": "srf49 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0169820844871522,
-                    "surface_name": "srf45 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00119294307180086,
-                    "surface_name": "srf14"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00908223054900533,
-                    "surface_name": "srf57"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00409837756835814,
-                    "surface_name": "srf31 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00831620536946528,
-                    "surface_name": "srf37 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0139488025344099,
-                    "surface_name": "srf47"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00906656434325125,
-                    "surface_name": "srf48"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0103245294796479,
-                    "surface_name": "srf49"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0240320404345057,
-                    "surface_name": "srf46 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00300400503814472,
-                    "surface_name": "srf13"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00200832411018266,
-                    "surface_name": "srf33 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0048822381911586,
-                    "surface_name": "srf32 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0451811233353357,
-                    "surface_name": "srf41 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00409686873296788,
-                    "surface_name": "srf42"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 2.22810309637865e-05,
-                    "surface_name": "srf39 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0138354539116137,
-                    "surface_name": "srf40 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 1.08318737111892e-05,
-                    "surface_name": "srf38 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0169820844871522,
-                    "surface_name": "srf45"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0169820844871522,
-                    "surface_name": "srf43"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0208373836294028,
-                    "surface_name": "srf44"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.016740514896435,
-                    "surface_name": "srf30 Reversed"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00587679248010567,
-                    "surface_name": "srf12"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00150441896441188,
-                    "surface_name": "srf2"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0103245294796479,
-                    "surface_name": "srf74"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0103245294796479,
-                    "surface_name": "srf73"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0240320404345057,
-                    "surface_name": "srf71"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0139488025344099,
-                    "surface_name": "srf72"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.00300400503814472,
-                    "surface_name": "srf46"
-                },
-                {
-                    "fraction_of_radiant_energy_to_surface": 0.0139488025344099,
-                    "surface_name": "srf64 Reversed"
-                }
-            ],
-            "water_inlet_node_name": "Node 55",
-            "water_outlet_node_name": "Node 56"
-        }
-    },
     "ZoneHVAC:EquipmentConnections": {
         "ZoneHVAC:EquipmentConnections 1": {
             "zone_air_node_name": "{b81760b5-9634-4a8a-9915-50573b900aea}",
@@ -14758,12 +14054,6 @@
                     "zone_equipment_heating_or_no_load_sequence": 1,
                     "zone_equipment_name": "Low Temp Radiant Const Flow_P1_Aseo2-Vestidor",
                     "zone_equipment_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow"
-                },
-                {
-                    "zone_equipment_cooling_sequence": 2,
-                    "zone_equipment_heating_or_no_load_sequence": 2,
-                    "zone_equipment_name": "Cooling Panel RadConvW_P1_Aseo2-Vestidor",
-                    "zone_equipment_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water"
                 }
             ],
             "load_distribution_scheme": "SequentialLoad"
@@ -14775,12 +14065,6 @@
                     "zone_equipment_heating_or_no_load_sequence": 1,
                     "zone_equipment_name": "Low Temp Radiant Const Flow_P1_Aseo-Pasillo",
                     "zone_equipment_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow"
-                },
-                {
-                    "zone_equipment_cooling_sequence": 2,
-                    "zone_equipment_heating_or_no_load_sequence": 2,
-                    "zone_equipment_name": "Cooling Panel RadConvW_P1_Aseo-Pasillo",
-                    "zone_equipment_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water"
                 }
             ],
             "load_distribution_scheme": "SequentialLoad"
@@ -14792,12 +14076,6 @@
                     "zone_equipment_heating_or_no_load_sequence": 1,
                     "zone_equipment_name": "Low Temp Radiant Const Flow_P1_Dormitorio1",
                     "zone_equipment_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow"
-                },
-                {
-                    "zone_equipment_cooling_sequence": 2,
-                    "zone_equipment_heating_or_no_load_sequence": 2,
-                    "zone_equipment_name": "Cooling Panel RadConvW_P1_Dormitorio1",
-                    "zone_equipment_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water"
                 }
             ],
             "load_distribution_scheme": "SequentialLoad"
@@ -14809,12 +14087,6 @@
                     "zone_equipment_heating_or_no_load_sequence": 1,
                     "zone_equipment_name": "Low Temp Radiant Const Flow_P1_Dormitorio2",
                     "zone_equipment_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow"
-                },
-                {
-                    "zone_equipment_cooling_sequence": 2,
-                    "zone_equipment_heating_or_no_load_sequence": 2,
-                    "zone_equipment_name": "Cooling Panel RadConvW_P1_Dormitorio2",
-                    "zone_equipment_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water"
                 }
             ],
             "load_distribution_scheme": "SequentialLoad"
@@ -14826,12 +14098,6 @@
                     "zone_equipment_heating_or_no_load_sequence": 1,
                     "zone_equipment_name": "Low Temp Radiant Const Flow_P1_Dormitorio3",
                     "zone_equipment_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow"
-                },
-                {
-                    "zone_equipment_cooling_sequence": 2,
-                    "zone_equipment_heating_or_no_load_sequence": 2,
-                    "zone_equipment_name": "Cooling Panel RadConvW_P1_Dormitorio3",
-                    "zone_equipment_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water"
                 }
             ],
             "load_distribution_scheme": "SequentialLoad"
@@ -14843,12 +14109,6 @@
                     "zone_equipment_heating_or_no_load_sequence": 1,
                     "zone_equipment_name": "Low Temp Radiant Const Flow_PB_Aseo-Vestibulo",
                     "zone_equipment_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow"
-                },
-                {
-                    "zone_equipment_cooling_sequence": 2,
-                    "zone_equipment_heating_or_no_load_sequence": 2,
-                    "zone_equipment_name": "Cooling Panel RadConvW_PB_Aseo-Vestibulo",
-                    "zone_equipment_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water"
                 }
             ],
             "load_distribution_scheme": "SequentialLoad"
@@ -14860,12 +14120,6 @@
                     "zone_equipment_heating_or_no_load_sequence": 1,
                     "zone_equipment_name": "Low Temp Radiant Const Flow_PB_Cocina",
                     "zone_equipment_object_type": "ZoneHVAC:LowTemperatureRadiant:ConstantFlow"
-                },
-                {
-                    "zone_equipment_cooling_sequence": 2,
-                    "zone_equipment_heating_or_no_load_sequence": 2,
-                    "zone_equipment_name": "Cooling Panel RadConvW_PB_Cocina",
-                    "zone_equipment_object_type": "ZoneHVAC:CoolingPanel:RadiantConvective:Water"
                 }
             ],
             "load_distribution_scheme": "SequentialLoad"
@@ -14879,6 +14133,8 @@
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
             "cooling_low_control_temperature_schedule_name": "Const Vol Rad Clg Low Air Temp Sch",
             "cooling_low_water_temperature_schedule_name": "Const Vol Rad Clg Low Wtr Temp Sch",
+            "cooling_water_inlet_node_name": "Node 41",
+            "cooling_water_outlet_node_name": "Node 42",
             "design_object": "Low Temp Radiant Const Flow_P1_Aseo2-Vestidor Design",
             "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
@@ -14901,6 +14157,8 @@
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
             "cooling_low_control_temperature_schedule_name": "Const Vol Rad Clg Low Air Temp Sch",
             "cooling_low_water_temperature_schedule_name": "Const Vol Rad Clg Low Wtr Temp Sch",
+            "cooling_water_inlet_node_name": "Node 6",
+            "cooling_water_outlet_node_name": "Node 40",
             "design_object": "Low Temp Radiant Const Flow_P1_Aseo-Pasillo Design",
             "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
@@ -14923,6 +14181,8 @@
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
             "cooling_low_control_temperature_schedule_name": "Const Vol Rad Clg Low Air Temp Sch",
             "cooling_low_water_temperature_schedule_name": "Const Vol Rad Clg Low Wtr Temp Sch",
+            "cooling_water_inlet_node_name": "Node 43",
+            "cooling_water_outlet_node_name": "Node 44",
             "design_object": "Low Temp Radiant Const Flow_P1_Dormitorio1 Design",
             "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
@@ -14945,6 +14205,8 @@
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
             "cooling_low_control_temperature_schedule_name": "Const Vol Rad Clg Low Air Temp Sch",
             "cooling_low_water_temperature_schedule_name": "Const Vol Rad Clg Low Wtr Temp Sch",
+            "cooling_water_inlet_node_name": "Node 45",
+            "cooling_water_outlet_node_name": "Node 46",
             "design_object": "Low Temp Radiant Const Flow_P1_Dormitorio2 Design",
             "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
@@ -14967,6 +14229,8 @@
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
             "cooling_low_control_temperature_schedule_name": "Const Vol Rad Clg Low Air Temp Sch",
             "cooling_low_water_temperature_schedule_name": "Const Vol Rad Clg Low Wtr Temp Sch",
+            "cooling_water_inlet_node_name": "Node 47",
+            "cooling_water_outlet_node_name": "Node 48",
             "design_object": "Low Temp Radiant Const Flow_P1_Dormitorio3 Design",
             "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
@@ -14989,6 +14253,8 @@
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
             "cooling_low_control_temperature_schedule_name": "Const Vol Rad Clg Low Air Temp Sch",
             "cooling_low_water_temperature_schedule_name": "Const Vol Rad Clg Low Wtr Temp Sch",
+            "cooling_water_inlet_node_name": "Node 49",
+            "cooling_water_outlet_node_name": "Node 50",
             "design_object": "Low Temp Radiant Const Flow_PB_Aseo-Vestibulo Design",
             "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
@@ -15011,6 +14277,8 @@
             "cooling_high_water_temperature_schedule_name": "Const Vol Rad Clg Hi Wtr Temp Sch",
             "cooling_low_control_temperature_schedule_name": "Const Vol Rad Clg Low Air Temp Sch",
             "cooling_low_water_temperature_schedule_name": "Const Vol Rad Clg Low Wtr Temp Sch",
+            "cooling_water_inlet_node_name": "Node 51",
+            "cooling_water_outlet_node_name": "Node 52",
             "design_object": "Low Temp Radiant Const Flow_PB_Cocina Design",
             "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
@@ -15117,21 +14385,17 @@
         "Low Temp Radiant Const Flow_P1_Aseo2-VestidorFloors": {
             "surface_fractions": [
                 {
-                    "flow_fraction_for_surface": 0.320319751968662,
-                    "surface_name": "srf40"
-                },
-                {
                     "flow_fraction_for_surface": 0.679680248031338,
                     "surface_name": "srf52"
+                },
+                {
+                    "flow_fraction_for_surface": 0.320319751968662,
+                    "surface_name": "srf40"
                 }
             ]
         },
         "Low Temp Radiant Const Flow_P1_Aseo-PasilloFloors": {
             "surface_fractions": [
-                {
-                    "flow_fraction_for_surface": 0.510477519848565,
-                    "surface_name": "srf34"
-                },
                 {
                     "flow_fraction_for_surface": 0.192346615791252,
                     "surface_name": "srf50"
@@ -15139,18 +14403,22 @@
                 {
                     "flow_fraction_for_surface": 0.297175864360183,
                     "surface_name": "srf25"
+                },
+                {
+                    "flow_fraction_for_surface": 0.510477519848565,
+                    "surface_name": "srf34"
                 }
             ]
         },
         "Low Temp Radiant Const Flow_P1_Dormitorio1Floors": {
             "surface_fractions": [
                 {
-                    "flow_fraction_for_surface": 0.28089353343492,
-                    "surface_name": "srf54"
-                },
-                {
                     "flow_fraction_for_surface": 0.71910646656508,
                     "surface_name": "srf59"
+                },
+                {
+                    "flow_fraction_for_surface": 0.28089353343492,
+                    "surface_name": "srf54"
                 }
             ]
         },
@@ -15165,44 +14433,44 @@
         "Low Temp Radiant Const Flow_P1_Dormitorio3Floors": {
             "surface_fractions": [
                 {
-                    "flow_fraction_for_surface": 0.0363861792734575,
-                    "surface_name": "srf27"
-                },
-                {
                     "flow_fraction_for_surface": 0.963613820726543,
                     "surface_name": "srf79"
+                },
+                {
+                    "flow_fraction_for_surface": 0.0363861792734575,
+                    "surface_name": "srf27"
                 }
             ]
         },
         "Low Temp Radiant Const Flow_PB_Aseo-VestibuloFloors": {
             "surface_fractions": [
                 {
-                    "flow_fraction_for_surface": 0.516205109215978,
-                    "surface_name": "srf11"
-                },
-                {
                     "flow_fraction_for_surface": 0.483794890784022,
                     "surface_name": "srf10"
+                },
+                {
+                    "flow_fraction_for_surface": 0.516205109215978,
+                    "surface_name": "srf11"
                 }
             ]
         },
         "Low Temp Radiant Const Flow_PB_CocinaFloors": {
             "surface_fractions": [
                 {
-                    "flow_fraction_for_surface": 0.376636762663969,
-                    "surface_name": "srf21"
+                    "flow_fraction_for_surface": 0.234535996292608,
+                    "surface_name": "srf20"
                 },
                 {
                     "flow_fraction_for_surface": 0.110132989050527,
                     "surface_name": "srf3"
                 },
                 {
-                    "flow_fraction_for_surface": 0.234535996292608,
-                    "surface_name": "srf20"
-                },
-                {
                     "flow_fraction_for_surface": 0.0470267062501356,
                     "surface_name": "srf14"
+                },
+                {
+                    "flow_fraction_for_surface": 0.376636762663969,
+                    "surface_name": "srf21"
                 },
                 {
                     "flow_fraction_for_surface": 0.231667545742761,
