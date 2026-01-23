@@ -10497,7 +10497,7 @@
         "Const Spd Pump 1": {
             "design_electric_power_per_unit_flow_rate": 348701.1,
             "design_flow_rate": "Autosize",
-            "design_power_consumption": 35,
+            "design_power_consumption": "Autosize",
             "design_power_sizing_method": "PowerPerFlowPerPressure",
             "design_pump_head": 38460,
             "design_shaft_power_per_unit_flow_rate_per_unit_head": 1.282051282,
@@ -10855,7 +10855,7 @@
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": 50
+                    "value_until_time": 22
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -10875,7 +10875,7 @@
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": -10
+                    "value_until_time": 17
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -11719,7 +11719,7 @@
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": 35
+                    "value_until_time": 45
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -13240,8 +13240,8 @@
         },
         "Sizing:Plant 2": {
             "coincident_sizing_factor_mode": "None",
-            "design_loop_exit_temperature": 82,
-            "loop_design_temperature_difference": 11,
+            "design_loop_exit_temperature": 45,
+            "loop_design_temperature_difference": 5,
             "loop_type": "Heating",
             "plant_or_condenser_loop_name": "Heating Plant Loop",
             "sizing_option": "NonCoincident",
@@ -14144,8 +14144,8 @@
             "heating_water_outlet_node_name": "Node 29",
             "hydronic_tubing_length": 200,
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": "Autosize",
-            "rated_power_consumption": 0,
+            "rated_flow_rate": 0.0000072828,
+            "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_P1_Aseo2-VestidorFloors",
             "zone_name": "P1_Aseo2-Vestidor"
@@ -14168,8 +14168,8 @@
             "heating_water_outlet_node_name": "Node 27",
             "hydronic_tubing_length": 200,
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": "Autosize",
-            "rated_power_consumption": 0,
+            "rated_flow_rate": 0.0000083695,
+            "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_P1_Aseo-PasilloFloors",
             "zone_name": "P1_Aseo-Pasillo"
@@ -14192,8 +14192,8 @@
             "heating_water_outlet_node_name": "Node 31",
             "hydronic_tubing_length": 200,
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": "Autosize",
-            "rated_power_consumption": 0,
+            "rated_flow_rate": 	0.0000213169,
+            "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_P1_Dormitorio1Floors",
             "zone_name": "P1_Dormitorio1"
@@ -14216,8 +14216,8 @@
             "heating_water_outlet_node_name": "Node 33",
             "hydronic_tubing_length": 200,
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": "Autosize",
-            "rated_power_consumption": 0,
+            "rated_flow_rate": 0.0000213444,
+            "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_P1_Dormitorio2Floors",
             "zone_name": "P1_Dormitorio2"
@@ -14240,8 +14240,8 @@
             "heating_water_outlet_node_name": "Node 35",
             "hydronic_tubing_length": 200,
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": "Autosize",
-            "rated_power_consumption": 0,
+            "rated_flow_rate": 0.0000269686,
+            "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_P1_Dormitorio3Floors",
             "zone_name": "P1_Dormitorio3"
@@ -14264,8 +14264,8 @@
             "heating_water_outlet_node_name": "Node 37",
             "hydronic_tubing_length": 200,
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": "Autosize",
-            "rated_power_consumption": 0,
+            "rated_flow_rate": 	0.0000130949,
+            "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_PB_Aseo-VestibuloFloors",
             "zone_name": "PB_Aseo-Vestibulo"
@@ -14288,8 +14288,8 @@
             "heating_water_outlet_node_name": "Node 39",
             "hydronic_tubing_length": 200,
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": "Autosize",
-            "rated_power_consumption": 0,
+            "rated_flow_rate": 0.0000684446,
+            "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_PB_CocinaFloors",
             "zone_name": "PB_Cocina-Salon1-Salon2"
