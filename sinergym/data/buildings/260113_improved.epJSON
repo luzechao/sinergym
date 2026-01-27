@@ -6408,15 +6408,6 @@
             ]
         }
     },
-    "ElectricEquipment": {
-        "Electric Equipment 1": {
-            "design_level_calculation_method": "Watts/Area",
-            "end_use_subcategory": "General",
-            "schedule_name": "Residential Equipment Schedule",
-            "watts_per_floor_area": 5,
-            "zone_or_zonelist_or_space_or_spacelist_name": "Residencial"
-        }
-    },
     "FenestrationSurface:Detailed": {
         "opn1": {
             "building_surface_name": "srf16",
@@ -7543,16 +7534,6 @@
             ],
             "lcc_price_escalation_name": "U.S. Avg  Commercial-Coal",
             "resource": "Coal"
-        }
-    },
-    "Lights": {
-        "Lights 1": {
-            "design_level_calculation_method": "Watts/Area",
-            "end_use_subcategory": "General",
-            "fraction_replaceable": 1,
-            "schedule_name": "Residential Lighting Schedule",
-            "watts_per_floor_area": 4,
-            "zone_or_zonelist_or_space_or_spacelist_name": "Residencial"
         }
     },
     "Material": {
@@ -10282,16 +10263,6 @@
             "column_separator": "HTML"
         }
     },
-    "People": {
-        "People 1": {
-            "activity_level_schedule_name": "ActivityLevel",
-            "fraction_radiant": 0.3,
-            "number_of_people_calculation_method": "People/Area",
-            "number_of_people_schedule_name": "Residential Occupancy Schedule",
-            "people_per_floor_area": 0.04,
-            "zone_or_zonelist_or_space_or_spacelist_name": "Residencial"
-        }
-    },
     "Pipe:Adiabatic": {
         "Cooling Plant Loop Demand Bypass Pipe": {
             "inlet_node_name": "Cooling Plant Loop Demand Bypass Pipe Inlet Node",
@@ -10811,6 +10782,16 @@
         }
     },
     "Schedule:Day:Interval": {
+        "AlwaysOff": {
+            "data": [
+                {
+                    "time": "24:00",
+                    "value_until_time": 0
+                }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "OnOff"
+        },
         "Const Vol Rad Clg Hi Air Temp Sch All Days": {
             "data": [
                 {
@@ -10891,103 +10872,51 @@
             "interpolate_to_timestep": "No",
             "schedule_type_limits_name": "Temperature"
         },
+        "Infiltraciones": {
+            "data": [
+                {
+                    "time": "24:00",
+                    "value_until_time": 0.15
+                }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "PlantLoop_Cooling_15C": {
+            "data": [
+                {
+                    "time": "24:00",
+                    "value_until_time": 15
+                }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Temperature"
+        },
+        "PlantLoop_Heating_2_45C": {
+            "data": [
+                {
+                    "time": "24:00",
+                    "value_until_time": 44.9115934020956
+                }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Temperature"
+        },
+        "PlantLoop_Heating_45C": {
+            "data": [
+                {
+                    "time": "24:00",
+                    "value_until_time": 45
+                }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Temperature"
+        },
         "Residential Equipment Schedule Default": {
             "data": [
                 {
-                    "time": "01:00",
-                    "value_until_time": 0.1
-                },
-                {
-                    "time": "02:00",
-                    "value_until_time": 0.1
-                },
-                {
-                    "time": "03:00",
-                    "value_until_time": 0.1
-                },
-                {
-                    "time": "04:00",
-                    "value_until_time": 0.1
-                },
-                {
-                    "time": "05:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "06:00",
-                    "value_until_time": 0.3
-                },
-                {
-                    "time": "07:00",
-                    "value_until_time": 0.5
-                },
-                {
-                    "time": "08:00",
-                    "value_until_time": 0.6
-                },
-                {
-                    "time": "09:00",
-                    "value_until_time": 0.7
-                },
-                {
-                    "time": "10:00",
-                    "value_until_time": 0.6
-                },
-                {
-                    "time": "11:00",
-                    "value_until_time": 0.5
-                },
-                {
-                    "time": "12:00",
-                    "value_until_time": 0.5
-                },
-                {
-                    "time": "13:00",
-                    "value_until_time": 0.5
-                },
-                {
-                    "time": "14:00",
-                    "value_until_time": 0.6
-                },
-                {
-                    "time": "15:00",
-                    "value_until_time": 0.7
-                },
-                {
-                    "time": "16:00",
-                    "value_until_time": 0.9
-                },
-                {
-                    "time": "17:00",
-                    "value_until_time": 1
-                },
-                {
-                    "time": "18:00",
-                    "value_until_time": 1
-                },
-                {
-                    "time": "19:00",
-                    "value_until_time": 0.8
-                },
-                {
-                    "time": "20:00",
-                    "value_until_time": 0.6
-                },
-                {
-                    "time": "21:00",
-                    "value_until_time": 0.5
-                },
-                {
-                    "time": "22:00",
-                    "value_until_time": 0.4
-                },
-                {
-                    "time": "23:00",
-                    "value_until_time": 0.3
-                },
-                {
                     "time": "24:00",
-                    "value_until_time": 0
+                    "value_until_time": 0.0989492362327301
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -10996,100 +10925,8 @@
         "Residential Lighting Schedule Default": {
             "data": [
                 {
-                    "time": "01:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "02:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "03:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "04:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "05:00",
-                    "value_until_time": 0.3
-                },
-                {
-                    "time": "06:00",
-                    "value_until_time": 0.4
-                },
-                {
-                    "time": "07:00",
-                    "value_until_time": 0.5
-                },
-                {
-                    "time": "08:00",
-                    "value_until_time": 0.6
-                },
-                {
-                    "time": "09:00",
-                    "value_until_time": 0.7
-                },
-                {
-                    "time": "10:00",
-                    "value_until_time": 0.4
-                },
-                {
-                    "time": "11:00",
-                    "value_until_time": 0.3
-                },
-                {
-                    "time": "12:00",
-                    "value_until_time": 0.3
-                },
-                {
-                    "time": "13:00",
-                    "value_until_time": 0.3
-                },
-                {
-                    "time": "14:00",
-                    "value_until_time": 0.4
-                },
-                {
-                    "time": "15:00",
-                    "value_until_time": 0.5
-                },
-                {
-                    "time": "16:00",
-                    "value_until_time": 0.6
-                },
-                {
-                    "time": "17:00",
-                    "value_until_time": 0.8
-                },
-                {
-                    "time": "18:00",
-                    "value_until_time": 0.9
-                },
-                {
-                    "time": "19:00",
-                    "value_until_time": 1
-                },
-                {
-                    "time": "20:00",
-                    "value_until_time": 0.8
-                },
-                {
-                    "time": "21:00",
-                    "value_until_time": 0.6
-                },
-                {
-                    "time": "22:00",
-                    "value_until_time": 0.5
-                },
-                {
-                    "time": "23:00",
-                    "value_until_time": 0.3
-                },
-                {
                     "time": "24:00",
-                    "value_until_time": 0
+                    "value_until_time": 0.1
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -11097,98 +10934,6 @@
         },
         "Residential Occupancy Schedule Default": {
             "data": [
-                {
-                    "time": "01:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "02:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "03:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "04:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "05:00",
-                    "value_until_time": 0.3
-                },
-                {
-                    "time": "06:00",
-                    "value_until_time": 0.4
-                },
-                {
-                    "time": "07:00",
-                    "value_until_time": 0.6
-                },
-                {
-                    "time": "08:00",
-                    "value_until_time": 0.7
-                },
-                {
-                    "time": "09:00",
-                    "value_until_time": 0.8
-                },
-                {
-                    "time": "10:00",
-                    "value_until_time": 0.3
-                },
-                {
-                    "time": "11:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "12:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "13:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "14:00",
-                    "value_until_time": 0.2
-                },
-                {
-                    "time": "15:00",
-                    "value_until_time": 0.3
-                },
-                {
-                    "time": "16:00",
-                    "value_until_time": 0.4
-                },
-                {
-                    "time": "17:00",
-                    "value_until_time": 0.6
-                },
-                {
-                    "time": "18:00",
-                    "value_until_time": 0.7
-                },
-                {
-                    "time": "19:00",
-                    "value_until_time": 0.8
-                },
-                {
-                    "time": "20:00",
-                    "value_until_time": 0.7
-                },
-                {
-                    "time": "21:00",
-                    "value_until_time": 0.5
-                },
-                {
-                    "time": "22:00",
-                    "value_until_time": 0.4
-                },
-                {
-                    "time": "23:00",
-                    "value_until_time": 0.3
-                },
                 {
                     "time": "24:00",
                     "value_until_time": 0
@@ -11839,7 +11584,63 @@
             "wednesday_schedule_day_name": "Schedule Day 10",
             "winterdesignday_schedule_day_name": "Schedule Day 10"
         },
-        "CHW Temperature Schedule Week Rule - Jan1-Dec31": {
+        "AlwaysOff Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "AlwaysOff",
+            "customday2_schedule_day_name": "AlwaysOff",
+            "friday_schedule_day_name": "AlwaysOff",
+            "holiday_schedule_day_name": "AlwaysOff",
+            "monday_schedule_day_name": "AlwaysOff",
+            "saturday_schedule_day_name": "AlwaysOff",
+            "summerdesignday_schedule_day_name": "AlwaysOff",
+            "sunday_schedule_day_name": "AlwaysOff",
+            "thursday_schedule_day_name": "AlwaysOff",
+            "tuesday_schedule_day_name": "AlwaysOff",
+            "wednesday_schedule_day_name": "AlwaysOff",
+            "winterdesignday_schedule_day_name": "AlwaysOff"
+        },
+        "CHW Temperature Schedule Week Rule - Jan1-May27": {
+            "customday1_schedule_day_name": "Schedule Day 7",
+            "customday2_schedule_day_name": "Schedule Day 7",
+            "friday_schedule_day_name": "Schedule Day 7",
+            "holiday_schedule_day_name": "Schedule Day 7",
+            "monday_schedule_day_name": "Schedule Day 7",
+            "saturday_schedule_day_name": "Schedule Day 7",
+            "summerdesignday_schedule_day_name": "Schedule Day 7",
+            "sunday_schedule_day_name": "Schedule Day 7",
+            "thursday_schedule_day_name": "Schedule Day 7",
+            "tuesday_schedule_day_name": "Schedule Day 7",
+            "wednesday_schedule_day_name": "Schedule Day 7",
+            "winterdesignday_schedule_day_name": "Schedule Day 7"
+        },
+        "CHW Temperature Schedule Week Rule - Jun4-Sep30": {
+            "customday1_schedule_day_name": "Schedule Day 7",
+            "customday2_schedule_day_name": "Schedule Day 7",
+            "friday_schedule_day_name": "PlantLoop_Cooling_15C",
+            "holiday_schedule_day_name": "Schedule Day 7",
+            "monday_schedule_day_name": "PlantLoop_Cooling_15C",
+            "saturday_schedule_day_name": "PlantLoop_Cooling_15C",
+            "summerdesignday_schedule_day_name": "Schedule Day 7",
+            "sunday_schedule_day_name": "PlantLoop_Cooling_15C",
+            "thursday_schedule_day_name": "PlantLoop_Cooling_15C",
+            "tuesday_schedule_day_name": "PlantLoop_Cooling_15C",
+            "wednesday_schedule_day_name": "PlantLoop_Cooling_15C",
+            "winterdesignday_schedule_day_name": "Schedule Day 7"
+        },
+        "CHW Temperature Schedule Week Rule - May28-Jun3": {
+            "customday1_schedule_day_name": "Schedule Day 7",
+            "customday2_schedule_day_name": "Schedule Day 7",
+            "friday_schedule_day_name": "PlantLoop_Cooling_15C",
+            "holiday_schedule_day_name": "Schedule Day 7",
+            "monday_schedule_day_name": "Schedule Day 7",
+            "saturday_schedule_day_name": "PlantLoop_Cooling_15C",
+            "summerdesignday_schedule_day_name": "Schedule Day 7",
+            "sunday_schedule_day_name": "Schedule Day 7",
+            "thursday_schedule_day_name": "PlantLoop_Cooling_15C",
+            "tuesday_schedule_day_name": "Schedule Day 7",
+            "wednesday_schedule_day_name": "Schedule Day 7",
+            "winterdesignday_schedule_day_name": "Schedule Day 7"
+        },
+        "CHW Temperature Schedule Week Rule - Oct1-Dec31": {
             "customday1_schedule_day_name": "Schedule Day 7",
             "customday2_schedule_day_name": "Schedule Day 7",
             "friday_schedule_day_name": "Schedule Day 7",
@@ -11965,7 +11766,21 @@
             "wednesday_schedule_day_name": "Const Vol Rad Htg Low Wtr Temp Sch All Days",
             "winterdesignday_schedule_day_name": "Const Vol Rad Htg Low Wtr Temp Sch All Days"
         },
-        "HW Temperature Schedule Week Rule - Jan1-Dec31": {
+        "HW Temperature Schedule_45C Week Rule - Jan1-May27": {
+            "customday1_schedule_day_name": "Schedule Day 6",
+            "customday2_schedule_day_name": "Schedule Day 6",
+            "friday_schedule_day_name": "PlantLoop_Heating_45C",
+            "holiday_schedule_day_name": "Schedule Day 6",
+            "monday_schedule_day_name": "PlantLoop_Heating_45C",
+            "saturday_schedule_day_name": "PlantLoop_Heating_45C",
+            "summerdesignday_schedule_day_name": "Schedule Day 6",
+            "sunday_schedule_day_name": "PlantLoop_Heating_45C",
+            "thursday_schedule_day_name": "PlantLoop_Heating_45C",
+            "tuesday_schedule_day_name": "PlantLoop_Heating_45C",
+            "wednesday_schedule_day_name": "PlantLoop_Heating_45C",
+            "winterdesignday_schedule_day_name": "Schedule Day 6"
+        },
+        "HW Temperature Schedule_45C Week Rule - Jun4-Sep30": {
             "customday1_schedule_day_name": "Schedule Day 6",
             "customday2_schedule_day_name": "Schedule Day 6",
             "friday_schedule_day_name": "Schedule Day 6",
@@ -11978,6 +11793,48 @@
             "tuesday_schedule_day_name": "Schedule Day 6",
             "wednesday_schedule_day_name": "Schedule Day 6",
             "winterdesignday_schedule_day_name": "Schedule Day 6"
+        },
+        "HW Temperature Schedule_45C Week Rule - May28-Jun3": {
+            "customday1_schedule_day_name": "Schedule Day 6",
+            "customday2_schedule_day_name": "Schedule Day 6",
+            "friday_schedule_day_name": "Schedule Day 6",
+            "holiday_schedule_day_name": "Schedule Day 6",
+            "monday_schedule_day_name": "PlantLoop_Heating_45C",
+            "saturday_schedule_day_name": "Schedule Day 6",
+            "summerdesignday_schedule_day_name": "Schedule Day 6",
+            "sunday_schedule_day_name": "PlantLoop_Heating_45C",
+            "thursday_schedule_day_name": "Schedule Day 6",
+            "tuesday_schedule_day_name": "PlantLoop_Heating_45C",
+            "wednesday_schedule_day_name": "PlantLoop_Heating_45C",
+            "winterdesignday_schedule_day_name": "Schedule Day 6"
+        },
+        "HW Temperature Schedule_45C Week Rule - Oct1-Dec31": {
+            "customday1_schedule_day_name": "Schedule Day 6",
+            "customday2_schedule_day_name": "Schedule Day 6",
+            "friday_schedule_day_name": "PlantLoop_Heating_2_45C",
+            "holiday_schedule_day_name": "Schedule Day 6",
+            "monday_schedule_day_name": "PlantLoop_Heating_2_45C",
+            "saturday_schedule_day_name": "PlantLoop_Heating_2_45C",
+            "summerdesignday_schedule_day_name": "Schedule Day 6",
+            "sunday_schedule_day_name": "PlantLoop_Heating_2_45C",
+            "thursday_schedule_day_name": "PlantLoop_Heating_2_45C",
+            "tuesday_schedule_day_name": "PlantLoop_Heating_2_45C",
+            "wednesday_schedule_day_name": "PlantLoop_Heating_2_45C",
+            "winterdesignday_schedule_day_name": "Schedule Day 6"
+        },
+        "Infiltraciones Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Infiltraciones",
+            "customday2_schedule_day_name": "Infiltraciones",
+            "friday_schedule_day_name": "Infiltraciones",
+            "holiday_schedule_day_name": "Infiltraciones",
+            "monday_schedule_day_name": "Infiltraciones",
+            "saturday_schedule_day_name": "Infiltraciones",
+            "summerdesignday_schedule_day_name": "Infiltraciones",
+            "sunday_schedule_day_name": "Infiltraciones",
+            "thursday_schedule_day_name": "Infiltraciones",
+            "tuesday_schedule_day_name": "Infiltraciones",
+            "wednesday_schedule_day_name": "Infiltraciones",
+            "winterdesignday_schedule_day_name": "Infiltraciones"
         },
         "Residential Equipment Schedule Week Rule - Jan1-Dec31": {
             "customday1_schedule_day_name": "Residential Equipment Schedule Default",
@@ -12175,15 +12032,48 @@
                 }
             ]
         },
-        "CHW Temperature Schedule": {
-            "schedule_type_limits_name": "Temperature",
+        "AlwaysOff": {
+            "schedule_type_limits_name": "OnOff",
             "schedule_weeks": [
                 {
                     "end_day": 31,
                     "end_month": 12,
-                    "schedule_week_name": "CHW Temperature Schedule Week Rule - Jan1-Dec31",
+                    "schedule_week_name": "AlwaysOff Week Rule - Jan1-Dec31",
                     "start_day": 1,
                     "start_month": 1
+                }
+            ]
+        },
+        "CHW Temperature Schedule": {
+            "schedule_type_limits_name": "Temperature",
+            "schedule_weeks": [
+                {
+                    "end_day": 27,
+                    "end_month": 5,
+                    "schedule_week_name": "CHW Temperature Schedule Week Rule - Jan1-May27",
+                    "start_day": 1,
+                    "start_month": 1
+                },
+                {
+                    "end_day": 3,
+                    "end_month": 6,
+                    "schedule_week_name": "CHW Temperature Schedule Week Rule - May28-Jun3",
+                    "start_day": 28,
+                    "start_month": 5
+                },
+                {
+                    "end_day": 30,
+                    "end_month": 9,
+                    "schedule_week_name": "CHW Temperature Schedule Week Rule - Jun4-Sep30",
+                    "start_day": 4,
+                    "start_month": 6
+                },
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "CHW Temperature Schedule Week Rule - Oct1-Dec31",
+                    "start_day": 1,
+                    "start_month": 10
                 }
             ]
         },
@@ -12283,13 +12173,46 @@
                 }
             ]
         },
-        "HW Temperature Schedule": {
+        "HW Temperature Schedule_45C": {
             "schedule_type_limits_name": "Temperature",
+            "schedule_weeks": [
+                {
+                    "end_day": 27,
+                    "end_month": 5,
+                    "schedule_week_name": "HW Temperature Schedule_45C Week Rule - Jan1-May27",
+                    "start_day": 1,
+                    "start_month": 1
+                },
+                {
+                    "end_day": 3,
+                    "end_month": 6,
+                    "schedule_week_name": "HW Temperature Schedule_45C Week Rule - May28-Jun3",
+                    "start_day": 28,
+                    "start_month": 5
+                },
+                {
+                    "end_day": 30,
+                    "end_month": 9,
+                    "schedule_week_name": "HW Temperature Schedule_45C Week Rule - Jun4-Sep30",
+                    "start_day": 4,
+                    "start_month": 6
+                },
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "HW Temperature Schedule_45C Week Rule - Oct1-Dec31",
+                    "start_day": 1,
+                    "start_month": 10
+                }
+            ]
+        },
+        "Infiltraciones": {
+            "schedule_type_limits_name": "Fractional",
             "schedule_weeks": [
                 {
                     "end_day": 31,
                     "end_month": 12,
-                    "schedule_week_name": "HW Temperature Schedule Week Rule - Jan1-Dec31",
+                    "schedule_week_name": "Infiltraciones Week Rule - Jan1-Dec31",
                     "start_day": 1,
                     "start_month": 1
                 }
@@ -12603,7 +12526,7 @@
         },
         "Setpoint Manager Scheduled 1": {
             "control_variable": "Temperature",
-            "schedule_name": "HW Temperature Schedule",
+            "schedule_name": "HW Temperature Schedule_45C",
             "setpoint_node_or_nodelist_name": "Node 11"
         },
         "Setpoint Manager Scheduled 2": {
@@ -14136,15 +14059,15 @@
             "cooling_water_inlet_node_name": "Node 41",
             "cooling_water_outlet_node_name": "Node 42",
             "design_object": "Low Temp Radiant Const Flow_P1_Aseo2-Vestidor Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Setpoint Schedule P1_Aseo2-Vestidor",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
             "heating_water_inlet_node_name": "Node 28",
             "heating_water_outlet_node_name": "Node 29",
-            "hydronic_tubing_length": 200,
+            "hydronic_tubing_length": "Autosize",
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": 0.0000072828,
+            "rated_flow_rate": 7.2828e-06,
             "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_P1_Aseo2-VestidorFloors",
@@ -14160,15 +14083,15 @@
             "cooling_water_inlet_node_name": "Node 6",
             "cooling_water_outlet_node_name": "Node 40",
             "design_object": "Low Temp Radiant Const Flow_P1_Aseo-Pasillo Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Setpoint Schedule P1_Aseo-Pasillo",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
             "heating_water_inlet_node_name": "Node 15",
             "heating_water_outlet_node_name": "Node 27",
-            "hydronic_tubing_length": 200,
+            "hydronic_tubing_length": "Autosize",
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": 0.0000083695,
+            "rated_flow_rate": 8.3695e-06,
             "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_P1_Aseo-PasilloFloors",
@@ -14184,15 +14107,15 @@
             "cooling_water_inlet_node_name": "Node 43",
             "cooling_water_outlet_node_name": "Node 44",
             "design_object": "Low Temp Radiant Const Flow_P1_Dormitorio1 Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio1",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
             "heating_water_inlet_node_name": "Node 30",
             "heating_water_outlet_node_name": "Node 31",
-            "hydronic_tubing_length": 200,
+            "hydronic_tubing_length": "Autosize",
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": 	0.0000213169,
+            "rated_flow_rate": 2.13169e-05,
             "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_P1_Dormitorio1Floors",
@@ -14208,15 +14131,15 @@
             "cooling_water_inlet_node_name": "Node 45",
             "cooling_water_outlet_node_name": "Node 46",
             "design_object": "Low Temp Radiant Const Flow_P1_Dormitorio2 Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio2",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
             "heating_water_inlet_node_name": "Node 32",
             "heating_water_outlet_node_name": "Node 33",
-            "hydronic_tubing_length": 200,
+            "hydronic_tubing_length": "Autosize",
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": 0.0000213444,
+            "rated_flow_rate": 2.13444e-05,
             "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_P1_Dormitorio2Floors",
@@ -14232,15 +14155,15 @@
             "cooling_water_inlet_node_name": "Node 47",
             "cooling_water_outlet_node_name": "Node 48",
             "design_object": "Low Temp Radiant Const Flow_P1_Dormitorio3 Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio3",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
             "heating_water_inlet_node_name": "Node 34",
             "heating_water_outlet_node_name": "Node 35",
-            "hydronic_tubing_length": 200,
+            "hydronic_tubing_length": "Autosize",
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": 0.0000269686,
+            "rated_flow_rate": 2.69686e-05,
             "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_P1_Dormitorio3Floors",
@@ -14256,15 +14179,15 @@
             "cooling_water_inlet_node_name": "Node 49",
             "cooling_water_outlet_node_name": "Node 50",
             "design_object": "Low Temp Radiant Const Flow_PB_Aseo-Vestibulo Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Setpoint Schedule PB_Aseo-Vestibulo",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
             "heating_water_inlet_node_name": "Node 36",
             "heating_water_outlet_node_name": "Node 37",
-            "hydronic_tubing_length": 200,
+            "hydronic_tubing_length": "Autosize",
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": 	0.0000130949,
+            "rated_flow_rate": 1.30949e-05,
             "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_PB_Aseo-VestibuloFloors",
@@ -14280,15 +14203,15 @@
             "cooling_water_inlet_node_name": "Node 51",
             "cooling_water_outlet_node_name": "Node 52",
             "design_object": "Low Temp Radiant Const Flow_PB_Cocina Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Setpoint Schedule PB_Salon",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
             "heating_water_inlet_node_name": "Node 38",
             "heating_water_outlet_node_name": "Node 39",
-            "hydronic_tubing_length": 200,
+            "hydronic_tubing_length": "Autosize",
             "number_of_circuits": "OnePerSurface",
-            "rated_flow_rate": 0.0000684446,
+            "rated_flow_rate": 6.84446e-05,
             "rated_power_consumption": 35,
             "rated_pump_head": 0,
             "surface_name_or_radiant_surface_group_name": "Low Temp Radiant Const Flow_PB_CocinaFloors",
@@ -14397,28 +14320,28 @@
         "Low Temp Radiant Const Flow_P1_Aseo-PasilloFloors": {
             "surface_fractions": [
                 {
+                    "flow_fraction_for_surface": 0.510477519848565,
+                    "surface_name": "srf34"
+                },
+                {
                     "flow_fraction_for_surface": 0.192346615791252,
                     "surface_name": "srf50"
                 },
                 {
                     "flow_fraction_for_surface": 0.297175864360183,
                     "surface_name": "srf25"
-                },
-                {
-                    "flow_fraction_for_surface": 0.510477519848565,
-                    "surface_name": "srf34"
                 }
             ]
         },
         "Low Temp Radiant Const Flow_P1_Dormitorio1Floors": {
             "surface_fractions": [
                 {
-                    "flow_fraction_for_surface": 0.71910646656508,
-                    "surface_name": "srf59"
-                },
-                {
                     "flow_fraction_for_surface": 0.28089353343492,
                     "surface_name": "srf54"
+                },
+                {
+                    "flow_fraction_for_surface": 0.71910646656508,
+                    "surface_name": "srf59"
                 }
             ]
         },
@@ -14457,8 +14380,8 @@
         "Low Temp Radiant Const Flow_PB_CocinaFloors": {
             "surface_fractions": [
                 {
-                    "flow_fraction_for_surface": 0.234535996292608,
-                    "surface_name": "srf20"
+                    "flow_fraction_for_surface": 0.231667545742761,
+                    "surface_name": "srf12"
                 },
                 {
                     "flow_fraction_for_surface": 0.110132989050527,
@@ -14469,12 +14392,12 @@
                     "surface_name": "srf14"
                 },
                 {
-                    "flow_fraction_for_surface": 0.376636762663969,
-                    "surface_name": "srf21"
+                    "flow_fraction_for_surface": 0.234535996292608,
+                    "surface_name": "srf20"
                 },
                 {
-                    "flow_fraction_for_surface": 0.231667545742761,
-                    "surface_name": "srf12"
+                    "flow_fraction_for_surface": 0.376636762663969,
+                    "surface_name": "srf21"
                 }
             ]
         }
