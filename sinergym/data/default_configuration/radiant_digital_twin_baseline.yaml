@@ -1,0 +1,399 @@
+# Documentation: https://ugr-sail.github.io/sinergym/compilation/main/pages/environments_registration.html
+# ---------------------------------------------------------------------------- #
+#                        ID BASE FROM ENVIRONMENT NAMES                        #
+# ---------------------------------------------------------------------------- #
+id_base: radiant_digital_twin_baseline
+
+# ---------------------------------------------------------------------------- #
+#                         BUILDING AND WEATHER SETTINGS                        #
+# ---------------------------------------------------------------------------- #
+building_file: digital_twin_heatcurve.epJSON
+
+weather_specification:
+  weather_files:
+  - ESP_Madrid.082210_IWEC.epw
+
+  # weather_confs:
+  # - cap_nom_heating: 1000
+  #   cap_nom_cooling: 100
+  #   window_type: double_pane_low_E_air_eu
+  #   thickness_roof: 0.15
+  #   thickness_wall: 0.1
+  #   setpoint_control_type: HalfFlowPower
+  #   heating_control_throttling_range: 10
+  #   cooling_control_throttling_range: 10
+  #   maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
+  #   maximum_cold_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
+  # - cap_nom_heating: 2000
+  #   cap_nom_cooling: 200
+  #   window_type: double_pane_low_E_air_eu
+  #   thickness_roof: 0.15
+  #   thickness_wall: 0.1
+  #   setpoint_control_type: HalfFlowPower
+  #   heating_control_throttling_range: 10
+  #   cooling_control_throttling_range: 10
+  #   maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
+  #   maximum_cold_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
+  # - cap_nom_heating: 3000
+  #   cap_nom_cooling: 300
+  #   window_type: double_pane_low_E_air_eu
+  #   thickness_roof: 0.15
+  #   thickness_wall: 0.1
+  #   setpoint_control_type: HalfFlowPower
+  #   heating_control_throttling_range: 10
+  #   cooling_control_throttling_range: 10
+  #   maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
+  #   maximum_cold_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
+  # - cap_nom_heating: 7000
+  #   cap_nom_cooling: Autosize
+  #   window_type: double_pane_low_E_air_eu
+  #   thickness_roof: 0.05
+  #   thickness_wall: 0.05
+  #   setpoint_control_type: HalfFlowPower
+  #   heating_control_throttling_range: 10
+  #   cooling_control_throttling_range: 10
+  #   maximum_hot_water_flow: [3.53971e-05, 4.77988e-05, 2.6982e-05, 5.19201e-05, 4.4704e-05]
+  #   maximum_cold_water_flow: ['Autosize', 'Autosize', 'Autosize', 'Autosize', 'Autosize']
+
+  keys:
+    - madrid
+
+# ---------------------------------------------------------------------------- #
+#                         BUILDING EXTRA CONFIGURATION                         #
+# ---------------------------------------------------------------------------- #
+building_config:
+  timesteps_per_hour: 2
+  runperiod: 
+    - 1
+    - 11
+    - 2006
+    - 31
+    - 3
+    - 2007
+  # north_axis: 270
+
+# ---------------------------------------------------------------------------- #
+#                        WEATHER VARIABILITY (OPTIONAL)                        #
+# ---------------------------------------------------------------------------- #
+# Alternative stochastic environments if it is defined
+weather_variability:
+  Dry Bulb Temperature:
+    - [0.0, 2.0]
+    - 0.0
+    - 24.0
+    - [-40.0, 40.0]
+  Relative Humidity:
+    - [0.0, 5.0]
+    - 0.0
+    - 24.0
+    - [0.0, 100.0]
+  Wind Speed:
+    - [0.0, 5.0]    
+    - 0.0
+    - 24.0
+    - [0.0, 20.0]
+  Wind Direction:
+    - [0.0, 45.0]
+    - 0.0
+    - 24.0
+    - [0.0, 360.0]
+  Direct Normal Radiation:
+    - [0.0, 80.0]
+    - 0.0
+    - 24.0
+    - [0.0, 1000.0]
+  Diffuse Horizontal Radiation:
+    - [0.0, 30.0]
+    - 0.0
+    - 24.0
+    - [0.0, 400.0]
+
+# ---------------------------------------------------------------------------- #
+#                          EPISODES FOLDER GENERATION                          #
+# ---------------------------------------------------------------------------- #
+max_ep_store: 3
+
+# ---------------------------------------------------------------------------- #
+#                             OBSERVATION VARIABLES                            #
+# ---------------------------------------------------------------------------- #
+
+# --------------- TIME VARIABLES (same name as EnergyPlus API) --------------- #
+time_variables:
+  - month
+  - day_of_month
+  - hour
+  # More variables in Data Transfer API: https://energyplus.readthedocs.io/en/latest/datatransfer.html
+
+# ----------------------------- OUTPUT:VARIABLES ----------------------------- #
+variables:
+
+  # ---------------------------------- OUTDOOR --------------------------------- #
+  Site Outdoor Air DryBulb Temperature:
+    variable_names: outdoor_temperature
+    keys: Environment
+  Site Outdoor Air Relative Humidity:
+    variable_names: outdoor_humidity
+    keys: Environment
+  Site Wind Speed:
+    variable_names: wind_speed
+    keys: Environment
+  Site Wind Direction:
+    variable_names: wind_direction
+    keys: Environment
+  Site Diffuse Solar Radiation Rate per Area:
+    variable_names: diffuse_solar_radiation
+    keys: Environment
+  Site Direct Solar Radiation Rate per Area:
+    variable_names: direct_solar_radiation
+    keys: Environment
+
+  # -------------------------------- ZONE INDOOR ------------------------------- #
+  Zone Mean Air Temperature:
+    variable_names:
+      - air_temperature_f0_living-kitchen
+      - air_temperature_f0_bathroom-lobby
+      - air_temperature_f1_bedroom1
+      - air_temperature_f1_bedroom2
+      - air_temperature_f1_bedroom3
+      - air_temperature_f1_bathroom-corridor
+      - air_temperature_f1_bathroom-dressing
+    keys:
+      - PB_Cocina-Salon1-Salon2
+      - PB_Aseo-Vestibulo
+      - P1_Dormitorio1
+      - P1_Dormitorio2
+      - P1_Dormitorio3
+      - P1_Aseo-Pasillo
+      - P1_Aseo2-Vestidor
+
+  Zone Air Relative Humidity:
+    variable_names:
+      - air_humidity_f0_living-kitchen
+      - air_humidity_f0_bathroom-lobby
+      - air_humidity_f1_bedroom1
+      - air_humidity_f1_bedroom2
+      - air_humidity_f1_bedroom3
+      - air_humidity_f1_bathroom-corridor
+      - air_humidity_f1_bathroom-dressing
+    keys:
+      - PB_Cocina-Salon1-Salon2
+      - PB_Aseo-Vestibulo
+      - P1_Dormitorio1
+      - P1_Dormitorio2
+      - P1_Dormitorio3
+      - P1_Aseo-Pasillo
+      - P1_Aseo2-Vestidor
+      
+
+  # # ---------------------------------- SYSTEM ---------------------------------- #
+
+  Zone Thermostat Heating Setpoint Temperature:
+    variable_names:
+      - heating_setpoint_f0_living-kitchen
+      - heating_setpoint_f0_bathroom-lobby
+      - heating_setpoint_f1_bedroom1
+      - heating_setpoint_f1_bedroom2
+      - heating_setpoint_f1_bedroom3
+      - heating_setpoint_f1_bathroom-corridor
+      - heating_setpoint_f1_bathroom-dressing
+    keys:
+      - PB_Cocina-Salon1-Salon2
+      - PB_Aseo-Vestibulo
+      - P1_Dormitorio1
+      - P1_Dormitorio2
+      - P1_Dormitorio3
+      - P1_Aseo-Pasillo
+      - P1_Aseo2-Vestidor
+  
+  Zone Radiant HVAC Outlet Temperature:
+    variable_names:
+      - radiant_hvac_outlet_temperature_f0_living-kitchen
+      - radiant_hvac_outlet_temperature_f0_bathroom-lobby
+      - radiant_hvac_outlet_temperature_f1_bedroom1
+      - radiant_hvac_outlet_temperature_f1_bedroom2
+      - radiant_hvac_outlet_temperature_f1_bedroom3
+      - radiant_hvac_outlet_temperature_f1_bathroom-corridor
+      - radiant_hvac_outlet_temperature_f1_bathroom-dressing
+    keys:
+      - LOW TEMP RADIANT CONST FLOW_PB_COCINA
+      - LOW TEMP RADIANT CONST FLOW_PB_ASEO-VESTIBULO
+      - LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO1
+      - LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO2
+      - LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO3
+      - LOW TEMP RADIANT CONST FLOW_P1_ASEO-PASILLO
+      - LOW TEMP RADIANT CONST FLOW_P1_ASEO2-VESTIDOR
+
+  System Node Setpoint Temperature:
+    variable_names: water_temperature
+    keys: Node 11
+  
+  System Node Mass Flow Rate:
+    variable_names:
+      - flow_rate_f0_living-kitchen
+      - flow_rate_f0_bathroom-lobby
+      - flow_rate_f1_bedroom1
+      - flow_rate_f1_bedroom2
+      - flow_rate_f1_bedroom3
+      - flow_rate_f1_bathroom-corridor
+      - flow_rate_f1_bathroom-dressing
+    keys:
+      - Node 38
+      - Node 36
+      - Node 30
+      - Node 32
+      - Node 34
+      - Node 15
+      - Node 28
+
+  Heat Pump Load Side Outlet Temperature:
+    variable_names: heat_source_load_side_outlet_temp
+    keys: ERGA08EAV3A 1
+
+  Heat Pump Load Side Inlet Temperature:
+    variable_names: heat_source_load_side_inlet_temp
+    keys: ERGA08EAV3A 1
+
+  Heat Pump Load Side Heat Transfer Rate:
+    variable_names: heat_source_load_side_heat_transfer_rate
+    keys: ERGA08EAV3A 1
+
+  Heat Pump Load Side Mass Flow Rate:
+    variable_names: heat_source_load_side_mass_flow_rate
+    keys: ERGA08EAV3A 1
+  
+  Heat Pump Cycling Ratio:
+    variable_names: crf
+    keys: ERGA08EAV3A 1
+  # Performance Curve Output Value:
+  #   variable_names:
+  #     - heat_cap_mod
+  #     - cop_plr_mod
+  #     - cop_temp_mod
+  #   keys:
+  #     - HEATCAPAQUAREA9KW
+  #     - AQUAREA9KW_PLR
+  #     - COPAQUAREA9KW
+  Heat Pump Part Load Ratio:
+    variable_names: plr_current
+    keys: ERGA08EAV3A 1
+
+  # # ---------------------------------- ENERGY ---------------------------------- #
+  Heat Pump Electricity Rate:
+    variable_names: heat_source_electricity_rate
+    keys: ERGA08EAV3A 1
+
+# ------------------------------- OUTPUT:METERS ------------------------------ #
+meters: {}
+
+# ---------------------------------------------------------------------------- #
+#                               ACTION VARIABLES                               #
+# ---------------------------------------------------------------------------- #
+
+# --------------------------- ACTUATORS TO CONTROL --------------------------- #
+actuators: {}
+
+  # LOW TEMP RADIANT CONST FLOW_PB_COCINA:
+  #   variable_name: flow_rate_f0_living-kitchen
+  #   element_type: Constant Flow Low Temp Radiant
+  #   value_type: Water Mass Flow Rate
+  # LOW TEMP RADIANT CONST FLOW_PB_ASEO-VESTIBULO:
+  #   variable_name: flow_rate_f0_bathroom-lobby
+  #   element_type: Constant Flow Low Temp Radiant
+  #   value_type: Water Mass Flow Rate
+  # LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO1:
+  #   variable_name: flow_rate_f1_bedroom1
+  #   element_type: Constant Flow Low Temp Radiant
+  #   value_type: Water Mass Flow Rate
+  # LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO2:
+  #   variable_name: flow_rate_f1_bedroom2
+  #   element_type: Constant Flow Low Temp Radiant
+  #   value_type: Water Mass Flow Rate
+  # LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO3:
+  #   variable_name: flow_rate_f1_bedroom3
+  #   element_type: Constant Flow Low Temp Radiant
+  #   value_type: Water Mass Flow Rate
+  # LOW TEMP RADIANT CONST FLOW_P1_ASEO-PASILLO:
+  #   variable_name: flow_rate_f1_bathroom-corridor
+  #   element_type: Constant Flow Low Temp Radiant
+  #   value_type: Water Mass Flow Rate
+  # LOW TEMP RADIANT CONST FLOW_P1_ASEO2-VESTIDOR:
+  #   variable_name: flow_rate_f1_bathroom-dressing
+  #   element_type: Constant Flow Low Temp Radiant
+  #   value_type: Water Mass Flow Rate
+  
+  # HW Temperature Schedule_45C:
+  #   variable_name: water_temperature
+  #   element_type: Schedule:Year
+  #   value_type: Schedule Value
+
+# ---------------------------------------------------------------------------- #
+#                   DYNAMIC CONTEXT CONFIGURABLE IN REAL-TIME                  #
+# ---------------------------------------------------------------------------- #
+context: 
+
+  Setpoint Schedule PB_Salon:
+    variable_name: heating_setpoint_f0_living-kitchen
+    element_type: Schedule:Compact
+    value_type: Schedule Value
+  Setpoint Schedule PB_Aseo-Vestibulo:
+    variable_name: heating_setpoint_f0_bathroom-lobby
+    element_type: Schedule:Compact
+    value_type: Schedule Value
+  Setpoint Schedule P1_Dormitorio1:
+    variable_name: heating_setpoint_f1_bedroom1
+    element_type: Schedule:Compact
+    value_type: Schedule Value
+  Setpoint Schedule P1_Dormitorio2:
+    variable_name: heating_setpoint_f1_bedroom2
+    element_type: Schedule:Compact
+    value_type: Schedule Value
+  Setpoint Schedule P1_Dormitorio3:
+    variable_name: heating_setpoint_f1_bedroom3
+    element_type: Schedule:Compact
+    value_type: Schedule Value
+  Setpoint Schedule P1_Aseo-Pasillo:
+    variable_name: heating_setpoint_f1_bathroom-corridor
+    element_type: Schedule:Compact
+    value_type: Schedule Value
+  Setpoint Schedule P1_Aseo2-Vestidor:
+    variable_name: heating_setpoint_f1_bathroom-dressing
+    element_type: Schedule:Compact
+    value_type: Schedule Value
+
+initial_context:
+  - 22.0
+  - 22.0
+  - 22.0
+  - 22.0
+  - 22.0
+  - 22.0
+  - 22.0
+# ---------------------------------------------------------------------------- #
+#                                 ACTIONS SPACE                                #
+# ---------------------------------------------------------------------------- #
+action_space: gym.spaces.Box(low=np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 25.0], dtype=np.float32),
+  high=np.array([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 45.0], dtype=np.float32),
+  shape=(8,), dtype=np.float32)
+
+only_discrete: false
+
+# ---------------------------------------------------------------------------- #
+#                                REWARD FUNCTION                               #
+# ---------------------------------------------------------------------------- #
+reward: sinergym.utils.rewards:MultiZoneRewardV2
+
+reward_kwargs:
+  comfort_threshold: 1
+  energy_variables:
+    - heat_source_electricity_rate
+  energy_weight: 0.5
+  lambda_energy: 0.001
+  lambda_temperature: 1
+  temperature_and_setpoints_conf:
+    air_temperature_f0_living-kitchen: heating_setpoint_f0_living-kitchen
+    air_temperature_f0_bathroom-lobby: heating_setpoint_f0_bathroom-lobby
+    air_temperature_f1_bedroom1: heating_setpoint_f1_bedroom1
+    air_temperature_f1_bedroom2: heating_setpoint_f1_bedroom2
+    air_temperature_f1_bedroom3: heating_setpoint_f1_bedroom3
+    air_temperature_f1_bathroom-corridor: heating_setpoint_f1_bathroom-corridor
+    air_temperature_f1_bathroom-dressing: heating_setpoint_f1_bathroom-dressing

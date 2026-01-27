@@ -2,12 +2,12 @@
 # ---------------------------------------------------------------------------- #
 #                        ID BASE FROM ENVIRONMENT NAMES                        #
 # ---------------------------------------------------------------------------- #
-id_base: radiant_digital_twin
+id_base: radiant_digital_twin_rl
 
 # ---------------------------------------------------------------------------- #
 #                         BUILDING AND WEATHER SETTINGS                        #
 # ---------------------------------------------------------------------------- #
-building_file: 260113_improved.epJSON
+building_file: digital_twin_rl.epJSON
 
 weather_specification:
   weather_files:
@@ -321,7 +321,7 @@ actuators:
     element_type: Constant Flow Low Temp Radiant
     value_type: Water Mass Flow Rate
   
-  HW Temperature Schedule:
+  HW Temperature Schedule_45C:
     variable_name: water_temperature
     element_type: Schedule:Year
     value_type: Schedule Value
