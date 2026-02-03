@@ -215,13 +215,13 @@ variables:
       - radiant_hvac_outlet_temperature_f1_bathroom-corridor
       - radiant_hvac_outlet_temperature_f1_bathroom-dressing
     keys:
-      - LOW TEMP RADIANT CONST FLOW_PB_COCINA
-      - LOW TEMP RADIANT CONST FLOW_PB_ASEO-VESTIBULO
-      - LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO1
-      - LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO2
-      - LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO3
-      - LOW TEMP RADIANT CONST FLOW_P1_ASEO-PASILLO
-      - LOW TEMP RADIANT CONST FLOW_P1_ASEO2-VESTIDOR
+      - Low Temp Radiant Const Flow_PB_Cocina
+      - Low Temp Radiant Const Flow_PB_Aseo-Vestibulo
+      - Low Temp Radiant Const Flow_P1_Dormitorio1
+      - Low Temp Radiant Const Flow_P1_Dormitorio2
+      - Low Temp Radiant Const Flow_P1_Dormitorio3
+      - Low Temp Radiant Const Flow_P1_Aseo-Pasillo
+      - Low Temp Radiant Const Flow_P1_Aseo2-Vestidor
 
   System Node Setpoint Temperature:
     variable_names: water_temperature
@@ -292,31 +292,31 @@ meters: {}
 # --------------------------- ACTUATORS TO CONTROL --------------------------- #
 actuators: 
 
-  LOW TEMP RADIANT CONST FLOW_PB_COCINA:
+  Low Temp Radiant Const Flow_PB_Cocina:
     variable_name: flow_rate_f0_living-kitchen
     element_type: Constant Flow Low Temp Radiant
     value_type: Water Mass Flow Rate
-  LOW TEMP RADIANT CONST FLOW_PB_ASEO-VESTIBULO:
+  Low Temp Radiant Const Flow_PB_Aseo-Vestibulo:
     variable_name: flow_rate_f0_bathroom-lobby
     element_type: Constant Flow Low Temp Radiant
     value_type: Water Mass Flow Rate
-  LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO1:
+  Low Temp Radiant Const Flow_P1_Dormitorio1:
     variable_name: flow_rate_f1_bedroom1
     element_type: Constant Flow Low Temp Radiant
     value_type: Water Mass Flow Rate
-  LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO2:
+  Low Temp Radiant Const Flow_P1_Dormitorio2:
     variable_name: flow_rate_f1_bedroom2
     element_type: Constant Flow Low Temp Radiant
     value_type: Water Mass Flow Rate
-  LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO3:
+  Low Temp Radiant Const Flow_P1_Dormitorio3:
     variable_name: flow_rate_f1_bedroom3
     element_type: Constant Flow Low Temp Radiant
     value_type: Water Mass Flow Rate
-  LOW TEMP RADIANT CONST FLOW_P1_ASEO-PASILLO:
+  Low Temp Radiant Const Flow_P1_Aseo-Pasillo:
     variable_name: flow_rate_f1_bathroom-corridor
     element_type: Constant Flow Low Temp Radiant
     value_type: Water Mass Flow Rate
-  LOW TEMP RADIANT CONST FLOW_P1_ASEO2-VESTIDOR:
+  Low Temp Radiant Const Flow_P1_Aseo2-Vestidor:
     variable_name: flow_rate_f1_bathroom-dressing
     element_type: Constant Flow Low Temp Radiant
     value_type: Water Mass Flow Rate
@@ -371,8 +371,10 @@ initial_context:
 # ---------------------------------------------------------------------------- #
 #                                 ACTIONS SPACE                                #
 # ---------------------------------------------------------------------------- #
-action_space: gym.spaces.Box(low=np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 25.0], dtype=np.float32),
-  high=np.array([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 45.0], dtype=np.float32),
+action_space: gym.spaces.Box(
+  low=np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 25.0], dtype=np.float32),
+  high=np.array([1.0,1.0,1.0,1.0,1.0,1.0,1.0,45.0], 
+  dtype=np.float32),
   shape=(8,), dtype=np.float32)
 
 only_discrete: false

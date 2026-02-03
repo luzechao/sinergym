@@ -12509,13 +12509,13 @@
         }
     },
     "SetpointManager:OutdoorAirReset": {
-        "Daikin_EHVX08_Calefaccion": {
+        "Daikin_EHVX08_Refrigeracion": {
             "control_variable": "Temperature",
-            "outdoor_high_temperature": 15,
-            "outdoor_low_temperature": -10,
-            "setpoint_at_outdoor_high_temperature": 25,
-            "setpoint_at_outdoor_low_temperature": 35,
-            "setpoint_node_or_nodelist_name": "Node 11"
+            "outdoor_high_temperature": 35,
+            "outdoor_low_temperature": 20,
+            "setpoint_at_outdoor_high_temperature": 18,
+            "setpoint_at_outdoor_low_temperature": 22,
+            "setpoint_node_or_nodelist_name": "Node 1"
         }
     },
     "SetpointManager:Scheduled": {
@@ -13708,31 +13708,31 @@
     },
     "ThermostatSetpoint:DualSetpoint": {
         "Thermostat Setpoint Dual Setpoint 3": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule PB_Aseo-Vestibulo",
             "heating_setpoint_temperature_schedule_name": "Setpoint Schedule PB_Aseo-Vestibulo"
         },
         "Thermostat Setpoint Dual Setpoint 4": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio1",
             "heating_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio1"
         },
         "Thermostat Setpoint Dual Setpoint 5": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio2",
             "heating_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio2"
         },
         "Thermostat Setpoint Dual Setpoint 7": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Aseo2-Vestidor",
             "heating_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Aseo2-Vestidor"
         },
         "Thermostat Setpoint Dual Setpoint 12": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule PB_Salon",
             "heating_setpoint_temperature_schedule_name": "Setpoint Schedule PB_Salon"
         },
         "Thermostat Setpoint Dual Setpoint 16": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Aseo-Pasillo",
             "heating_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Aseo-Pasillo"
         },
         "Thermostat Setpoint Dual Setpoint 17": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio3",
             "heating_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio3"
         }
     },
@@ -14308,21 +14308,17 @@
         "Low Temp Radiant Const Flow_P1_Aseo2-VestidorFloors": {
             "surface_fractions": [
                 {
-                    "flow_fraction_for_surface": 0.679680248031338,
-                    "surface_name": "srf52"
-                },
-                {
                     "flow_fraction_for_surface": 0.320319751968662,
                     "surface_name": "srf40"
+                },
+                {
+                    "flow_fraction_for_surface": 0.679680248031338,
+                    "surface_name": "srf52"
                 }
             ]
         },
         "Low Temp Radiant Const Flow_P1_Aseo-PasilloFloors": {
             "surface_fractions": [
-                {
-                    "flow_fraction_for_surface": 0.510477519848565,
-                    "surface_name": "srf34"
-                },
                 {
                     "flow_fraction_for_surface": 0.192346615791252,
                     "surface_name": "srf50"
@@ -14330,6 +14326,10 @@
                 {
                     "flow_fraction_for_surface": 0.297175864360183,
                     "surface_name": "srf25"
+                },
+                {
+                    "flow_fraction_for_surface": 0.510477519848565,
+                    "surface_name": "srf34"
                 }
             ]
         },
@@ -14384,16 +14384,16 @@
                     "surface_name": "srf12"
                 },
                 {
-                    "flow_fraction_for_surface": 0.110132989050527,
-                    "surface_name": "srf3"
+                    "flow_fraction_for_surface": 0.234535996292608,
+                    "surface_name": "srf20"
                 },
                 {
                     "flow_fraction_for_surface": 0.0470267062501356,
                     "surface_name": "srf14"
                 },
                 {
-                    "flow_fraction_for_surface": 0.234535996292608,
-                    "surface_name": "srf20"
+                    "flow_fraction_for_surface": 0.110132989050527,
+                    "surface_name": "srf3"
                 },
                 {
                     "flow_fraction_for_surface": 0.376636762663969,
@@ -14486,127 +14486,6 @@
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_PB_Salon2"
-        }
-    },
-    "ZoneVentilation:WindandStackOpenArea": {
-        "Zone Ventilation Wind and Stack Open Area": {
-            "delta_temperature": 2,
-            "discharge_coefficient_for_opening": "Autocalculate",
-            "effective_angle": 0,
-            "height_difference": 1.5,
-            "maximum_indoor_temperature": 26,
-            "maximum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "maximum_outdoor_temperature": 30,
-            "maximum_wind_speed": 10,
-            "minimum_indoor_temperature": 22,
-            "minimum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "minimum_outdoor_temperature": 18,
-            "opening_area": 2,
-            "opening_area_fraction_schedule_name": "VentilacionNatural",
-            "opening_effectiveness": "Autocalculate",
-            "zone_or_space_name": "P1_Aseo-Pasillo"
-        },
-        "Zone Ventilation Wind and Stack Open Area 2": {
-            "delta_temperature": 2,
-            "discharge_coefficient_for_opening": "Autocalculate",
-            "effective_angle": 0,
-            "height_difference": 1.5,
-            "maximum_indoor_temperature": 26,
-            "maximum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "maximum_outdoor_temperature": 30,
-            "maximum_wind_speed": 10,
-            "minimum_indoor_temperature": 22,
-            "minimum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "minimum_outdoor_temperature": 18,
-            "opening_area": 2,
-            "opening_area_fraction_schedule_name": "VentilacionNatural",
-            "opening_effectiveness": "Autocalculate",
-            "zone_or_space_name": "P1_Dormitorio1"
-        },
-        "Zone Ventilation Wind and Stack Open Area 3": {
-            "delta_temperature": 2,
-            "discharge_coefficient_for_opening": "Autocalculate",
-            "effective_angle": 0,
-            "height_difference": 1.5,
-            "maximum_indoor_temperature": 26,
-            "maximum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "maximum_outdoor_temperature": 30,
-            "maximum_wind_speed": 10,
-            "minimum_indoor_temperature": 22,
-            "minimum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "minimum_outdoor_temperature": 18,
-            "opening_area": 2,
-            "opening_area_fraction_schedule_name": "VentilacionNatural",
-            "opening_effectiveness": "Autocalculate",
-            "zone_or_space_name": "P1_Dormitorio3"
-        },
-        "Zone Ventilation Wind and Stack Open Area 4": {
-            "delta_temperature": 2,
-            "discharge_coefficient_for_opening": "Autocalculate",
-            "effective_angle": 0,
-            "height_difference": 1.5,
-            "maximum_indoor_temperature": 26,
-            "maximum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "maximum_outdoor_temperature": 30,
-            "maximum_wind_speed": 10,
-            "minimum_indoor_temperature": 22,
-            "minimum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "minimum_outdoor_temperature": 18,
-            "opening_area": 2,
-            "opening_area_fraction_schedule_name": "VentilacionNatural",
-            "opening_effectiveness": "Autocalculate",
-            "zone_or_space_name": "P1_Aseo2-Vestidor"
-        },
-        "Zone Ventilation Wind and Stack Open Area 5": {
-            "delta_temperature": 2,
-            "discharge_coefficient_for_opening": "Autocalculate",
-            "effective_angle": 0,
-            "height_difference": 1.5,
-            "maximum_indoor_temperature": 26,
-            "maximum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "maximum_outdoor_temperature": 30,
-            "maximum_wind_speed": 10,
-            "minimum_indoor_temperature": 22,
-            "minimum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "minimum_outdoor_temperature": 18,
-            "opening_area": 2,
-            "opening_area_fraction_schedule_name": "VentilacionNatural",
-            "opening_effectiveness": "Autocalculate",
-            "zone_or_space_name": "PB_Aseo-Vestibulo"
-        },
-        "Zone Ventilation Wind and Stack Open Area 6": {
-            "delta_temperature": 2,
-            "discharge_coefficient_for_opening": "Autocalculate",
-            "effective_angle": 0,
-            "height_difference": 1.5,
-            "maximum_indoor_temperature": 26,
-            "maximum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "maximum_outdoor_temperature": 30,
-            "maximum_wind_speed": 10,
-            "minimum_indoor_temperature": 22,
-            "minimum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "minimum_outdoor_temperature": 18,
-            "opening_area": 2,
-            "opening_area_fraction_schedule_name": "VentilacionNatural",
-            "opening_effectiveness": "Autocalculate",
-            "zone_or_space_name": "PB_Cocina-Salon1-Salon2"
-        },
-        "Zone Ventilation Wind and Stack Open Area 8": {
-            "delta_temperature": 2,
-            "discharge_coefficient_for_opening": "Autocalculate",
-            "effective_angle": 0,
-            "height_difference": 1.5,
-            "maximum_indoor_temperature": 26,
-            "maximum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "maximum_outdoor_temperature": 30,
-            "maximum_wind_speed": 10,
-            "minimum_indoor_temperature": 22,
-            "minimum_indoor_temperature_schedule_name": "VentilacionNatural",
-            "minimum_outdoor_temperature": 18,
-            "opening_area": 2,
-            "opening_area_fraction_schedule_name": "VentilacionNatural",
-            "opening_effectiveness": "Autocalculate",
-            "zone_or_space_name": "P1_Dormitorio2"
         }
     }
 }
