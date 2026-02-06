@@ -10417,9 +10417,9 @@
             "load_distribution_scheme": "Optimal",
             "loop_temperature_setpoint_node_name": "Node 11",
             "maximum_loop_flow_rate": "Autosize",
-            "maximum_loop_temperature": 45,
+            "maximum_loop_temperature": 60,
             "minimum_loop_flow_rate": 0,
-            "minimum_loop_temperature": 35,
+            "minimum_loop_temperature": 10,
             "plant_equipment_operation_scheme_name": "Heating Plant Loop Operation Schemes",
             "plant_loop_demand_calculation_scheme": "SingleSetpoint",
             "plant_loop_volume": "Autocalculate",
@@ -10507,12 +10507,12 @@
         "Run Period 1": {
             "apply_weekend_holiday_rule": "No",
             "begin_day_of_month": 1,
-            "begin_month": 1,
+            "begin_month": 11,
             "begin_year": 2006,
             "day_of_week_for_start_day": "Sunday",
             "end_day_of_month": 31,
-            "end_month": 12,
-            "end_year": 2006,
+            "end_month": 3,
+            "end_year": 2007,
             "use_weather_file_daylight_saving_period": "No",
             "use_weather_file_holidays_and_special_days": "No",
             "use_weather_file_rain_indicators": "Yes",
@@ -13746,7 +13746,7 @@
     },
     "Timestep": {
         "Timestep 1": {
-            "number_of_timesteps_per_hour": 6
+            "number_of_timesteps_per_hour": 2
         }
     },
     "Version": {
