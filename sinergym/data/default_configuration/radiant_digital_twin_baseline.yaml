@@ -80,7 +80,7 @@ building_config:
 # Alternative stochastic environments if it is defined
 weather_variability:
   Dry Bulb Temperature:
-    - [0.0, 1.0]
+    - [0.0, 2.0]
     - 0.0
     - 24.0
     - [-8.0, 40.0]
@@ -216,6 +216,24 @@ variables:
       - radiant_hvac_outlet_temperature_f1_bedroom3
       - radiant_hvac_outlet_temperature_f1_bathroom-corridor
       - radiant_hvac_outlet_temperature_f1_bathroom-dressing
+    keys:
+      - LOW TEMP RADIANT CONST FLOW_PB_COCINA
+      - LOW TEMP RADIANT CONST FLOW_PB_ASEO-VESTIBULO
+      - LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO1
+      - LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO2
+      - LOW TEMP RADIANT CONST FLOW_P1_DORMITORIO3
+      - LOW TEMP RADIANT CONST FLOW_P1_ASEO-PASILLO
+      - LOW TEMP RADIANT CONST FLOW_P1_ASEO2-VESTIDOR
+
+  Zone Radiant HVAC Inlet Temperature:
+    variable_names:
+      - radiant_hvac_inlet_temperature_f0_living-kitchen
+      - radiant_hvac_inlet_temperature_f0_bathroom-lobby
+      - radiant_hvac_inlet_temperature_f1_bedroom1
+      - radiant_hvac_inlet_temperature_f1_bedroom2
+      - radiant_hvac_inlet_temperature_f1_bedroom3
+      - radiant_hvac_inlet_temperature_f1_bathroom-corridor
+      - radiant_hvac_inlet_temperature_f1_bathroom-dressing
     keys:
       - LOW TEMP RADIANT CONST FLOW_PB_COCINA
       - LOW TEMP RADIANT CONST FLOW_PB_ASEO-VESTIBULO

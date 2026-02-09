@@ -11766,21 +11766,7 @@
             "wednesday_schedule_day_name": "Const Vol Rad Htg Low Wtr Temp Sch All Days",
             "winterdesignday_schedule_day_name": "Const Vol Rad Htg Low Wtr Temp Sch All Days"
         },
-        "HW Temperature Schedule_45C Week Rule - Jan1-May27": {
-            "customday1_schedule_day_name": "Schedule Day 6",
-            "customday2_schedule_day_name": "Schedule Day 6",
-            "friday_schedule_day_name": "PlantLoop_Heating_45C",
-            "holiday_schedule_day_name": "Schedule Day 6",
-            "monday_schedule_day_name": "PlantLoop_Heating_45C",
-            "saturday_schedule_day_name": "PlantLoop_Heating_45C",
-            "summerdesignday_schedule_day_name": "Schedule Day 6",
-            "sunday_schedule_day_name": "PlantLoop_Heating_45C",
-            "thursday_schedule_day_name": "PlantLoop_Heating_45C",
-            "tuesday_schedule_day_name": "PlantLoop_Heating_45C",
-            "wednesday_schedule_day_name": "PlantLoop_Heating_45C",
-            "winterdesignday_schedule_day_name": "Schedule Day 6"
-        },
-        "HW Temperature Schedule_45C Week Rule - Jun4-Sep30": {
+        "HW Temperature Schedule Week Rule - Jan1-Dec31": {
             "customday1_schedule_day_name": "Schedule Day 6",
             "customday2_schedule_day_name": "Schedule Day 6",
             "friday_schedule_day_name": "Schedule Day 6",
@@ -11792,34 +11778,6 @@
             "thursday_schedule_day_name": "Schedule Day 6",
             "tuesday_schedule_day_name": "Schedule Day 6",
             "wednesday_schedule_day_name": "Schedule Day 6",
-            "winterdesignday_schedule_day_name": "Schedule Day 6"
-        },
-        "HW Temperature Schedule_45C Week Rule - May28-Jun3": {
-            "customday1_schedule_day_name": "Schedule Day 6",
-            "customday2_schedule_day_name": "Schedule Day 6",
-            "friday_schedule_day_name": "Schedule Day 6",
-            "holiday_schedule_day_name": "Schedule Day 6",
-            "monday_schedule_day_name": "PlantLoop_Heating_45C",
-            "saturday_schedule_day_name": "Schedule Day 6",
-            "summerdesignday_schedule_day_name": "Schedule Day 6",
-            "sunday_schedule_day_name": "PlantLoop_Heating_45C",
-            "thursday_schedule_day_name": "Schedule Day 6",
-            "tuesday_schedule_day_name": "PlantLoop_Heating_45C",
-            "wednesday_schedule_day_name": "PlantLoop_Heating_45C",
-            "winterdesignday_schedule_day_name": "Schedule Day 6"
-        },
-        "HW Temperature Schedule_45C Week Rule - Oct1-Dec31": {
-            "customday1_schedule_day_name": "Schedule Day 6",
-            "customday2_schedule_day_name": "Schedule Day 6",
-            "friday_schedule_day_name": "PlantLoop_Heating_2_45C",
-            "holiday_schedule_day_name": "Schedule Day 6",
-            "monday_schedule_day_name": "PlantLoop_Heating_2_45C",
-            "saturday_schedule_day_name": "PlantLoop_Heating_2_45C",
-            "summerdesignday_schedule_day_name": "Schedule Day 6",
-            "sunday_schedule_day_name": "PlantLoop_Heating_2_45C",
-            "thursday_schedule_day_name": "PlantLoop_Heating_2_45C",
-            "tuesday_schedule_day_name": "PlantLoop_Heating_2_45C",
-            "wednesday_schedule_day_name": "PlantLoop_Heating_2_45C",
             "winterdesignday_schedule_day_name": "Schedule Day 6"
         },
         "Infiltraciones Week Rule - Jan1-Dec31": {
@@ -12173,36 +12131,15 @@
                 }
             ]
         },
-        "HW Temperature Schedule_45C": {
+        "HW Temperature Schedule": {
             "schedule_type_limits_name": "Temperature",
             "schedule_weeks": [
                 {
-                    "end_day": 27,
-                    "end_month": 5,
-                    "schedule_week_name": "HW Temperature Schedule_45C Week Rule - Jan1-May27",
-                    "start_day": 1,
-                    "start_month": 1
-                },
-                {
-                    "end_day": 3,
-                    "end_month": 6,
-                    "schedule_week_name": "HW Temperature Schedule_45C Week Rule - May28-Jun3",
-                    "start_day": 28,
-                    "start_month": 5
-                },
-                {
-                    "end_day": 30,
-                    "end_month": 9,
-                    "schedule_week_name": "HW Temperature Schedule_45C Week Rule - Jun4-Sep30",
-                    "start_day": 4,
-                    "start_month": 6
-                },
-                {
                     "end_day": 31,
                     "end_month": 12,
-                    "schedule_week_name": "HW Temperature Schedule_45C Week Rule - Oct1-Dec31",
+                    "schedule_week_name": "HW Temperature Schedule Week Rule - Jan1-Dec31",
                     "start_day": 1,
-                    "start_month": 10
+                    "start_month": 1
                 }
             ]
         },
@@ -12534,7 +12471,7 @@
         },
         "Setpoint Manager Scheduled 1": {
             "control_variable": "Temperature",
-            "schedule_name": "HW Temperature Schedule_45C",
+            "schedule_name": "HW Temperature Schedule",
             "setpoint_node_or_nodelist_name": "Node 11"
         },
         "Setpoint Manager Scheduled 2": {
