@@ -341,7 +341,7 @@ actuators: {}
   #   element_type: Constant Flow Low Temp Radiant
   #   value_type: Water Mass Flow Rate
   
-  # HW Temperature Schedule_45C:
+  # HW Temperature Schedule:
   #   variable_name: water_temperature
   #   element_type: Schedule:Year
   #   value_type: Schedule Value
