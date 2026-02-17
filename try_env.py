@@ -21,9 +21,7 @@ terminal_logger = TerminalLogger()
 logger = terminal_logger.getLogger(name='MAIN', level=logging.INFO)
 
 # Creating environment and applying wrappers for normalization and logging
-env = gym.make('Eplus-radiant_case2_heating-stockholm-continuous-stochastic-v1')
-# env = RoundActionWrapper(env)
-# env = HeatPumpEnergyWrapper(env)
+env = gym.make('Eplus-radiant_digital_twin_rl-madrid-continuous-stochastic-v1')
 env = DatetimeWrapper(env)
 env = NormalizeObservation(env)
 env = ExtremeFlowControlWrapper(env)
@@ -33,23 +31,31 @@ env = CSVLogger(env)
 env = ReduceObservationWrapper(
     env,
     obs_reduction=[
-        'radiant_hvac_outlet_temperature_living',
-        'radiant_hvac_outlet_temperature_kitchen',
-        'radiant_hvac_outlet_temperature_bed1',
-        'radiant_hvac_outlet_temperature_bed2',
-        'radiant_hvac_outlet_temperature_bed3',
+        'radiant_hvac_outlet_temperature_f0_living-kitchen',
+        'radiant_hvac_outlet_temperature_f0_bathroom-lobby',
+        'radiant_hvac_outlet_temperature_f1_bedroom1',
+        'radiant_hvac_outlet_temperature_f1_bedroom2',
+        'radiant_hvac_outlet_temperature_f1_bedroom3',
+        'radiant_hvac_outlet_temperature_f1_bathroom-corridor',
+        'radiant_hvac_outlet_temperature_f1_bathroom-dressing',
+        'radiant_hvac_inlet_temperature_f0_living-kitchen',
+        'radiant_hvac_inlet_temperature_f0_bathroom-lobby',
+        'radiant_hvac_inlet_temperature_f1_bedroom1',
+        'radiant_hvac_inlet_temperature_f1_bedroom2',
+        'radiant_hvac_inlet_temperature_f1_bedroom3',
+        'radiant_hvac_inlet_temperature_f1_bathroom-corridor',
+        'radiant_hvac_inlet_temperature_f1_bathroom-dressing',
         'water_temperature',
-        'flow_rate_living',
-        'flow_rate_kitchen',
-        'flow_rate_bed1',
-        'flow_rate_bed2',
-        'flow_rate_bed3',
+        'flow_rate_f0_living-kitchen',
+        'flow_rate_f0_bathroom-lobby',
+        'flow_rate_f1_bedroom1',
+        'flow_rate_f1_bedroom2',
+        'flow_rate_f1_bedroom3',
+        'flow_rate_f1_bathroom-corridor',
+        'flow_rate_f1_bathroom-dressing',
         'heat_source_load_side_heat_transfer_rate',
         'heat_source_load_side_mass_flow_rate',
         'crf',
-        'heat_cap_mod',
-        'cop_plr_mod',
-        'cop_temp_mod',
         'plr_current',
     ],
 )
