@@ -6408,6 +6408,29 @@
             ]
         }
     },
+    "ElectricEquipment": {
+        "Electric Equipment Living": {
+            "design_level_calculation_method": "Watts/Area",
+            "end_use_subcategory": "General",
+            "schedule_name": "Equipment Schedule Living",
+            "watts_per_floor_area": 6,
+            "zone_or_zonelist_or_space_or_spacelist_name": "Gains_LivingSpaces"
+        },
+        "Electric Equipment Bedrooms": {
+            "design_level_calculation_method": "Watts/Area",
+            "end_use_subcategory": "General",
+            "schedule_name": "Equipment Schedule Bedrooms",
+            "watts_per_floor_area": 2,
+            "zone_or_zonelist_or_space_or_spacelist_name": "Gains_BedroomSpaces"
+        },
+        "Electric Equipment CirculationWet": {
+            "design_level_calculation_method": "Watts/Area",
+            "end_use_subcategory": "General",
+            "schedule_name": "Equipment Schedule CirculationWet",
+            "watts_per_floor_area": 0.5,
+            "zone_or_zonelist_or_space_or_spacelist_name": "Gains_CirculationWetSpaces"
+        }
+    },
     "FenestrationSurface:Detailed": {
         "opn1": {
             "building_surface_name": "srf16",
@@ -7534,6 +7557,32 @@
             ],
             "lcc_price_escalation_name": "U.S. Avg  Commercial-Coal",
             "resource": "Coal"
+        }
+    },
+    "Lights": {
+        "Lights Living": {
+            "design_level_calculation_method": "Watts/Area",
+            "end_use_subcategory": "General",
+            "fraction_replaceable": 1,
+            "schedule_name": "Lighting Schedule Living",
+            "watts_per_floor_area": 5,
+            "zone_or_zonelist_or_space_or_spacelist_name": "Gains_LivingSpaces"
+        },
+        "Lights Bedrooms": {
+            "design_level_calculation_method": "Watts/Area",
+            "end_use_subcategory": "General",
+            "fraction_replaceable": 1,
+            "schedule_name": "Lighting Schedule Bedrooms",
+            "watts_per_floor_area": 3,
+            "zone_or_zonelist_or_space_or_spacelist_name": "Gains_BedroomSpaces"
+        },
+        "Lights CirculationWet": {
+            "design_level_calculation_method": "Watts/Area",
+            "end_use_subcategory": "General",
+            "fraction_replaceable": 1,
+            "schedule_name": "Lighting Schedule CirculationWet",
+            "watts_per_floor_area": 2,
+            "zone_or_zonelist_or_space_or_spacelist_name": "Gains_CirculationWetSpaces"
         }
     },
     "Material": {
@@ -10263,6 +10312,32 @@
             "column_separator": "HTML"
         }
     },
+    "People": {
+        "People Living": {
+            "activity_level_schedule_name": "ActivityLevel",
+            "fraction_radiant": 0.3,
+            "number_of_people_calculation_method": "People/Area",
+            "number_of_people_schedule_name": "Occupancy Schedule Living",
+            "people_per_floor_area": 0.02,
+            "zone_or_zonelist_or_space_or_spacelist_name": "Gains_LivingSpaces"
+        },
+        "People Bedrooms": {
+            "activity_level_schedule_name": "ActivityLevel",
+            "fraction_radiant": 0.3,
+            "number_of_people_calculation_method": "People/Area",
+            "number_of_people_schedule_name": "Occupancy Schedule Bedrooms",
+            "people_per_floor_area": 0.04,
+            "zone_or_zonelist_or_space_or_spacelist_name": "Gains_BedroomSpaces"
+        },
+        "People CirculationWet": {
+            "activity_level_schedule_name": "ActivityLevel",
+            "fraction_radiant": 0.3,
+            "number_of_people_calculation_method": "People/Area",
+            "number_of_people_schedule_name": "Occupancy Schedule CirculationWet",
+            "people_per_floor_area": 0.005,
+            "zone_or_zonelist_or_space_or_spacelist_name": "Gains_CirculationWetSpaces"
+        }
+    },
     "Pipe:Adiabatic": {
         "Cooling Plant Loop Demand Bypass Pipe": {
             "inlet_node_name": "Cooling Plant Loop Demand Bypass Pipe Inlet Node",
@@ -10417,9 +10492,9 @@
             "load_distribution_scheme": "Optimal",
             "loop_temperature_setpoint_node_name": "Node 11",
             "maximum_loop_flow_rate": "Autosize",
-            "maximum_loop_temperature": 60,
+            "maximum_loop_temperature": 45,
             "minimum_loop_flow_rate": 0,
-            "minimum_loop_temperature": 10,
+            "minimum_loop_temperature": 35,
             "plant_equipment_operation_scheme_name": "Heating Plant Loop Operation Schemes",
             "plant_loop_demand_calculation_scheme": "SingleSetpoint",
             "plant_loop_volume": "Autocalculate",
@@ -10520,6 +10595,41 @@
         }
     },
     "Schedule:Compact": {
+        "Radiant control temp 22 sizing then 30": {
+            "data": [
+                {
+                    "field": "Through: 12/31"
+                },
+                {
+                    "field": "For: WinterDesignDay"
+                },
+                {
+                    "field": "Until: 24:00"
+                },
+                {
+                    "field": 22
+                },
+                {
+                    "field": "For: SummerDesignDay"
+                },
+                {
+                    "field": "Until: 24:00"
+                },
+                {
+                    "field": 22
+                },
+                {
+                    "field": "For: AllOtherDays"
+                },
+                {
+                    "field": "Until: 24:00"
+                },
+                {
+                    "field": 30
+                }
+            ],
+            "schedule_type_limits_name": "Temperature"
+        },
         "Setpoint Schedule PB_Salon": {
             "data": [
                 {
@@ -10872,11 +10982,11 @@
             "interpolate_to_timestep": "No",
             "schedule_type_limits_name": "Temperature"
         },
-        "Infiltraciones": {
+        "Infiltraciones Day": {
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": 0.15
+                    "value_until_time": 1.0
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -10915,8 +11025,100 @@
         "Residential Equipment Schedule Default": {
             "data": [
                 {
+                    "time": "01:00",
+                    "value_until_time": 0.1
+                },
+                {
+                    "time": "02:00",
+                    "value_until_time": 0.1
+                },
+                {
+                    "time": "03:00",
+                    "value_until_time": 0.1
+                },
+                {
+                    "time": "04:00",
+                    "value_until_time": 0.1
+                },
+                {
+                    "time": "05:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "06:00",
+                    "value_until_time": 0.3
+                },
+                {
+                    "time": "07:00",
+                    "value_until_time": 0.5
+                },
+                {
+                    "time": "08:00",
+                    "value_until_time": 0.6
+                },
+                {
+                    "time": "09:00",
+                    "value_until_time": 0.7
+                },
+                {
+                    "time": "10:00",
+                    "value_until_time": 0.6
+                },
+                {
+                    "time": "11:00",
+                    "value_until_time": 0.5
+                },
+                {
+                    "time": "12:00",
+                    "value_until_time": 0.5
+                },
+                {
+                    "time": "13:00",
+                    "value_until_time": 0.5
+                },
+                {
+                    "time": "14:00",
+                    "value_until_time": 0.6
+                },
+                {
+                    "time": "15:00",
+                    "value_until_time": 0.7
+                },
+                {
+                    "time": "16:00",
+                    "value_until_time": 0.9
+                },
+                {
+                    "time": "17:00",
+                    "value_until_time": 1
+                },
+                {
+                    "time": "18:00",
+                    "value_until_time": 1
+                },
+                {
+                    "time": "19:00",
+                    "value_until_time": 0.8
+                },
+                {
+                    "time": "20:00",
+                    "value_until_time": 0.6
+                },
+                {
+                    "time": "21:00",
+                    "value_until_time": 0.5
+                },
+                {
+                    "time": "22:00",
+                    "value_until_time": 0.4
+                },
+                {
+                    "time": "23:00",
+                    "value_until_time": 0.3
+                },
+                {
                     "time": "24:00",
-                    "value_until_time": 0.0989492362327301
+                    "value_until_time": 0
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -10925,8 +11127,100 @@
         "Residential Lighting Schedule Default": {
             "data": [
                 {
+                    "time": "01:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "02:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "03:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "04:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "05:00",
+                    "value_until_time": 0.3
+                },
+                {
+                    "time": "06:00",
+                    "value_until_time": 0.4
+                },
+                {
+                    "time": "07:00",
+                    "value_until_time": 0.5
+                },
+                {
+                    "time": "08:00",
+                    "value_until_time": 0.6
+                },
+                {
+                    "time": "09:00",
+                    "value_until_time": 0.7
+                },
+                {
+                    "time": "10:00",
+                    "value_until_time": 0.4
+                },
+                {
+                    "time": "11:00",
+                    "value_until_time": 0.3
+                },
+                {
+                    "time": "12:00",
+                    "value_until_time": 0.3
+                },
+                {
+                    "time": "13:00",
+                    "value_until_time": 0.3
+                },
+                {
+                    "time": "14:00",
+                    "value_until_time": 0.4
+                },
+                {
+                    "time": "15:00",
+                    "value_until_time": 0.5
+                },
+                {
+                    "time": "16:00",
+                    "value_until_time": 0.6
+                },
+                {
+                    "time": "17:00",
+                    "value_until_time": 0.8
+                },
+                {
+                    "time": "18:00",
+                    "value_until_time": 0.9
+                },
+                {
+                    "time": "19:00",
+                    "value_until_time": 1
+                },
+                {
+                    "time": "20:00",
+                    "value_until_time": 0.8
+                },
+                {
+                    "time": "21:00",
+                    "value_until_time": 0.6
+                },
+                {
+                    "time": "22:00",
+                    "value_until_time": 0.5
+                },
+                {
+                    "time": "23:00",
+                    "value_until_time": 0.3
+                },
+                {
                     "time": "24:00",
-                    "value_until_time": 0.1
+                    "value_until_time": 0
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -10935,9 +11229,371 @@
         "Residential Occupancy Schedule Default": {
             "data": [
                 {
+                    "time": "01:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "02:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "03:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "04:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "05:00",
+                    "value_until_time": 0.3
+                },
+                {
+                    "time": "06:00",
+                    "value_until_time": 0.4
+                },
+                {
+                    "time": "07:00",
+                    "value_until_time": 0.6
+                },
+                {
+                    "time": "08:00",
+                    "value_until_time": 0.7
+                },
+                {
+                    "time": "09:00",
+                    "value_until_time": 0.8
+                },
+                {
+                    "time": "10:00",
+                    "value_until_time": 0.3
+                },
+                {
+                    "time": "11:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "12:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "13:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "14:00",
+                    "value_until_time": 0.2
+                },
+                {
+                    "time": "15:00",
+                    "value_until_time": 0.3
+                },
+                {
+                    "time": "16:00",
+                    "value_until_time": 0.4
+                },
+                {
+                    "time": "17:00",
+                    "value_until_time": 0.6
+                },
+                {
+                    "time": "18:00",
+                    "value_until_time": 0.7
+                },
+                {
+                    "time": "19:00",
+                    "value_until_time": 0.8
+                },
+                {
+                    "time": "20:00",
+                    "value_until_time": 0.7
+                },
+                {
+                    "time": "21:00",
+                    "value_until_time": 0.5
+                },
+                {
+                    "time": "22:00",
+                    "value_until_time": 0.4
+                },
+                {
+                    "time": "23:00",
+                    "value_until_time": 0.3
+                },
+                {
                     "time": "24:00",
                     "value_until_time": 0
                 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Occupancy Schedule Living Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.15 },
+                { "time": "02:00", "value_until_time": 0.15 },
+                { "time": "03:00", "value_until_time": 0.15 },
+                { "time": "04:00", "value_until_time": 0.15 },
+                { "time": "05:00", "value_until_time": 0.15 },
+                { "time": "06:00", "value_until_time": 0.15 },
+                { "time": "07:00", "value_until_time": 0.25 },
+                { "time": "08:00", "value_until_time": 0.3 },
+                { "time": "09:00", "value_until_time": 0.2 },
+                { "time": "10:00", "value_until_time": 0.2 },
+                { "time": "11:00", "value_until_time": 0.2 },
+                { "time": "12:00", "value_until_time": 0.2 },
+                { "time": "13:00", "value_until_time": 0.2 },
+                { "time": "14:00", "value_until_time": 0.2 },
+                { "time": "15:00", "value_until_time": 0.2 },
+                { "time": "16:00", "value_until_time": 0.2 },
+                { "time": "17:00", "value_until_time": 0.2 },
+                { "time": "18:00", "value_until_time": 0.5 },
+                { "time": "19:00", "value_until_time": 0.7 },
+                { "time": "20:00", "value_until_time": 0.7 },
+                { "time": "21:00", "value_until_time": 0.7 },
+                { "time": "22:00", "value_until_time": 0.7 },
+                { "time": "23:00", "value_until_time": 0.5 },
+                { "time": "24:00", "value_until_time": 0.25 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Occupancy Schedule Bedrooms Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.9 },
+                { "time": "02:00", "value_until_time": 0.9 },
+                { "time": "03:00", "value_until_time": 0.9 },
+                { "time": "04:00", "value_until_time": 0.9 },
+                { "time": "05:00", "value_until_time": 0.9 },
+                { "time": "06:00", "value_until_time": 0.9 },
+                { "time": "07:00", "value_until_time": 0.7 },
+                { "time": "08:00", "value_until_time": 0.4 },
+                { "time": "09:00", "value_until_time": 0.1 },
+                { "time": "10:00", "value_until_time": 0.1 },
+                { "time": "11:00", "value_until_time": 0.1 },
+                { "time": "12:00", "value_until_time": 0.1 },
+                { "time": "13:00", "value_until_time": 0.1 },
+                { "time": "14:00", "value_until_time": 0.1 },
+                { "time": "15:00", "value_until_time": 0.1 },
+                { "time": "16:00", "value_until_time": 0.1 },
+                { "time": "17:00", "value_until_time": 0.15 },
+                { "time": "18:00", "value_until_time": 0.2 },
+                { "time": "19:00", "value_until_time": 0.3 },
+                { "time": "20:00", "value_until_time": 0.5 },
+                { "time": "21:00", "value_until_time": 0.7 },
+                { "time": "22:00", "value_until_time": 0.85 },
+                { "time": "23:00", "value_until_time": 0.9 },
+                { "time": "24:00", "value_until_time": 0.9 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Occupancy Schedule CirculationWet Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.02 },
+                { "time": "02:00", "value_until_time": 0.02 },
+                { "time": "03:00", "value_until_time": 0.02 },
+                { "time": "04:00", "value_until_time": 0.02 },
+                { "time": "05:00", "value_until_time": 0.02 },
+                { "time": "06:00", "value_until_time": 0.02 },
+                { "time": "07:00", "value_until_time": 0.05 },
+                { "time": "08:00", "value_until_time": 0.06 },
+                { "time": "09:00", "value_until_time": 0.03 },
+                { "time": "10:00", "value_until_time": 0.02 },
+                { "time": "11:00", "value_until_time": 0.02 },
+                { "time": "12:00", "value_until_time": 0.02 },
+                { "time": "13:00", "value_until_time": 0.02 },
+                { "time": "14:00", "value_until_time": 0.02 },
+                { "time": "15:00", "value_until_time": 0.02 },
+                { "time": "16:00", "value_until_time": 0.02 },
+                { "time": "17:00", "value_until_time": 0.02 },
+                { "time": "18:00", "value_until_time": 0.04 },
+                { "time": "19:00", "value_until_time": 0.06 },
+                { "time": "20:00", "value_until_time": 0.06 },
+                { "time": "21:00", "value_until_time": 0.05 },
+                { "time": "22:00", "value_until_time": 0.04 },
+                { "time": "23:00", "value_until_time": 0.02 },
+                { "time": "24:00", "value_until_time": 0.02 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Lighting Schedule Living Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.05 },
+                { "time": "02:00", "value_until_time": 0.05 },
+                { "time": "03:00", "value_until_time": 0.05 },
+                { "time": "04:00", "value_until_time": 0.05 },
+                { "time": "05:00", "value_until_time": 0.05 },
+                { "time": "06:00", "value_until_time": 0.05 },
+                { "time": "07:00", "value_until_time": 0.1 },
+                { "time": "08:00", "value_until_time": 0.1 },
+                { "time": "09:00", "value_until_time": 0.05 },
+                { "time": "10:00", "value_until_time": 0.05 },
+                { "time": "11:00", "value_until_time": 0.05 },
+                { "time": "12:00", "value_until_time": 0.05 },
+                { "time": "13:00", "value_until_time": 0.05 },
+                { "time": "14:00", "value_until_time": 0.05 },
+                { "time": "15:00", "value_until_time": 0.05 },
+                { "time": "16:00", "value_until_time": 0.05 },
+                { "time": "17:00", "value_until_time": 0.2 },
+                { "time": "18:00", "value_until_time": 0.5 },
+                { "time": "19:00", "value_until_time": 0.8 },
+                { "time": "20:00", "value_until_time": 0.8 },
+                { "time": "21:00", "value_until_time": 0.8 },
+                { "time": "22:00", "value_until_time": 0.8 },
+                { "time": "23:00", "value_until_time": 0.5 },
+                { "time": "24:00", "value_until_time": 0.2 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Lighting Schedule Bedrooms Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.02 },
+                { "time": "02:00", "value_until_time": 0.02 },
+                { "time": "03:00", "value_until_time": 0.02 },
+                { "time": "04:00", "value_until_time": 0.02 },
+                { "time": "05:00", "value_until_time": 0.02 },
+                { "time": "06:00", "value_until_time": 0.02 },
+                { "time": "07:00", "value_until_time": 0.1 },
+                { "time": "08:00", "value_until_time": 0.1 },
+                { "time": "09:00", "value_until_time": 0.02 },
+                { "time": "10:00", "value_until_time": 0.02 },
+                { "time": "11:00", "value_until_time": 0.02 },
+                { "time": "12:00", "value_until_time": 0.02 },
+                { "time": "13:00", "value_until_time": 0.02 },
+                { "time": "14:00", "value_until_time": 0.02 },
+                { "time": "15:00", "value_until_time": 0.02 },
+                { "time": "16:00", "value_until_time": 0.02 },
+                { "time": "17:00", "value_until_time": 0.02 },
+                { "time": "18:00", "value_until_time": 0.1 },
+                { "time": "19:00", "value_until_time": 0.2 },
+                { "time": "20:00", "value_until_time": 0.4 },
+                { "time": "21:00", "value_until_time": 0.6 },
+                { "time": "22:00", "value_until_time": 0.6 },
+                { "time": "23:00", "value_until_time": 0.3 },
+                { "time": "24:00", "value_until_time": 0.1 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Lighting Schedule CirculationWet Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.01 },
+                { "time": "02:00", "value_until_time": 0.01 },
+                { "time": "03:00", "value_until_time": 0.01 },
+                { "time": "04:00", "value_until_time": 0.01 },
+                { "time": "05:00", "value_until_time": 0.01 },
+                { "time": "06:00", "value_until_time": 0.01 },
+                { "time": "07:00", "value_until_time": 0.05 },
+                { "time": "08:00", "value_until_time": 0.1 },
+                { "time": "09:00", "value_until_time": 0.03 },
+                { "time": "10:00", "value_until_time": 0.01 },
+                { "time": "11:00", "value_until_time": 0.01 },
+                { "time": "12:00", "value_until_time": 0.01 },
+                { "time": "13:00", "value_until_time": 0.01 },
+                { "time": "14:00", "value_until_time": 0.01 },
+                { "time": "15:00", "value_until_time": 0.01 },
+                { "time": "16:00", "value_until_time": 0.01 },
+                { "time": "17:00", "value_until_time": 0.01 },
+                { "time": "18:00", "value_until_time": 0.05 },
+                { "time": "19:00", "value_until_time": 0.15 },
+                { "time": "20:00", "value_until_time": 0.15 },
+                { "time": "21:00", "value_until_time": 0.1 },
+                { "time": "22:00", "value_until_time": 0.05 },
+                { "time": "23:00", "value_until_time": 0.02 },
+                { "time": "24:00", "value_until_time": 0.02 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Equipment Schedule Living Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.1 },
+                { "time": "02:00", "value_until_time": 0.1 },
+                { "time": "03:00", "value_until_time": 0.1 },
+                { "time": "04:00", "value_until_time": 0.1 },
+                { "time": "05:00", "value_until_time": 0.15 },
+                { "time": "06:00", "value_until_time": 0.2 },
+                { "time": "07:00", "value_until_time": 0.3 },
+                { "time": "08:00", "value_until_time": 0.4 },
+                { "time": "09:00", "value_until_time": 0.35 },
+                { "time": "10:00", "value_until_time": 0.3 },
+                { "time": "11:00", "value_until_time": 0.25 },
+                { "time": "12:00", "value_until_time": 0.25 },
+                { "time": "13:00", "value_until_time": 0.25 },
+                { "time": "14:00", "value_until_time": 0.25 },
+                { "time": "15:00", "value_until_time": 0.3 },
+                { "time": "16:00", "value_until_time": 0.35 },
+                { "time": "17:00", "value_until_time": 0.5 },
+                { "time": "18:00", "value_until_time": 0.7 },
+                { "time": "19:00", "value_until_time": 0.8 },
+                { "time": "20:00", "value_until_time": 0.7 },
+                { "time": "21:00", "value_until_time": 0.6 },
+                { "time": "22:00", "value_until_time": 0.5 },
+                { "time": "23:00", "value_until_time": 0.3 },
+                { "time": "24:00", "value_until_time": 0.2 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Equipment Schedule Bedrooms Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.05 },
+                { "time": "02:00", "value_until_time": 0.05 },
+                { "time": "03:00", "value_until_time": 0.05 },
+                { "time": "04:00", "value_until_time": 0.05 },
+                { "time": "05:00", "value_until_time": 0.05 },
+                { "time": "06:00", "value_until_time": 0.05 },
+                { "time": "07:00", "value_until_time": 0.08 },
+                { "time": "08:00", "value_until_time": 0.1 },
+                { "time": "09:00", "value_until_time": 0.06 },
+                { "time": "10:00", "value_until_time": 0.06 },
+                { "time": "11:00", "value_until_time": 0.06 },
+                { "time": "12:00", "value_until_time": 0.06 },
+                { "time": "13:00", "value_until_time": 0.06 },
+                { "time": "14:00", "value_until_time": 0.06 },
+                { "time": "15:00", "value_until_time": 0.06 },
+                { "time": "16:00", "value_until_time": 0.06 },
+                { "time": "17:00", "value_until_time": 0.06 },
+                { "time": "18:00", "value_until_time": 0.1 },
+                { "time": "19:00", "value_until_time": 0.15 },
+                { "time": "20:00", "value_until_time": 0.2 },
+                { "time": "21:00", "value_until_time": 0.2 },
+                { "time": "22:00", "value_until_time": 0.15 },
+                { "time": "23:00", "value_until_time": 0.1 },
+                { "time": "24:00", "value_until_time": 0.08 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Equipment Schedule CirculationWet Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.01 },
+                { "time": "02:00", "value_until_time": 0.01 },
+                { "time": "03:00", "value_until_time": 0.01 },
+                { "time": "04:00", "value_until_time": 0.01 },
+                { "time": "05:00", "value_until_time": 0.01 },
+                { "time": "06:00", "value_until_time": 0.01 },
+                { "time": "07:00", "value_until_time": 0.03 },
+                { "time": "08:00", "value_until_time": 0.05 },
+                { "time": "09:00", "value_until_time": 0.02 },
+                { "time": "10:00", "value_until_time": 0.01 },
+                { "time": "11:00", "value_until_time": 0.01 },
+                { "time": "12:00", "value_until_time": 0.01 },
+                { "time": "13:00", "value_until_time": 0.01 },
+                { "time": "14:00", "value_until_time": 0.01 },
+                { "time": "15:00", "value_until_time": 0.01 },
+                { "time": "16:00", "value_until_time": 0.01 },
+                { "time": "17:00", "value_until_time": 0.01 },
+                { "time": "18:00", "value_until_time": 0.03 },
+                { "time": "19:00", "value_until_time": 0.05 },
+                { "time": "20:00", "value_until_time": 0.05 },
+                { "time": "21:00", "value_until_time": 0.03 },
+                { "time": "22:00", "value_until_time": 0.02 },
+                { "time": "23:00", "value_until_time": 0.01 },
+                { "time": "24:00", "value_until_time": 0.01 }
             ],
             "interpolate_to_timestep": "No",
             "schedule_type_limits_name": "Fractional"
@@ -11454,7 +12110,7 @@
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": 30
+                    "value_until_time": 22
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -11484,7 +12140,7 @@
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": 30
+                    "value_until_time": 25
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -11494,7 +12150,17 @@
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": 0.3
+                    "value_until_time": 0.0
+                }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Dimensionless"
+        },
+        "VentNat_Closed": {
+            "data": [
+                {
+                    "time": "24:00",
+                    "value_until_time": 0.0
                 }
             ],
             "interpolate_to_timestep": "No",
@@ -11537,7 +12203,7 @@
                     "value_until_time": 1
                 },
                 {
-                    "time": "22:00",
+                    "time": "21:00",
                     "value_until_time": 0
                 },
                 {
@@ -11781,18 +12447,18 @@
             "winterdesignday_schedule_day_name": "Schedule Day 6"
         },
         "Infiltraciones Week Rule - Jan1-Dec31": {
-            "customday1_schedule_day_name": "Infiltraciones",
-            "customday2_schedule_day_name": "Infiltraciones",
-            "friday_schedule_day_name": "Infiltraciones",
-            "holiday_schedule_day_name": "Infiltraciones",
-            "monday_schedule_day_name": "Infiltraciones",
-            "saturday_schedule_day_name": "Infiltraciones",
-            "summerdesignday_schedule_day_name": "Infiltraciones",
-            "sunday_schedule_day_name": "Infiltraciones",
-            "thursday_schedule_day_name": "Infiltraciones",
-            "tuesday_schedule_day_name": "Infiltraciones",
-            "wednesday_schedule_day_name": "Infiltraciones",
-            "winterdesignday_schedule_day_name": "Infiltraciones"
+            "customday1_schedule_day_name": "Infiltraciones Day",
+            "customday2_schedule_day_name": "Infiltraciones Day",
+            "friday_schedule_day_name": "Infiltraciones Day",
+            "holiday_schedule_day_name": "Infiltraciones Day",
+            "monday_schedule_day_name": "Infiltraciones Day",
+            "saturday_schedule_day_name": "Infiltraciones Day",
+            "summerdesignday_schedule_day_name": "Infiltraciones Day",
+            "sunday_schedule_day_name": "Infiltraciones Day",
+            "thursday_schedule_day_name": "Infiltraciones Day",
+            "tuesday_schedule_day_name": "Infiltraciones Day",
+            "wednesday_schedule_day_name": "Infiltraciones Day",
+            "winterdesignday_schedule_day_name": "Infiltraciones Day"
         },
         "Residential Equipment Schedule Week Rule - Jan1-Dec31": {
             "customday1_schedule_day_name": "Residential Equipment Schedule Default",
@@ -11835,6 +12501,132 @@
             "tuesday_schedule_day_name": "Residential Occupancy Schedule Default",
             "wednesday_schedule_day_name": "Residential Occupancy Schedule Default",
             "winterdesignday_schedule_day_name": "Residential Occupancy Schedule Default"
+        },
+        "Equipment Schedule Living Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Equipment Schedule Living Default",
+            "customday2_schedule_day_name": "Equipment Schedule Living Default",
+            "friday_schedule_day_name": "Equipment Schedule Living Default",
+            "holiday_schedule_day_name": "Equipment Schedule Living Default",
+            "monday_schedule_day_name": "Equipment Schedule Living Default",
+            "saturday_schedule_day_name": "Equipment Schedule Living Default",
+            "summerdesignday_schedule_day_name": "Equipment Schedule Living Default",
+            "sunday_schedule_day_name": "Equipment Schedule Living Default",
+            "thursday_schedule_day_name": "Equipment Schedule Living Default",
+            "tuesday_schedule_day_name": "Equipment Schedule Living Default",
+            "wednesday_schedule_day_name": "Equipment Schedule Living Default",
+            "winterdesignday_schedule_day_name": "Equipment Schedule Living Default"
+        },
+        "Equipment Schedule Bedrooms Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Equipment Schedule Bedrooms Default",
+            "customday2_schedule_day_name": "Equipment Schedule Bedrooms Default",
+            "friday_schedule_day_name": "Equipment Schedule Bedrooms Default",
+            "holiday_schedule_day_name": "Equipment Schedule Bedrooms Default",
+            "monday_schedule_day_name": "Equipment Schedule Bedrooms Default",
+            "saturday_schedule_day_name": "Equipment Schedule Bedrooms Default",
+            "summerdesignday_schedule_day_name": "Equipment Schedule Bedrooms Default",
+            "sunday_schedule_day_name": "Equipment Schedule Bedrooms Default",
+            "thursday_schedule_day_name": "Equipment Schedule Bedrooms Default",
+            "tuesday_schedule_day_name": "Equipment Schedule Bedrooms Default",
+            "wednesday_schedule_day_name": "Equipment Schedule Bedrooms Default",
+            "winterdesignday_schedule_day_name": "Equipment Schedule Bedrooms Default"
+        },
+        "Equipment Schedule CirculationWet Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Equipment Schedule CirculationWet Default",
+            "customday2_schedule_day_name": "Equipment Schedule CirculationWet Default",
+            "friday_schedule_day_name": "Equipment Schedule CirculationWet Default",
+            "holiday_schedule_day_name": "Equipment Schedule CirculationWet Default",
+            "monday_schedule_day_name": "Equipment Schedule CirculationWet Default",
+            "saturday_schedule_day_name": "Equipment Schedule CirculationWet Default",
+            "summerdesignday_schedule_day_name": "Equipment Schedule CirculationWet Default",
+            "sunday_schedule_day_name": "Equipment Schedule CirculationWet Default",
+            "thursday_schedule_day_name": "Equipment Schedule CirculationWet Default",
+            "tuesday_schedule_day_name": "Equipment Schedule CirculationWet Default",
+            "wednesday_schedule_day_name": "Equipment Schedule CirculationWet Default",
+            "winterdesignday_schedule_day_name": "Equipment Schedule CirculationWet Default"
+        },
+        "Lighting Schedule Living Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Lighting Schedule Living Default",
+            "customday2_schedule_day_name": "Lighting Schedule Living Default",
+            "friday_schedule_day_name": "Lighting Schedule Living Default",
+            "holiday_schedule_day_name": "Lighting Schedule Living Default",
+            "monday_schedule_day_name": "Lighting Schedule Living Default",
+            "saturday_schedule_day_name": "Lighting Schedule Living Default",
+            "summerdesignday_schedule_day_name": "Lighting Schedule Living Default",
+            "sunday_schedule_day_name": "Lighting Schedule Living Default",
+            "thursday_schedule_day_name": "Lighting Schedule Living Default",
+            "tuesday_schedule_day_name": "Lighting Schedule Living Default",
+            "wednesday_schedule_day_name": "Lighting Schedule Living Default",
+            "winterdesignday_schedule_day_name": "Lighting Schedule Living Default"
+        },
+        "Lighting Schedule Bedrooms Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Lighting Schedule Bedrooms Default",
+            "customday2_schedule_day_name": "Lighting Schedule Bedrooms Default",
+            "friday_schedule_day_name": "Lighting Schedule Bedrooms Default",
+            "holiday_schedule_day_name": "Lighting Schedule Bedrooms Default",
+            "monday_schedule_day_name": "Lighting Schedule Bedrooms Default",
+            "saturday_schedule_day_name": "Lighting Schedule Bedrooms Default",
+            "summerdesignday_schedule_day_name": "Lighting Schedule Bedrooms Default",
+            "sunday_schedule_day_name": "Lighting Schedule Bedrooms Default",
+            "thursday_schedule_day_name": "Lighting Schedule Bedrooms Default",
+            "tuesday_schedule_day_name": "Lighting Schedule Bedrooms Default",
+            "wednesday_schedule_day_name": "Lighting Schedule Bedrooms Default",
+            "winterdesignday_schedule_day_name": "Lighting Schedule Bedrooms Default"
+        },
+        "Lighting Schedule CirculationWet Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Lighting Schedule CirculationWet Default",
+            "customday2_schedule_day_name": "Lighting Schedule CirculationWet Default",
+            "friday_schedule_day_name": "Lighting Schedule CirculationWet Default",
+            "holiday_schedule_day_name": "Lighting Schedule CirculationWet Default",
+            "monday_schedule_day_name": "Lighting Schedule CirculationWet Default",
+            "saturday_schedule_day_name": "Lighting Schedule CirculationWet Default",
+            "summerdesignday_schedule_day_name": "Lighting Schedule CirculationWet Default",
+            "sunday_schedule_day_name": "Lighting Schedule CirculationWet Default",
+            "thursday_schedule_day_name": "Lighting Schedule CirculationWet Default",
+            "tuesday_schedule_day_name": "Lighting Schedule CirculationWet Default",
+            "wednesday_schedule_day_name": "Lighting Schedule CirculationWet Default",
+            "winterdesignday_schedule_day_name": "Lighting Schedule CirculationWet Default"
+        },
+        "Occupancy Schedule Living Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Occupancy Schedule Living Default",
+            "customday2_schedule_day_name": "Occupancy Schedule Living Default",
+            "friday_schedule_day_name": "Occupancy Schedule Living Default",
+            "holiday_schedule_day_name": "Occupancy Schedule Living Default",
+            "monday_schedule_day_name": "Occupancy Schedule Living Default",
+            "saturday_schedule_day_name": "Occupancy Schedule Living Default",
+            "summerdesignday_schedule_day_name": "Occupancy Schedule Living Default",
+            "sunday_schedule_day_name": "Occupancy Schedule Living Default",
+            "thursday_schedule_day_name": "Occupancy Schedule Living Default",
+            "tuesday_schedule_day_name": "Occupancy Schedule Living Default",
+            "wednesday_schedule_day_name": "Occupancy Schedule Living Default",
+            "winterdesignday_schedule_day_name": "Occupancy Schedule Living Default"
+        },
+        "Occupancy Schedule Bedrooms Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Occupancy Schedule Bedrooms Default",
+            "customday2_schedule_day_name": "Occupancy Schedule Bedrooms Default",
+            "friday_schedule_day_name": "Occupancy Schedule Bedrooms Default",
+            "holiday_schedule_day_name": "Occupancy Schedule Bedrooms Default",
+            "monday_schedule_day_name": "Occupancy Schedule Bedrooms Default",
+            "saturday_schedule_day_name": "Occupancy Schedule Bedrooms Default",
+            "summerdesignday_schedule_day_name": "Occupancy Schedule Bedrooms Default",
+            "sunday_schedule_day_name": "Occupancy Schedule Bedrooms Default",
+            "thursday_schedule_day_name": "Occupancy Schedule Bedrooms Default",
+            "tuesday_schedule_day_name": "Occupancy Schedule Bedrooms Default",
+            "wednesday_schedule_day_name": "Occupancy Schedule Bedrooms Default",
+            "winterdesignday_schedule_day_name": "Occupancy Schedule Bedrooms Default"
+        },
+        "Occupancy Schedule CirculationWet Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Occupancy Schedule CirculationWet Default",
+            "customday2_schedule_day_name": "Occupancy Schedule CirculationWet Default",
+            "friday_schedule_day_name": "Occupancy Schedule CirculationWet Default",
+            "holiday_schedule_day_name": "Occupancy Schedule CirculationWet Default",
+            "monday_schedule_day_name": "Occupancy Schedule CirculationWet Default",
+            "saturday_schedule_day_name": "Occupancy Schedule CirculationWet Default",
+            "summerdesignday_schedule_day_name": "Occupancy Schedule CirculationWet Default",
+            "sunday_schedule_day_name": "Occupancy Schedule CirculationWet Default",
+            "thursday_schedule_day_name": "Occupancy Schedule CirculationWet Default",
+            "tuesday_schedule_day_name": "Occupancy Schedule CirculationWet Default",
+            "wednesday_schedule_day_name": "Occupancy Schedule CirculationWet Default",
+            "winterdesignday_schedule_day_name": "Occupancy Schedule CirculationWet Default"
         },
         "Residential Ventilation Schedule Week Rule - Jan1-Dec31": {
             "customday1_schedule_day_name": "Residential Ventilation Schedule Default",
@@ -11891,6 +12683,20 @@
             "tuesday_schedule_day_name": "Schedule Day 9",
             "wednesday_schedule_day_name": "Schedule Day 9",
             "winterdesignday_schedule_day_name": "Schedule Day 9"
+        },
+        "VentilacionNatural Week Rule - WinterClosed": {
+            "customday1_schedule_day_name": "VentNat_Closed",
+            "customday2_schedule_day_name": "VentNat_Closed",
+            "friday_schedule_day_name": "VentNat_Closed",
+            "holiday_schedule_day_name": "VentNat_Closed",
+            "monday_schedule_day_name": "VentNat_Closed",
+            "saturday_schedule_day_name": "VentNat_Closed",
+            "summerdesignday_schedule_day_name": "VentNat_Closed",
+            "sunday_schedule_day_name": "VentNat_Closed",
+            "thursday_schedule_day_name": "VentNat_Closed",
+            "tuesday_schedule_day_name": "VentNat_Closed",
+            "wednesday_schedule_day_name": "VentNat_Closed",
+            "winterdesignday_schedule_day_name": "VentNat_Closed"
         },
         "VentilacionNatural Week Rule - Jun4-Sep30": {
             "customday1_schedule_day_name": "Schedule Day 9",
@@ -12191,6 +12997,114 @@
                 }
             ]
         },
+        "Equipment Schedule Living": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Equipment Schedule Living Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Equipment Schedule Bedrooms": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Equipment Schedule Bedrooms Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Equipment Schedule CirculationWet": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Equipment Schedule CirculationWet Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Lighting Schedule Living": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Lighting Schedule Living Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Lighting Schedule Bedrooms": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Lighting Schedule Bedrooms Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Lighting Schedule CirculationWet": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Lighting Schedule CirculationWet Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Occupancy Schedule Living": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Occupancy Schedule Living Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Occupancy Schedule Bedrooms": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Occupancy Schedule Bedrooms Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Occupancy Schedule CirculationWet": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Occupancy Schedule CirculationWet Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
         "Residential Ventilation Schedule": {
             "schedule_weeks": [
                 {
@@ -12230,11 +13144,18 @@
             "schedule_type_limits_name": "Dimensionless",
             "schedule_weeks": [
                 {
+                    "end_day": 31,
+                    "end_month": 3,
+                    "schedule_week_name": "VentilacionNatural Week Rule - WinterClosed",
+                    "start_day": 1,
+                    "start_month": 1
+                },
+                {
                     "end_day": 27,
                     "end_month": 5,
                     "schedule_week_name": "VentilacionNatural Week Rule - Jan1-May27",
                     "start_day": 1,
-                    "start_month": 1
+                    "start_month": 4
                 },
                 {
                     "end_day": 3,
@@ -12252,10 +13173,17 @@
                 },
                 {
                     "end_day": 31,
-                    "end_month": 12,
+                    "end_month": 10,
                     "schedule_week_name": "VentilacionNatural Week Rule - Oct1-Dec31",
                     "start_day": 1,
                     "start_month": 10
+                },
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "VentilacionNatural Week Rule - WinterClosed",
+                    "start_day": 1,
+                    "start_month": 11
                 }
             ]
         },
@@ -13631,6 +14559,63 @@
                     "space_name": "spc_P1_Dormitorio1"
                 }
             ]
+        },
+        "Gains_LivingSpaces": {
+            "spaces": [
+                {
+                    "space_name": "spc_PB_Cocina"
+                },
+                {
+                    "space_name": "spc_PB_Salon1"
+                },
+                {
+                    "space_name": "spc_PB_Salon2"
+                },
+                {
+                    "space_name": "spc_P1_DobleAltura"
+                }
+            ]
+        },
+        "Gains_BedroomSpaces": {
+            "spaces": [
+                {
+                    "space_name": "spc_P1_Dormitorio1"
+                },
+                {
+                    "space_name": "spc_P1_Dormitorio2"
+                },
+                {
+                    "space_name": "spc_P1_Dormitorio3"
+                }
+            ]
+        },
+        "Gains_CirculationWetSpaces": {
+            "spaces": [
+                {
+                    "space_name": "spc_PB_Aseo"
+                },
+                {
+                    "space_name": "spc_PB_Vestibulo"
+                },
+                {
+                    "space_name": "spc_PB_Escalera"
+                },
+                {
+                    "space_name": "spc_P1_Escalera"
+                },
+                {
+                    "space_name": "spc_P1_Pasillo"
+                },
+                {
+                    "space_name": "spc_P1_Aseo"
+                },
+                {
+                    "space_name": "spc_P1_Aseo2"
+                },
+                {
+                    "space_name": "spc_P1_Vestidor"
+                }
+            ]
         }
     },
     "SurfaceConvectionAlgorithm:Inside": {
@@ -13645,32 +14630,32 @@
     },
     "ThermostatSetpoint:DualSetpoint": {
         "Thermostat Setpoint Dual Setpoint 3": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
-            "heating_setpoint_temperature_schedule_name": "Winter"
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule PB_Aseo-Vestibulo",
+            "heating_setpoint_temperature_schedule_name": "Setpoint Schedule PB_Aseo-Vestibulo"
         },
         "Thermostat Setpoint Dual Setpoint 4": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
-            "heating_setpoint_temperature_schedule_name": "Winter"
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio1",
+            "heating_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio1"
         },
         "Thermostat Setpoint Dual Setpoint 5": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
-            "heating_setpoint_temperature_schedule_name": "Winter"
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio2",
+            "heating_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio2"
         },
         "Thermostat Setpoint Dual Setpoint 7": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
-            "heating_setpoint_temperature_schedule_name": "Winter"
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Aseo2-Vestidor",
+            "heating_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Aseo2-Vestidor"
         },
         "Thermostat Setpoint Dual Setpoint 12": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
-            "heating_setpoint_temperature_schedule_name": "Winter"
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule PB_Salon",
+            "heating_setpoint_temperature_schedule_name": "Setpoint Schedule PB_Salon"
         },
         "Thermostat Setpoint Dual Setpoint 16": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
-            "heating_setpoint_temperature_schedule_name": "Winter"
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Aseo-Pasillo",
+            "heating_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Aseo-Pasillo"
         },
         "Thermostat Setpoint Dual Setpoint 17": {
-            "cooling_setpoint_temperature_schedule_name": "Summer",
-            "heating_setpoint_temperature_schedule_name": "Winter"
+            "cooling_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio3",
+            "heating_setpoint_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio3"
         }
     },
     "Timestep": {
@@ -13996,7 +14981,7 @@
             "cooling_water_inlet_node_name": "Node 41",
             "cooling_water_outlet_node_name": "Node 42",
             "design_object": "Low Temp Radiant Const Flow_P1_Aseo2-Vestidor Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Radiant control temp 22 sizing then 30",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
@@ -14020,7 +15005,7 @@
             "cooling_water_inlet_node_name": "Node 6",
             "cooling_water_outlet_node_name": "Node 40",
             "design_object": "Low Temp Radiant Const Flow_P1_Aseo-Pasillo Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Scho",
+            "heating_high_control_temperature_schedule_name": "Radiant control temp 22 sizing then 30",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
@@ -14044,7 +15029,7 @@
             "cooling_water_inlet_node_name": "Node 43",
             "cooling_water_outlet_node_name": "Node 44",
             "design_object": "Low Temp Radiant Const Flow_P1_Dormitorio1 Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Radiant control temp 22 sizing then 30",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
@@ -14068,7 +15053,7 @@
             "cooling_water_inlet_node_name": "Node 45",
             "cooling_water_outlet_node_name": "Node 46",
             "design_object": "Low Temp Radiant Const Flow_P1_Dormitorio2 Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Radiant control temp 22 sizing then 30",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
@@ -14092,7 +15077,7 @@
             "cooling_water_inlet_node_name": "Node 47",
             "cooling_water_outlet_node_name": "Node 48",
             "design_object": "Low Temp Radiant Const Flow_P1_Dormitorio3 Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Radiant control temp 22 sizing then 30",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
@@ -14116,7 +15101,7 @@
             "cooling_water_inlet_node_name": "Node 49",
             "cooling_water_outlet_node_name": "Node 50",
             "design_object": "Low Temp Radiant Const Flow_PB_Aseo-Vestibulo Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Radiant control temp 22 sizing then 30",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
@@ -14140,7 +15125,7 @@
             "cooling_water_inlet_node_name": "Node 51",
             "cooling_water_outlet_node_name": "Node 52",
             "design_object": "Low Temp Radiant Const Flow_PB_Cocina Design",
-            "heating_high_control_temperature_schedule_name": "Const Vol Rad Htg Hi Air Temp Sch",
+            "heating_high_control_temperature_schedule_name": "Radiant control temp 22 sizing then 30",
             "heating_high_water_temperature_schedule_name": "Const Vol Rad Htg Hi Wtr Temp Sch",
             "heating_low_control_temperature_schedule_name": "Const Vol Rad Htg Low Air Temp Sch",
             "heating_low_water_temperature_schedule_name": "Const Vol Rad Htg Low Wtr Temp Sch",
@@ -14344,85 +15329,206 @@
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_P1_Aseo"
         },
         "DesignInfiltration 1": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_P1_Vestidor"
         },
         "DesignInfiltration 2": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_P1_Dormitorio1"
         },
         "DesignInfiltration 3": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_P1_Aseo2"
         },
         "DesignInfiltration 4": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_P1_Dormitorio2"
         },
         "DesignInfiltration 5": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_PB_Vestibulo"
         },
         "DesignInfiltration 6": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_PB_Cocina"
         },
         "DesignInfiltration 7": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_PB_Aseo"
         },
         "DesignInfiltration 8": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_PB_Escalera"
         },
         "DesignInfiltration 9": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_P1_Pasillo"
         },
         "DesignInfiltration 10": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_P1_Dormitorio3"
         },
         "DesignInfiltration 11": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_P1_Escalera"
         },
         "DesignInfiltration 12": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_PB_Salon1"
         },
         "DesignInfiltration 13": {
             "air_changes_per_hour": 0.1,
             "density_basis": "Outdoor",
             "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_PB_Salon2"
+        }
+    },
+    "ZoneVentilation:WindandStackOpenArea": {
+        "Zone Ventilation Wind and Stack Open Area": {
+            "delta_temperature": 4,
+            "discharge_coefficient_for_opening": "Autocalculate",
+            "effective_angle": 0,
+            "height_difference": 1.5,
+            "maximum_indoor_temperature": 50,
+            "maximum_outdoor_temperature": 30,
+            "maximum_wind_speed": 8,
+            "minimum_indoor_temperature_schedule_name": "Setpoint Schedule P1_Aseo-Pasillo",
+            "minimum_outdoor_temperature": -5,
+            "opening_area": 0.2,
+            "opening_area_fraction_schedule_name": "VentilacionNatural",
+            "opening_effectiveness": "Autocalculate",
+            "zone_or_space_name": "P1_Aseo-Pasillo"
+        },
+        "Zone Ventilation Wind and Stack Open Area 2": {
+            "delta_temperature": 4,
+            "discharge_coefficient_for_opening": "Autocalculate",
+            "effective_angle": 0,
+            "height_difference": 1.5,
+            "maximum_indoor_temperature": 50,
+            "maximum_outdoor_temperature": 30,
+            "maximum_wind_speed": 8,
+            "minimum_indoor_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio1",
+            "minimum_outdoor_temperature": -5,
+            "opening_area": 0.2,
+            "opening_area_fraction_schedule_name": "VentilacionNatural",
+            "opening_effectiveness": "Autocalculate",
+            "zone_or_space_name": "P1_Dormitorio1"
+        },
+        "Zone Ventilation Wind and Stack Open Area 3": {
+            "delta_temperature": 4,
+            "discharge_coefficient_for_opening": "Autocalculate",
+            "effective_angle": 0,
+            "height_difference": 1.5,
+            "maximum_indoor_temperature": 50,
+            "maximum_outdoor_temperature": 30,
+            "maximum_wind_speed": 8,
+            "minimum_indoor_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio3",
+            "minimum_outdoor_temperature": -5,
+            "opening_area": 0.2,
+            "opening_area_fraction_schedule_name": "VentilacionNatural",
+            "opening_effectiveness": "Autocalculate",
+            "zone_or_space_name": "P1_Dormitorio3"
+        },
+        "Zone Ventilation Wind and Stack Open Area 4": {
+            "delta_temperature": 4,
+            "discharge_coefficient_for_opening": "Autocalculate",
+            "effective_angle": 0,
+            "height_difference": 1.5,
+            "maximum_indoor_temperature": 50,
+            "maximum_outdoor_temperature": 30,
+            "maximum_wind_speed": 8,
+            "minimum_indoor_temperature_schedule_name": "Setpoint Schedule P1_Aseo2-Vestidor",
+            "minimum_outdoor_temperature": -5,
+            "opening_area": 0.2,
+            "opening_area_fraction_schedule_name": "VentilacionNatural",
+            "opening_effectiveness": "Autocalculate",
+            "zone_or_space_name": "P1_Aseo2-Vestidor"
+        },
+        "Zone Ventilation Wind and Stack Open Area 5": {
+            "delta_temperature": 4,
+            "discharge_coefficient_for_opening": "Autocalculate",
+            "effective_angle": 0,
+            "height_difference": 1.5,
+            "maximum_indoor_temperature": 50,
+            "maximum_outdoor_temperature": 30,
+            "maximum_wind_speed": 8,
+            "minimum_indoor_temperature_schedule_name": "Setpoint Schedule PB_Aseo-Vestibulo",
+            "minimum_outdoor_temperature": -5,
+            "opening_area": 0.2,
+            "opening_area_fraction_schedule_name": "VentilacionNatural",
+            "opening_effectiveness": "Autocalculate",
+            "zone_or_space_name": "PB_Aseo-Vestibulo"
+        },
+        "Zone Ventilation Wind and Stack Open Area 6": {
+            "delta_temperature": 4,
+            "discharge_coefficient_for_opening": "Autocalculate",
+            "effective_angle": 0,
+            "height_difference": 1.5,
+            "maximum_indoor_temperature": 50,
+            "maximum_outdoor_temperature": 30,
+            "maximum_wind_speed": 8,
+            "minimum_indoor_temperature_schedule_name": "Setpoint Schedule PB_Salon",
+            "minimum_outdoor_temperature": -5,
+            "opening_area": 0.2,
+            "opening_area_fraction_schedule_name": "VentilacionNatural",
+            "opening_effectiveness": "Autocalculate",
+            "zone_or_space_name": "PB_Cocina-Salon1-Salon2"
+        },
+        "Zone Ventilation Wind and Stack Open Area 8": {
+            "delta_temperature": 4,
+            "discharge_coefficient_for_opening": "Autocalculate",
+            "effective_angle": 0,
+            "height_difference": 1.5,
+            "maximum_indoor_temperature": 50,
+            "maximum_outdoor_temperature": 30,
+            "maximum_wind_speed": 8,
+            "minimum_indoor_temperature_schedule_name": "Setpoint Schedule P1_Dormitorio2",
+            "minimum_outdoor_temperature": -5,
+            "opening_area": 0.2,
+            "opening_area_fraction_schedule_name": "VentilacionNatural",
+            "opening_effectiveness": "Autocalculate",
+            "zone_or_space_name": "P1_Dormitorio2"
         }
     }
 }

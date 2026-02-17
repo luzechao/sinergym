@@ -12,7 +12,6 @@ building_file: digital_twin_heatcurve.epJSON
 weather_specification:
   weather_files:
   - ESP_Madrid.082210_IWEC.epw
-  - SWE_Stockholm.Arlanda.024600_IWEC.epw
 
   # weather_confs:
   # - cap_nom_heating: 1000
@@ -58,7 +57,6 @@ weather_specification:
 
   keys:
     - madrid
-    - stockholm
 
 # ---------------------------------------------------------------------------- #
 #                         BUILDING EXTRA CONFIGURATION                         #
