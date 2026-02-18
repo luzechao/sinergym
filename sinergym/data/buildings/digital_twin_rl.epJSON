@@ -10601,31 +10601,13 @@
                     "field": "Through: 12/31"
                 },
                 {
-                    "field": "For: WinterDesignDay"
+                    "field": "For: AllDays"
                 },
                 {
                     "field": "Until: 24:00"
                 },
                 {
-                    "field": 22
-                },
-                {
-                    "field": "For: SummerDesignDay"
-                },
-                {
-                    "field": "Until: 24:00"
-                },
-                {
-                    "field": 22
-                },
-                {
-                    "field": "For: AllOtherDays"
-                },
-                {
-                    "field": "Until: 24:00"
-                },
-                {
-                    "field": 30
+                    "field": 20
                 }
             ],
             "schedule_type_limits_name": "Temperature"
@@ -10642,7 +10624,7 @@
                     "field": "Until: 24:00"
                 },
                 {
-                    "field": 22
+                    "field": 20
                 }
             ],
             "schedule_type_limits_name": "Temperature"
@@ -10659,7 +10641,7 @@
                     "field": "Until: 24:00"
                 },
                 {
-                    "field": 22
+                    "field": 20
                 }
             ],
             "schedule_type_limits_name": "Temperature"
@@ -10676,7 +10658,7 @@
                     "field": "Until: 24:00"
                 },
                 {
-                    "field": 22
+                    "field": 20
                 }
             ],
             "schedule_type_limits_name": "Temperature"
@@ -10693,7 +10675,7 @@
                     "field": "Until: 24:00"
                 },
                 {
-                    "field": 22
+                    "field": 20
                 }
             ],
             "schedule_type_limits_name": "Temperature"
@@ -10710,7 +10692,7 @@
                     "field": "Until: 24:00"
                 },
                 {
-                    "field": 22
+                    "field": 20
                 }
             ],
             "schedule_type_limits_name": "Temperature"
@@ -10727,7 +10709,7 @@
                     "field": "Until: 24:00"
                 },
                 {
-                    "field": 22
+                    "field": 20
                 }
             ],
             "schedule_type_limits_name": "Temperature"
@@ -10744,7 +10726,7 @@
                     "field": "Until: 24:00"
                 },
                 {
-                    "field": 22
+                    "field": 20
                 }
             ],
             "schedule_type_limits_name": "Temperature"

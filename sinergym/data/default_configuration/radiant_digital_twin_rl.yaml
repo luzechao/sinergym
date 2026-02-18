@@ -348,7 +348,10 @@ actuators:
 #                   DYNAMIC CONTEXT CONFIGURABLE IN REAL-TIME                  #
 # ---------------------------------------------------------------------------- #
 context: 
-
+  Radiant control temp 22 sizing then 30:
+    variable_name: radiant_control_temp_22_sizing_then_30
+    element_type: Schedule:Compact
+    value_type: Schedule Value
   Setpoint Schedule PB_Salon:
     variable_name: heating_setpoint_f0_living-kitchen
     element_type: Schedule:Compact
@@ -379,6 +382,7 @@ context:
     value_type: Schedule Value
 
 initial_context:
+  - 30.0
   - 22.0
   - 22.0
   - 22.0
