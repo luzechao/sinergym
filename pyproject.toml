@@ -5,7 +5,7 @@
 [project]
 
 name = "sinergym"
-version = "3.11.0"
+version = "3.11.2"
 description = "Sinergym provides a Gymnasium-based interface to interact with building simulations. This allows control in simulation time through custom controllers, including reinforcement learning agents"
 
 authors = [
@@ -140,6 +140,7 @@ optional = true
 include-groups = ["notebooks"]
 
 [tool.poetry.group.doc.dependencies]
+# sphinx-multiversion is incompatible with Sphinx 9.x (Config.read() API change). Keep <9 until fixed.
 sphinx = ">=8.2.3,<9.0"
 sphinx-rtd-theme = ">=3.0.2"
 sphinxcontrib-spelling = ">=8.0.1"
