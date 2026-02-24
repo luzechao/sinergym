@@ -568,10 +568,16 @@ Optional[Tuple[float, float]]</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sinergym.envs.eplus_env.EplusEnv.update_context">
-<span class="sig-name descname"><span class="pre">update_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#sinergym.envs.eplus_env.EplusEnv.update_context" title="Link to this definition"></a></dt>
-<dd><p>Update real-time building context (actuators which are not controlled by the agent).
-:param context_values: List of values to be updated in the building model.
-:type context_values: Union[np.ndarray, List[float]]</p>
+<span class="sig-name descname"><span class="pre">update_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#sinergym.envs.eplus_env.EplusEnv.update_context" title="Link to this definition"></a></dt>
+<dd><p>Update real-time building context (actuators which are not controlled by the agent).</p>
+<p>This method supports two input formats:</p>
+<ul class="simple">
+<li><p>Full vector update (backwards-compatible): <code class="docutils literal notranslate"><span class="pre">List[float]</span></code> or <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> with the same
+length and order than <code class="docutils literal notranslate"><span class="pre">self.context_variables</span></code>.</p></li>
+<li><p>Partial update by name: <code class="docutils literal notranslate"><span class="pre">Dict[str,</span> <span class="pre">float]</span></code> where keys are context variable names. Values
+not provided are kept from the last applied context (<code class="docutils literal notranslate"><span class="pre">self.last_context</span></code>) or initialized
+to zeros.</p></li>
+</ul>
 </dd></dl>
 
 <dl class="py property">
@@ -644,13 +650,7 @@ Optional[Tuple[float, float]]</p></li>
             <dd><a href="../../../v3.2.0/pages/modules/sinergym.envs.eplus_env.EplusEnv.html">v3.2.0</a></dd>
             <dd><a href="../../../v3.1.0/pages/modules/sinergym.envs.eplus_env.EplusEnv.html">v3.1.0</a></dd>
             <dd><a href="../../../v2.5.0/pages/modules/sinergym.envs.eplus_env.EplusEnv.html">v2.5.0</a></dd>
-            <dd><a href="../../../v2.3.0/pages/modules/sinergym.envs.eplus_env.EplusEnv.html">v2.3.0</a></dd>
-            <dd><a href="../../../v2.2.0/pages/modules/sinergym.envs.eplus_env.EplusEnv.html">v2.2.0</a></dd>
-            <dd><a href="../../../v2.1.0/pages/modules/sinergym.envs.eplus_env.EplusEnv.html">v2.1.0</a></dd>
-            <dd><a href="../../../v2.0.0/pages/modules/sinergym.envs.eplus_env.EplusEnv.html">v2.0.0</a></dd>
             <dd><a href="../../../v1.7.0/pages/modules/sinergym.envs.eplus_env.EplusEnv.html">v1.7.0</a></dd>
-            <dd><a href="../../../v1.6.0/pages/modules/sinergym.envs.eplus_env.EplusEnv.html">v1.6.0</a></dd>
-            <dd><a href="../../../v1.4.0/pages/modules/sinergym.envs.eplus_env.EplusEnv.html">v1.4.0</a></dd>
         </dl>
         <dl>
             <dt>Branches</dt>

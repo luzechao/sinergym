@@ -81,7 +81,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#action-space">Action space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-extra-configuration">Building extra configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#seed">Seed</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#global-seed-environment-level">Global Seed (environment-level)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#global-seed-environment-level">Global seed (environment-level)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#episode-level-seed-reset-seed">Episode-level seed (reset seed)</a></li>
 </ul>
 </li>
@@ -348,12 +348,25 @@ The format of each element must be the following:</p>
 <section id="context">
 <h3>Context<a class="headerlink" href="#context" title="Link to this heading"></a></h3>
 <p>The argument called <code class="docutils literal notranslate"><span class="pre">context</span></code> is a dictionary where actuators are also specified in the same way as in <a class="reference internal" href="#actuators"><span class="std std-ref">Actuators</span></a>. However, the internal processing differs for the actuators defined here.</p>
-<p>These values will not be changed by the actions sent from the agent to the environment using <code class="docutils literal notranslate"><span class="pre">step(a)</span></code> method, as happens in Gymnasium’s interaction flow. Instead, these actuators can be modified at any time, outside the control flow, using the <code class="docutils literal notranslate"><span class="pre">update_context(List[float])</span></code> method whenever needed.</p>
+<p>These values will not be changed by the actions sent from the agent to the environment using <code class="docutils literal notranslate"><span class="pre">step(a)</span></code> method, as happens in Gymnasium’s interaction flow. Instead, these actuators can be modified at any time, outside the control flow, using the <code class="docutils literal notranslate"><span class="pre">update_context(...)</span></code> method whenever needed.</p>
 <p>This allows internal variables within the building to be configured in real time. For example, if we want to enforce either specific occupancy levels or lighting conditions or setpoints values that are not part of the building’s control optimization process.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contexts</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1"># &lt;custom_actuator_name&gt; : (&lt;actuator_type&gt;,&lt;actuator_value&gt;,&lt;actuator_original_name&gt;),</span>
   <span class="c1"># ...</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+<p>Context updates can be applied in two ways:</p>
+<ul class="simple">
+<li><p><strong>Full update (vector)</strong>: pass a <code class="docutils literal notranslate"><span class="pre">list</span></code> / <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> with the same length and order as <code class="docutils literal notranslate"><span class="pre">context</span></code>.</p></li>
+<li><p><strong>Partial update (dict)</strong>: pass a dictionary <code class="docutils literal notranslate"><span class="pre">{context_variable_name:</span> <span class="pre">value}</span></code> to update only a subset
+of context variables (the rest keep their last applied values).</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Full update: [Occupancy, Clothing, ...] in the same order as defined in `context`</span>
+<span class="n">env</span><span class="o">.</span><span class="n">update_context</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
+
+<span class="c1"># Partial update: update only Occupancy by name</span>
+<span class="n">env</span><span class="o">.</span><span class="n">update_context</span><span class="p">({</span><span class="s2">&quot;Occupancy&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
 </pre></div>
 </div>
 </section>
@@ -394,7 +407,7 @@ users are encouraged to explore and experiment with these spaces. For guidance, 
 <h3>Seed<a class="headerlink" href="#seed" title="Link to this heading"></a></h3>
 <p><em>Sinergym</em> supports two levels of seed configuration for reproducibility:</p>
 <section id="global-seed-environment-level">
-<h4>Global Seed (environment-level)<a class="headerlink" href="#global-seed-environment-level" title="Link to this heading"></a></h4>
+<h4>Global seed (environment-level)<a class="headerlink" href="#global-seed-environment-level" title="Link to this heading"></a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">seed</span></code> parameter in the environment constructor sets a <strong>global random seed</strong> for the entire environment lifecycle. This ensures complete reproducibility across all episodes, including:</p>
 <ul class="simple">
 <li><p>Weather file selection (when multiple weather files are provided)</p></li>
@@ -537,13 +550,7 @@ users are encouraged to explore and experiment with these spaces. For guidance, 
             <dd><a href="../../v3.2.0/pages/environments.html">v3.2.0</a></dd>
             <dd><a href="../../v3.1.0/pages/environments.html">v3.1.0</a></dd>
             <dd><a href="../../v2.5.0/pages/environments.html">v2.5.0</a></dd>
-            <dd><a href="../../v2.3.0/pages/environments.html">v2.3.0</a></dd>
-            <dd><a href="../../v2.2.0/pages/environments.html">v2.2.0</a></dd>
-            <dd><a href="../../v2.1.0/pages/environments.html">v2.1.0</a></dd>
-            <dd><a href="../../v2.0.0/pages/environments.html">v2.0.0</a></dd>
             <dd><a href="../../v1.7.0/pages/environments.html">v1.7.0</a></dd>
-            <dd><a href="../../v1.6.0/pages/environments.html">v1.6.0</a></dd>
-            <dd><a href="../../v1.4.0/pages/environments.html">v1.4.0</a></dd>
         </dl>
         <dl>
             <dt>Branches</dt>
