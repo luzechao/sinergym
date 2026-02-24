@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>sinergym.utils.common.ornstein_uhlenbeck_process &mdash; Sinergym  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/doc_theme.css?v=23b407c1" />
       <link rel="stylesheet" type="text/css" href="../../_static/github_style.css?v=0a3c596a" />
 
@@ -170,7 +170,7 @@
 <h1>sinergym.utils.common.ornstein_uhlenbeck_process<a class="headerlink" href="#sinergym-utils-common-ornstein-uhlenbeck-process" title="Link to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sinergym.utils.common.ornstein_uhlenbeck_process">
-<span class="sig-prename descclassname"><span class="pre">sinergym.utils.common.</span></span><span class="sig-name descname"><span class="pre">ornstein_uhlenbeck_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variability_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#sinergym.utils.common.ornstein_uhlenbeck_process" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sinergym.utils.common.</span></span><span class="sig-name descname"><span class="pre">ornstein_uhlenbeck_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variability_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_random</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Generator</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#sinergym.utils.common.ornstein_uhlenbeck_process" title="Link to this definition"></a></dt>
 <dd><p>Add noise to the data using the Ornstein-Uhlenbeck process.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -179,6 +179,8 @@
 <li><p><strong>variability_config</strong> (<em>dict</em>) – Noise parameters. Can be:
 - (sigma, mu, tau)
 - (sigma, mu, tau, var_range)</p></li>
+<li><p><strong>np_random</strong> (<em>Optional</em><em>[</em><em>np.random.Generator</em><em>]</em>) – Random number generator for reproducible randomness.
+If None, uses np.random (legacy mode). Defaults to None.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -203,7 +205,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, J. Jiménez, J. Gómez, M. Molina, A. Manjavacas, A. Campoy.</p>
+    <p>&#169; Copyright 2026, J. Jiménez, J. Gómez, M. Molina, A. Manjavacas, A. Campoy.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
@@ -226,24 +228,25 @@
     <div class="rst-other-versions">
         <dl>
             <dt>Tags</dt>
-            <dd><a href="../../../v1.4.0/index.html">v1.4.0</a></dd>
-            <dd><a href="../../../v1.6.0/index.html">v1.6.0</a></dd>
-            <dd><a href="../../../v1.7.0/index.html">v1.7.0</a></dd>
-            <dd><a href="../../../v2.0.0/index.html">v2.0.0</a></dd>
-            <dd><a href="../../../v2.1.0/index.html">v2.1.0</a></dd>
-            <dd><a href="../../../v2.2.0/index.html">v2.2.0</a></dd>
-            <dd><a href="../../../v2.3.0/index.html">v2.3.0</a></dd>
-            <dd><a href="../../../v2.5.0/index.html">v2.5.0</a></dd>
-            <dd><a href="../../../v3.1.0/index.html">v3.1.0</a></dd>
+            <dd><a href="../../../v3.11.0/pages/modules/sinergym.utils.common.ornstein_uhlenbeck_process.html">v3.11.0</a></dd>
             <dd><a href="../../../v3.10.0/pages/modules/sinergym.utils.common.ornstein_uhlenbeck_process.html">v3.10.0</a></dd>
-            <dd><a href="../../../v3.2.0/index.html">v3.2.0</a></dd>
-            <dd><a href="../../../v3.3.0/index.html">v3.3.0</a></dd>
-            <dd><a href="../../../v3.4.0/index.html">v3.4.0</a></dd>
-            <dd><a href="../../../v3.5.0/index.html">v3.5.0</a></dd>
-            <dd><a href="../../../v3.6.0/index.html">v3.6.0</a></dd>
-            <dd><a href="../../../v3.7.0/pages/modules/sinergym.utils.common.ornstein_uhlenbeck_process.html">v3.7.0</a></dd>
-            <dd><a href="../../../v3.8.0/pages/modules/sinergym.utils.common.ornstein_uhlenbeck_process.html">v3.8.0</a></dd>
             <dd><a href="../../../v3.9.0/pages/modules/sinergym.utils.common.ornstein_uhlenbeck_process.html">v3.9.0</a></dd>
+            <dd><a href="../../../v3.8.0/pages/modules/sinergym.utils.common.ornstein_uhlenbeck_process.html">v3.8.0</a></dd>
+            <dd><a href="../../../v3.7.0/pages/modules/sinergym.utils.common.ornstein_uhlenbeck_process.html">v3.7.0</a></dd>
+            <dd><a href="../../../v3.6.0/index.html">v3.6.0</a></dd>
+            <dd><a href="../../../v3.5.0/index.html">v3.5.0</a></dd>
+            <dd><a href="../../../v3.4.0/index.html">v3.4.0</a></dd>
+            <dd><a href="../../../v3.3.0/index.html">v3.3.0</a></dd>
+            <dd><a href="../../../v3.2.0/index.html">v3.2.0</a></dd>
+            <dd><a href="../../../v3.1.0/index.html">v3.1.0</a></dd>
+            <dd><a href="../../../v2.5.0/index.html">v2.5.0</a></dd>
+            <dd><a href="../../../v2.3.0/index.html">v2.3.0</a></dd>
+            <dd><a href="../../../v2.2.0/index.html">v2.2.0</a></dd>
+            <dd><a href="../../../v2.1.0/index.html">v2.1.0</a></dd>
+            <dd><a href="../../../v2.0.0/index.html">v2.0.0</a></dd>
+            <dd><a href="../../../v1.7.0/index.html">v1.7.0</a></dd>
+            <dd><a href="../../../v1.6.0/index.html">v1.6.0</a></dd>
+            <dd><a href="../../../v1.4.0/index.html">v1.4.0</a></dd>
         </dl>
         <dl>
             <dt>Branches</dt>

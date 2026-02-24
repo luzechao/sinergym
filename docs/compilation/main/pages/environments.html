@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Environments &mdash; Sinergym  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/doc_theme.css?v=23b407c1" />
       <link rel="stylesheet" type="text/css" href="../_static/github_style.css?v=0a3c596a" />
 
@@ -80,7 +80,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#initial-context">Initial context</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#action-space">Action space</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-extra-configuration">Building extra configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#seed">Seed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#seed">Seed</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#global-seed-environment-level">Global Seed (environment-level)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#episode-level-seed-reset-seed">Episode-level seed (reset seed)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#adding-new-weathers">Adding new weathers</a></li>
@@ -388,11 +392,56 @@ users are encouraged to explore and experiment with these spaces. For guidance, 
 </section>
 <section id="seed">
 <h3>Seed<a class="headerlink" href="#seed" title="Link to this heading"></a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">seed</span></code> parameter is used to set the random seed for the global environment. This ensures reproducibility in the simulation results, including weather noise and/or dynamic normalization. If not specified, the seed is randomly generated.</p>
+<p><em>Sinergym</em> supports two levels of seed configuration for reproducibility:</p>
+<section id="global-seed-environment-level">
+<h4>Global Seed (environment-level)<a class="headerlink" href="#global-seed-environment-level" title="Link to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">seed</span></code> parameter in the environment constructor sets a <strong>global random seed</strong> for the entire environment lifecycle. This ensures complete reproducibility across all episodes, including:</p>
+<ul class="simple">
+<li><p>Weather file selection (when multiple weather files are provided)</p></li>
+<li><p>Weather variability noise (Ornstein-Uhlenbeck process)</p></li>
+<li><p>Dynamic normalization statistics</p></li>
+<li><p>Any other random processes in the environment</p></li>
+</ul>
+<p>When a global seed is set, the same seed will produce identical results across different environment instances and executions.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gymnasium</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gym</span>
+
+<span class="c1"># Create environment with global seed</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;Eplus-5zone-hot-continuous-stochastic-v1&#39;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>
+
+<span class="c1"># All episodes will use the same random sequence</span>
+<span class="n">obs1</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="n">obs2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>  <span class="c1"># Different episode, but deterministic sequence</span>
+</pre></div>
+</div>
+</section>
+<section id="episode-level-seed-reset-seed">
+<h4>Episode-level seed (reset seed)<a class="headerlink" href="#episode-level-seed-reset-seed" title="Link to this heading"></a></h4>
+<p>When no global seed is specified (<code class="docutils literal notranslate"><span class="pre">seed=None</span></code>), you can control randomness <strong>per episode</strong> using the <code class="docutils literal notranslate"><span class="pre">seed</span></code> parameter in the <code class="docutils literal notranslate"><span class="pre">reset()</span></code> method. This allows for controlled variability between episodes while maintaining reproducibility within each episode.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gymnasium</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gym</span>
+
+<span class="c1"># Create environment without global seed</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;Eplus-5zone-hot-continuous-stochastic-v1&#39;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># Each episode can have its own seed</span>
+<span class="n">obs1</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>   <span class="c1"># Episode 1 with seed 0</span>
+<span class="n">obs2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>   <span class="c1"># Episode 2 with seed 0 (same as episode 1)</span>
+<span class="n">obs3</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># Episode 3 with seed 1 (different from episodes 1-2)</span>
+</pre></div>
+</div>
+<p><strong>Important Notes:</strong></p>
+<ul class="simple">
+<li><p>If a <strong>global seed</strong> is set, the <code class="docutils literal notranslate"><span class="pre">seed</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">reset()</span></code> is <strong>ignored</strong>. The global seed takes priority and controls all randomness throughout the environment’s lifecycle.</p></li>
+<li><p>If no seed is specified at all (neither global nor in reset), the environment will use random seeds, making results non-reproducible.</p></li>
+<li><p>Use <strong>global seed</strong> when you need complete reproducibility across all episodes (e.g., for debugging, paper experiments, or comparing algorithms).</p></li>
+<li><p>Use <strong>episode-level seed</strong> when you want controlled variability between episodes while maintaining reproducibility within each episode (e.g., for reinforcement learning training with diverse episodes).</p></li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you define this global seed, the seed feature for reset will be disabled.</p>
+<p>If you define a global seed, the seed parameter in <code class="docutils literal notranslate"><span class="pre">reset()</span></code> will be ignored. The global seed takes priority.</p>
 </div>
+</section>
 </section>
 </section>
 <section id="adding-new-weathers">
@@ -453,7 +502,7 @@ users are encouraged to explore and experiment with these spaces. For guidance, 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, J. Jiménez, J. Gómez, M. Molina, A. Manjavacas, A. Campoy.</p>
+    <p>&#169; Copyright 2026, J. Jiménez, J. Gómez, M. Molina, A. Manjavacas, A. Campoy.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
@@ -476,24 +525,25 @@ users are encouraged to explore and experiment with these spaces. For guidance, 
     <div class="rst-other-versions">
         <dl>
             <dt>Tags</dt>
-            <dd><a href="../../v1.4.0/pages/environments.html">v1.4.0</a></dd>
-            <dd><a href="../../v1.6.0/pages/environments.html">v1.6.0</a></dd>
-            <dd><a href="../../v1.7.0/pages/environments.html">v1.7.0</a></dd>
-            <dd><a href="../../v2.0.0/pages/environments.html">v2.0.0</a></dd>
-            <dd><a href="../../v2.1.0/pages/environments.html">v2.1.0</a></dd>
-            <dd><a href="../../v2.2.0/pages/environments.html">v2.2.0</a></dd>
-            <dd><a href="../../v2.3.0/pages/environments.html">v2.3.0</a></dd>
-            <dd><a href="../../v2.5.0/pages/environments.html">v2.5.0</a></dd>
-            <dd><a href="../../v3.1.0/pages/environments.html">v3.1.0</a></dd>
+            <dd><a href="../../v3.11.0/pages/environments.html">v3.11.0</a></dd>
             <dd><a href="../../v3.10.0/pages/environments.html">v3.10.0</a></dd>
-            <dd><a href="../../v3.2.0/pages/environments.html">v3.2.0</a></dd>
-            <dd><a href="../../v3.3.0/pages/environments.html">v3.3.0</a></dd>
-            <dd><a href="../../v3.4.0/pages/environments.html">v3.4.0</a></dd>
-            <dd><a href="../../v3.5.0/pages/environments.html">v3.5.0</a></dd>
-            <dd><a href="../../v3.6.0/pages/environments.html">v3.6.0</a></dd>
-            <dd><a href="../../v3.7.0/pages/environments.html">v3.7.0</a></dd>
-            <dd><a href="../../v3.8.0/pages/environments.html">v3.8.0</a></dd>
             <dd><a href="../../v3.9.0/pages/environments.html">v3.9.0</a></dd>
+            <dd><a href="../../v3.8.0/pages/environments.html">v3.8.0</a></dd>
+            <dd><a href="../../v3.7.0/pages/environments.html">v3.7.0</a></dd>
+            <dd><a href="../../v3.6.0/pages/environments.html">v3.6.0</a></dd>
+            <dd><a href="../../v3.5.0/pages/environments.html">v3.5.0</a></dd>
+            <dd><a href="../../v3.4.0/pages/environments.html">v3.4.0</a></dd>
+            <dd><a href="../../v3.3.0/pages/environments.html">v3.3.0</a></dd>
+            <dd><a href="../../v3.2.0/pages/environments.html">v3.2.0</a></dd>
+            <dd><a href="../../v3.1.0/pages/environments.html">v3.1.0</a></dd>
+            <dd><a href="../../v2.5.0/pages/environments.html">v2.5.0</a></dd>
+            <dd><a href="../../v2.3.0/pages/environments.html">v2.3.0</a></dd>
+            <dd><a href="../../v2.2.0/pages/environments.html">v2.2.0</a></dd>
+            <dd><a href="../../v2.1.0/pages/environments.html">v2.1.0</a></dd>
+            <dd><a href="../../v2.0.0/pages/environments.html">v2.0.0</a></dd>
+            <dd><a href="../../v1.7.0/pages/environments.html">v1.7.0</a></dd>
+            <dd><a href="../../v1.6.0/pages/environments.html">v1.6.0</a></dd>
+            <dd><a href="../../v1.4.0/pages/environments.html">v1.4.0</a></dd>
         </dl>
         <dl>
             <dt>Branches</dt>
