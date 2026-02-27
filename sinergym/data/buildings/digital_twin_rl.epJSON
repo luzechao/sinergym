@@ -12210,7 +12210,7 @@
             "data": [
                 {
                     "time": "24:00",
-                    "value_until_time": 60
+                    "value_until_time": 45
                 }
             ],
             "interpolate_to_timestep": "No",
