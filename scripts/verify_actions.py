@@ -191,33 +191,42 @@ def compare_actions_with_observations(
 
 def main():
     """Función principal del script."""
-    if len(sys.argv) < 3 or len(sys.argv) > 4:
-        print(
-            "Uso: python verificar_acciones.py <actions_csv> <observations_csv> [tolerance]"
-        )
+    if len(sys.argv) < 2 or len(sys.argv) > 3:
+        print("Uso: python verify_actions.py <monitor_dir> [tolerance]")
         print()
         print("Compara las acciones con las observaciones:")
         print("  - Acciones fila i -> Observaciones fila i+1")
         print("  - Para flow_rates: acción 0.0 -> obs 0.0, acción 1.0 -> obs > 0")
         print("  - Para water_temperature: comparación con tolerancia (default: 1e-6)")
+        print()
+        print("El script espera encontrar dentro de <monitor_dir>:")
+        print("  - simulated_actions.csv")
+        print("  - observations.csv")
         sys.exit(1)
 
-    actions_path = sys.argv[1]
-    observations_path = sys.argv[2]
-    tolerance = float(sys.argv[3]) if len(sys.argv) == 4 else 1e-6
+    monitor_dir = Path(sys.argv[1])
+    tolerance = float(sys.argv[2]) if len(sys.argv) == 3 else 1e-6
 
-    # Verificar que los archivos existen
-    if not Path(actions_path).exists():
+    actions_path = monitor_dir / "simulated_actions.csv"
+    observations_path = monitor_dir / "observations.csv"
+
+    # Verificar que la carpeta y los archivos existen
+    if not monitor_dir.exists() or not monitor_dir.is_dir():
+        print(f"ERROR: La carpeta monitor '{monitor_dir}' no existe o no es válida.")
+        sys.exit(1)
+
+    if not actions_path.exists():
         print(f"ERROR: El archivo '{actions_path}' no existe.")
         sys.exit(1)
 
-    if not Path(observations_path).exists():
+    if not observations_path.exists():
         print(f"ERROR: El archivo '{observations_path}' no existe.")
         sys.exit(1)
 
     print("=" * 80)
     print("VERIFICACIÓN DE ACCIONES vs OBSERVACIONES")
     print("=" * 80)
+    print(f"Monitor dir: {monitor_dir}")
     print(f"Acciones: {actions_path}")
     print(f"Observaciones: {observations_path}")
     print(f"Tolerancia: {tolerance}")
@@ -226,7 +235,7 @@ def main():
 
     # Realizar la comparación
     errors = compare_actions_with_observations(
-        actions_path, observations_path, tolerance
+        str(actions_path), str(observations_path), tolerance
     )
 
     # Mostrar resultados
