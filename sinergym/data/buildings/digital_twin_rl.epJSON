@@ -7585,6 +7585,53 @@
             "zone_or_zonelist_or_space_or_spacelist_name": "Gains_CirculationWetSpaces"
         }
     },
+    "OtherEquipment": {
+        "Living Area Moisture Gain": {
+            "design_level": 70,
+            "design_level_calculation_method": "EquipmentLevel",
+            "end_use_subcategory": "CookingAndAmbient",
+            "fraction_latent": 0.92,
+            "fraction_radiant": 0.05,
+            "schedule_name": "Living Area Moisture Schedule",
+            "zone_or_zonelist_or_space_or_spacelist_name": "Gains_LivingSpaces"
+        },
+        "Bathroom Ambient Moisture Gain PB Aseo": {
+            "design_level": 14,
+            "design_level_calculation_method": "EquipmentLevel",
+            "end_use_subcategory": "BathroomAmbient",
+            "fraction_latent": 0.95,
+            "fraction_radiant": 0.05,
+            "schedule_name": "Bathroom Ambient Moisture Schedule PB",
+            "zone_or_zonelist_or_space_or_spacelist_name": "spc_PB_Aseo"
+        },
+        "Bathroom Ambient Moisture Gain P1 Aseo": {
+            "design_level": 14,
+            "design_level_calculation_method": "EquipmentLevel",
+            "end_use_subcategory": "BathroomAmbient",
+            "fraction_latent": 0.95,
+            "fraction_radiant": 0.05,
+            "schedule_name": "Bathroom Ambient Moisture Schedule P1 Main",
+            "zone_or_zonelist_or_space_or_spacelist_name": "spc_P1_Aseo"
+        },
+        "Bathroom Ambient Moisture Gain P1 Aseo2": {
+            "design_level": 10,
+            "design_level_calculation_method": "EquipmentLevel",
+            "end_use_subcategory": "BathroomAmbient",
+            "fraction_latent": 0.95,
+            "fraction_radiant": 0.05,
+            "schedule_name": "Bathroom Ambient Moisture Schedule P1 Aseo2",
+            "zone_or_zonelist_or_space_or_spacelist_name": "spc_P1_Aseo2"
+        },
+        "Shower Latent Gain P1 Aseo2": {
+            "design_level": 260,
+            "design_level_calculation_method": "EquipmentLevel",
+            "end_use_subcategory": "Shower",
+            "fraction_latent": 0.95,
+            "fraction_radiant": 0.05,
+            "schedule_name": "Shower Use Schedule",
+            "zone_or_zonelist_or_space_or_spacelist_name": "spc_P1_Aseo2"
+        }
+    },
     "Material": {
         "1_2_pie_LP_metrico_o_cat (150mm)": {
             "conductivity": 0.583,
@@ -11580,6 +11627,186 @@
             "interpolate_to_timestep": "No",
             "schedule_type_limits_name": "Fractional"
         },
+        "Shower Use Schedule Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.0 },
+                { "time": "02:00", "value_until_time": 0.0 },
+                { "time": "03:00", "value_until_time": 0.0 },
+                { "time": "04:00", "value_until_time": 0.0 },
+                { "time": "05:00", "value_until_time": 0.0 },
+                { "time": "06:00", "value_until_time": 0.0 },
+                { "time": "07:00", "value_until_time": 0.0 },
+                { "time": "08:00", "value_until_time": 1.0 },
+                { "time": "09:00", "value_until_time": 0.0 },
+                { "time": "10:00", "value_until_time": 0.0 },
+                { "time": "11:00", "value_until_time": 0.0 },
+                { "time": "12:00", "value_until_time": 0.0 },
+                { "time": "13:00", "value_until_time": 0.0 },
+                { "time": "14:00", "value_until_time": 0.0 },
+                { "time": "15:00", "value_until_time": 0.0 },
+                { "time": "16:00", "value_until_time": 0.0 },
+                { "time": "17:00", "value_until_time": 0.0 },
+                { "time": "18:00", "value_until_time": 0.0 },
+                { "time": "19:00", "value_until_time": 0.0 },
+                { "time": "20:00", "value_until_time": 0.0 },
+                { "time": "21:00", "value_until_time": 1.0 },
+                { "time": "22:00", "value_until_time": 0.0 },
+                { "time": "23:00", "value_until_time": 0.0 },
+                { "time": "24:00", "value_until_time": 0.0 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Bathroom Ambient Moisture Schedule PB Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.25 },
+                { "time": "02:00", "value_until_time": 0.25 },
+                { "time": "03:00", "value_until_time": 0.25 },
+                { "time": "04:00", "value_until_time": 0.25 },
+                { "time": "05:00", "value_until_time": 0.27 },
+                { "time": "06:00", "value_until_time": 0.29 },
+                { "time": "07:00", "value_until_time": 0.31 },
+                { "time": "08:00", "value_until_time": 0.31 },
+                { "time": "09:00", "value_until_time": 0.29 },
+                { "time": "10:00", "value_until_time": 0.29 },
+                { "time": "11:00", "value_until_time": 0.29 },
+                { "time": "12:00", "value_until_time": 0.29 },
+                { "time": "13:00", "value_until_time": 0.29 },
+                { "time": "14:00", "value_until_time": 0.29 },
+                { "time": "15:00", "value_until_time": 0.29 },
+                { "time": "16:00", "value_until_time": 0.29 },
+                { "time": "17:00", "value_until_time": 0.29 },
+                { "time": "18:00", "value_until_time": 0.31 },
+                { "time": "19:00", "value_until_time": 0.31 },
+                { "time": "20:00", "value_until_time": 0.31 },
+                { "time": "21:00", "value_until_time": 0.31 },
+                { "time": "22:00", "value_until_time": 0.29 },
+                { "time": "23:00", "value_until_time": 0.25 },
+                { "time": "24:00", "value_until_time": 0.25 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Bathroom Ambient Moisture Schedule P1 Main Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.45 },
+                { "time": "02:00", "value_until_time": 0.45 },
+                { "time": "03:00", "value_until_time": 0.45 },
+                { "time": "04:00", "value_until_time": 0.45 },
+                { "time": "05:00", "value_until_time": 0.48 },
+                { "time": "06:00", "value_until_time": 0.5 },
+                { "time": "07:00", "value_until_time": 0.52 },
+                { "time": "08:00", "value_until_time": 0.52 },
+                { "time": "09:00", "value_until_time": 0.5 },
+                { "time": "10:00", "value_until_time": 0.5 },
+                { "time": "11:00", "value_until_time": 0.5 },
+                { "time": "12:00", "value_until_time": 0.5 },
+                { "time": "13:00", "value_until_time": 0.5 },
+                { "time": "14:00", "value_until_time": 0.5 },
+                { "time": "15:00", "value_until_time": 0.5 },
+                { "time": "16:00", "value_until_time": 0.5 },
+                { "time": "17:00", "value_until_time": 0.5 },
+                { "time": "18:00", "value_until_time": 0.52 },
+                { "time": "19:00", "value_until_time": 0.52 },
+                { "time": "20:00", "value_until_time": 0.52 },
+                { "time": "21:00", "value_until_time": 0.52 },
+                { "time": "22:00", "value_until_time": 0.5 },
+                { "time": "23:00", "value_until_time": 0.45 },
+                { "time": "24:00", "value_until_time": 0.45 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Bathroom Ambient Moisture Schedule P1 Aseo2 Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.2 },
+                { "time": "02:00", "value_until_time": 0.2 },
+                { "time": "03:00", "value_until_time": 0.2 },
+                { "time": "04:00", "value_until_time": 0.2 },
+                { "time": "04:00", "value_until_time": 0.22 },
+                { "time": "06:00", "value_until_time": 0.24 },
+                { "time": "07:00", "value_until_time": 0.26 },
+                { "time": "08:00", "value_until_time": 0.26 },
+                { "time": "09:00", "value_until_time": 0.24 },
+                { "time": "10:00", "value_until_time": 0.24 },
+                { "time": "11:00", "value_until_time": 0.24 },
+                { "time": "12:00", "value_until_time": 0.24 },
+                { "time": "13:00", "value_until_time": 0.24 },
+                { "time": "14:00", "value_until_time": 0.24 },
+                { "time": "14:00", "value_until_time": 0.24 },
+                { "time": "16:00", "value_until_time": 0.24 },
+                { "time": "17:00", "value_until_time": 0.24 },
+                { "time": "18:00", "value_until_time": 0.26 },
+                { "time": "19:00", "value_until_time": 0.26 },
+                { "time": "20:00", "value_until_time": 0.26 },
+                { "time": "21:00", "value_until_time": 0.26 },
+                { "time": "22:00", "value_until_time": 0.24 },
+                { "time": "23:00", "value_until_time": 0.2 },
+                { "time": "24:00", "value_until_time": 0.2 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Bedroom Ambient Moisture Schedule Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.68 },
+                { "time": "02:00", "value_until_time": 0.68 },
+                { "time": "03:00", "value_until_time": 0.68 },
+                { "time": "04:00", "value_until_time": 0.68 },
+                { "time": "05:00", "value_until_time": 0.72 },
+                { "time": "06:00", "value_until_time": 0.75 },
+                { "time": "07:00", "value_until_time": 0.78 },
+                { "time": "08:00", "value_until_time": 0.78 },
+                { "time": "09:00", "value_until_time": 0.75 },
+                { "time": "10:00", "value_until_time": 0.75 },
+                { "time": "11:00", "value_until_time": 0.75 },
+                { "time": "12:00", "value_until_time": 0.75 },
+                { "time": "13:00", "value_until_time": 0.75 },
+                { "time": "14:00", "value_until_time": 0.75 },
+                { "time": "15:00", "value_until_time": 0.75 },
+                { "time": "16:00", "value_until_time": 0.75 },
+                { "time": "17:00", "value_until_time": 0.75 },
+                { "time": "18:00", "value_until_time": 0.78 },
+                { "time": "19:00", "value_until_time": 0.8 },
+                { "time": "20:00", "value_until_time": 0.8 },
+                { "time": "21:00", "value_until_time": 0.8 },
+                { "time": "22:00", "value_until_time": 0.78 },
+                { "time": "23:00", "value_until_time": 0.7 },
+                { "time": "24:00", "value_until_time": 0.68 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
+        "Living Area Moisture Schedule Default": {
+            "data": [
+                { "time": "01:00", "value_until_time": 0.48 },
+                { "time": "02:00", "value_until_time": 0.48 },
+                { "time": "03:00", "value_until_time": 0.48 },
+                { "time": "04:00", "value_until_time": 0.48 },
+                { "time": "05:00", "value_until_time": 0.5 },
+                { "time": "06:00", "value_until_time": 0.52 },
+                { "time": "07:00", "value_until_time": 0.52 },
+                { "time": "08:00", "value_until_time": 0.52 },
+                { "time": "09:00", "value_until_time": 0.5 },
+                { "time": "10:00", "value_until_time": 0.5 },
+                { "time": "11:00", "value_until_time": 0.55 },
+                { "time": "12:00", "value_until_time": 0.65 },
+                { "time": "13:00", "value_until_time": 0.65 },
+                { "time": "14:00", "value_until_time": 0.58 },
+                { "time": "15:00", "value_until_time": 0.52 },
+                { "time": "16:00", "value_until_time": 0.52 },
+                { "time": "17:00", "value_until_time": 0.55 },
+                { "time": "18:00", "value_until_time": 0.6 },
+                { "time": "19:00", "value_until_time": 0.68 },
+                { "time": "20:00", "value_until_time": 0.68 },
+                { "time": "21:00", "value_until_time": 0.62 },
+                { "time": "22:00", "value_until_time": 0.55 },
+                { "time": "23:00", "value_until_time": 0.5 },
+                { "time": "24:00", "value_until_time": 0.48 }
+            ],
+            "interpolate_to_timestep": "No",
+            "schedule_type_limits_name": "Fractional"
+        },
         "Residential Ventilation Schedule Default": {
             "data": [
                 {
@@ -12610,6 +12837,90 @@
             "wednesday_schedule_day_name": "Occupancy Schedule CirculationWet Default",
             "winterdesignday_schedule_day_name": "Occupancy Schedule CirculationWet Default"
         },
+        "Shower Use Schedule Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Shower Use Schedule Default",
+            "customday2_schedule_day_name": "Shower Use Schedule Default",
+            "friday_schedule_day_name": "Shower Use Schedule Default",
+            "holiday_schedule_day_name": "Shower Use Schedule Default",
+            "monday_schedule_day_name": "Shower Use Schedule Default",
+            "saturday_schedule_day_name": "Shower Use Schedule Default",
+            "summerdesignday_schedule_day_name": "Shower Use Schedule Default",
+            "sunday_schedule_day_name": "Shower Use Schedule Default",
+            "thursday_schedule_day_name": "Shower Use Schedule Default",
+            "tuesday_schedule_day_name": "Shower Use Schedule Default",
+            "wednesday_schedule_day_name": "Shower Use Schedule Default",
+            "winterdesignday_schedule_day_name": "Shower Use Schedule Default"
+        },
+        "Living Area Moisture Schedule Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Living Area Moisture Schedule Default",
+            "customday2_schedule_day_name": "Living Area Moisture Schedule Default",
+            "friday_schedule_day_name": "Living Area Moisture Schedule Default",
+            "holiday_schedule_day_name": "Living Area Moisture Schedule Default",
+            "monday_schedule_day_name": "Living Area Moisture Schedule Default",
+            "saturday_schedule_day_name": "Living Area Moisture Schedule Default",
+            "summerdesignday_schedule_day_name": "Living Area Moisture Schedule Default",
+            "sunday_schedule_day_name": "Living Area Moisture Schedule Default",
+            "thursday_schedule_day_name": "Living Area Moisture Schedule Default",
+            "tuesday_schedule_day_name": "Living Area Moisture Schedule Default",
+            "wednesday_schedule_day_name": "Living Area Moisture Schedule Default",
+            "winterdesignday_schedule_day_name": "Living Area Moisture Schedule Default"
+        },
+        "Bathroom Ambient Moisture Schedule PB Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default",
+            "customday2_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default",
+            "friday_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default",
+            "holiday_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default",
+            "monday_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default",
+            "saturday_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default",
+            "summerdesignday_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default",
+            "sunday_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default",
+            "thursday_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default",
+            "tuesday_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default",
+            "wednesday_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default",
+            "winterdesignday_schedule_day_name": "Bathroom Ambient Moisture Schedule PB Default"
+        },
+        "Bathroom Ambient Moisture Schedule P1 Main Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default",
+            "customday2_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default",
+            "friday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default",
+            "holiday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default",
+            "monday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default",
+            "saturday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default",
+            "summerdesignday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default",
+            "sunday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default",
+            "thursday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default",
+            "tuesday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default",
+            "wednesday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default",
+            "winterdesignday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Main Default"
+        },
+        "Bathroom Ambient Moisture Schedule P1 Aseo2 Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default",
+            "customday2_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default",
+            "friday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default",
+            "holiday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default",
+            "monday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default",
+            "saturday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default",
+            "summerdesignday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default",
+            "sunday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default",
+            "thursday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default",
+            "tuesday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default",
+            "wednesday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default",
+            "winterdesignday_schedule_day_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Default"
+        },
+        "Bedroom Ambient Moisture Schedule Week Rule - Jan1-Dec31": {
+            "customday1_schedule_day_name": "Bedroom Ambient Moisture Schedule Default",
+            "customday2_schedule_day_name": "Bedroom Ambient Moisture Schedule Default",
+            "friday_schedule_day_name": "Bedroom Ambient Moisture Schedule Default",
+            "holiday_schedule_day_name": "Bedroom Ambient Moisture Schedule Default",
+            "monday_schedule_day_name": "Bedroom Ambient Moisture Schedule Default",
+            "saturday_schedule_day_name": "Bedroom Ambient Moisture Schedule Default",
+            "summerdesignday_schedule_day_name": "Bedroom Ambient Moisture Schedule Default",
+            "sunday_schedule_day_name": "Bedroom Ambient Moisture Schedule Default",
+            "thursday_schedule_day_name": "Bedroom Ambient Moisture Schedule Default",
+            "tuesday_schedule_day_name": "Bedroom Ambient Moisture Schedule Default",
+            "wednesday_schedule_day_name": "Bedroom Ambient Moisture Schedule Default",
+            "winterdesignday_schedule_day_name": "Bedroom Ambient Moisture Schedule Default"
+        },
         "Residential Ventilation Schedule Week Rule - Jan1-Dec31": {
             "customday1_schedule_day_name": "Residential Ventilation Schedule Default",
             "customday2_schedule_day_name": "Residential Ventilation Schedule Default",
@@ -13082,6 +13393,78 @@
                     "end_day": 31,
                     "end_month": 12,
                     "schedule_week_name": "Occupancy Schedule CirculationWet Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Shower Use Schedule": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Shower Use Schedule Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Living Area Moisture Schedule": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Living Area Moisture Schedule Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Bathroom Ambient Moisture Schedule PB": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Bathroom Ambient Moisture Schedule PB Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Bathroom Ambient Moisture Schedule P1 Main": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Bathroom Ambient Moisture Schedule P1 Main Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Bathroom Ambient Moisture Schedule P1 Aseo2": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Bathroom Ambient Moisture Schedule P1 Aseo2 Week Rule - Jan1-Dec31",
+                    "start_day": 1,
+                    "start_month": 1
+                }
+            ]
+        },
+        "Bedroom Ambient Moisture Schedule": {
+            "schedule_type_limits_name": "Fractional",
+            "schedule_weeks": [
+                {
+                    "end_day": 31,
+                    "end_month": 12,
+                    "schedule_week_name": "Bedroom Ambient Moisture Schedule Week Rule - Jan1-Dec31",
                     "start_day": 1,
                     "start_month": 1
                 }
@@ -15404,6 +15787,78 @@
             "design_flow_rate_calculation_method": "AirChanges/Hour",
             "schedule_name": "Infiltraciones",
             "zone_or_zonelist_or_space_or_spacelist_name": "spc_PB_Salon2"
+        }
+    },
+    "ZoneMixing": {
+        "Mixing Living to Vestibulo": {
+            "air_changes_per_hour": 0.2,
+            "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Always On Continuous",
+            "source_zone_or_space_name": "PB_Cocina-Salon1-Salon2",
+            "zone_or_space_name": "PB_Aseo-Vestibulo"
+        },
+        "Mixing Vestibulo to Living": {
+            "air_changes_per_hour": 0.2,
+            "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Always On Continuous",
+            "source_zone_or_space_name": "PB_Aseo-Vestibulo",
+            "zone_or_space_name": "PB_Cocina-Salon1-Salon2"
+        },
+        "Mixing Pasillo to Dormitorio1": {
+            "air_changes_per_hour": 0.2,
+            "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Always On Continuous",
+            "source_zone_or_space_name": "P1_Aseo-Pasillo",
+            "zone_or_space_name": "P1_Dormitorio1"
+        },
+        "Mixing Pasillo to Dormitorio2": {
+            "air_changes_per_hour": 0.2,
+            "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Always On Continuous",
+            "source_zone_or_space_name": "P1_Aseo-Pasillo",
+            "zone_or_space_name": "P1_Dormitorio2"
+        },
+        "Mixing Pasillo to Dormitorio3": {
+            "air_changes_per_hour": 0.2,
+            "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Always On Continuous",
+            "source_zone_or_space_name": "P1_Aseo-Pasillo",
+            "zone_or_space_name": "P1_Dormitorio3"
+        },
+        "Mixing Dormitorio1 to Pasillo": {
+            "air_changes_per_hour": 0.2,
+            "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Always On Continuous",
+            "source_zone_or_space_name": "P1_Dormitorio1",
+            "zone_or_space_name": "P1_Aseo-Pasillo"
+        },
+        "Mixing Dormitorio2 to Pasillo": {
+            "air_changes_per_hour": 0.2,
+            "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Always On Continuous",
+            "source_zone_or_space_name": "P1_Dormitorio2",
+            "zone_or_space_name": "P1_Aseo-Pasillo"
+        },
+        "Mixing Dormitorio3 to Pasillo": {
+            "air_changes_per_hour": 0.2,
+            "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Always On Continuous",
+            "source_zone_or_space_name": "P1_Dormitorio3",
+            "zone_or_space_name": "P1_Aseo-Pasillo"
+        },
+        "Mixing Pasillo to Aseo2-Vestidor": {
+            "air_changes_per_hour": 0.25,
+            "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Always On Continuous",
+            "source_zone_or_space_name": "P1_Aseo-Pasillo",
+            "zone_or_space_name": "P1_Aseo2-Vestidor"
+        },
+        "Mixing Aseo2-Vestidor to Pasillo": {
+            "air_changes_per_hour": 0.25,
+            "design_flow_rate_calculation_method": "AirChanges/Hour",
+            "schedule_name": "Always On Continuous",
+            "source_zone_or_space_name": "P1_Aseo2-Vestidor",
+            "zone_or_space_name": "P1_Aseo-Pasillo"
         }
     },
     "ZoneVentilation:WindandStackOpenArea": {
