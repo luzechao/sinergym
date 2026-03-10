@@ -102,11 +102,11 @@ weather_variability:
     - 0.0
     - 24.0
     - [0.0, 1000.0]
-  Diffuse Horizontal Radiation:
-    - [0.0, 30.0]
-    - 0.0
-    - 24.0
-    - [0.0, 400.0]
+  # Diffuse Horizontal Radiation:
+  #   - [0.0, 30.0]
+  #   - 0.0
+  #   - 24.0
+  #   - [0.0, 400.0]
 
 # ---------------------------------------------------------------------------- #
 #                          EPISODES FOLDER GENERATION                          #
@@ -140,9 +140,9 @@ variables:
   Site Wind Direction:
     variable_names: wind_direction
     keys: Environment
-  Site Diffuse Solar Radiation Rate per Area:
-    variable_names: diffuse_solar_radiation
-    keys: Environment
+  # Site Diffuse Solar Radiation Rate per Area:
+  #   variable_names: diffuse_solar_radiation
+  #   keys: Environment
   Site Direct Solar Radiation Rate per Area:
     variable_names: direct_solar_radiation
     keys: Environment
