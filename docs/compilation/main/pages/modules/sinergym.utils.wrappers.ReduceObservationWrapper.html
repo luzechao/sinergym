@@ -194,8 +194,8 @@
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_name</span></code>()</p></td>
 <td><p>Returns the class name of the wrapper.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code>()</p></td>
-<td><p>Closes the wrapper and <code class="xref py py-attr docutils literal notranslate"><span class="pre">env</span></code>.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sinergym.utils.wrappers.ReduceObservationWrapper.close" title="sinergym.utils.wrappers.ReduceObservationWrapper.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<td><p>Close the environment and filter normalization calibrations and save if is required</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_obs_dict</span></code>(obs)</p></td>
 <td><p>Convert observation array to dictionary with variable names as keys.</p></td>
@@ -255,6 +255,12 @@
 </tr>
 </tbody>
 </table>
+<dl class="py method">
+<dt class="sig sig-object py" id="sinergym.utils.wrappers.ReduceObservationWrapper.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sinergym.utils.wrappers.ReduceObservationWrapper.close" title="Link to this definition"></a></dt>
+<dd><p>Close the environment and filter normalization calibrations and save if is required</p>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sinergym.utils.wrappers.ReduceObservationWrapper.logger">
 <span class="sig-name descname"><span class="pre">logger</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Logger</span> <span class="pre">WRAPPER</span> <span class="pre">ReduceObservationWrapper</span> <span class="pre">(INFO)&gt;</span></em><a class="headerlink" href="#sinergym.utils.wrappers.ReduceObservationWrapper.logger" title="Link to this definition"></a></dt>
